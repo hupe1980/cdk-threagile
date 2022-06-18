@@ -125,7 +125,7 @@
         "module": "cdktg"
       },
       "go": {
-        "moduleName": "github.com/hupe1980/cdktg"
+        "moduleName": "github.com/hupe1980/cdktg-go"
       }
     },
     "tsc": {
