@@ -1,6 +1,18 @@
 {
   "dependencies": [
     {
+      "name": "@openapitools/openapi-generator-cli",
+      "type": "build"
+    },
+    {
+      "name": "@types/adm-zip",
+      "type": "build"
+    },
+    {
+      "name": "@types/fs-extra",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -102,11 +114,44 @@
       "type": "build"
     },
     {
+      "name": "adm-zip",
+      "type": "bundled"
+    },
+    {
+      "name": "axios",
+      "type": "bundled"
+    },
+    {
+      "name": "dotenv",
+      "type": "bundled"
+    },
+    {
+      "name": "execa",
+      "version": "^5",
+      "type": "bundled"
+    },
+    {
+      "name": "form-data",
+      "type": "bundled"
+    },
+    {
+      "name": "fs-extra",
+      "type": "bundled"
+    },
+    {
+      "name": "ts-node",
+      "type": "bundled"
+    },
+    {
       "name": "uuid",
       "type": "bundled"
     },
     {
       "name": "yaml",
+      "type": "bundled"
+    },
+    {
+      "name": "yargs",
       "type": "bundled"
     },
     {

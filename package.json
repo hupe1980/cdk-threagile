@@ -1,8 +1,12 @@
 {
   "name": "cdktg",
+  "description": "Agile Threat Modeling as Code",
   "repository": {
     "type": "git",
     "url": "https://github.com/hupe1980/cdk-threagile.git"
+  },
+  "bin": {
+    "cdktg": "bin/cdktg"
   },
   "scripts": {
     "build": "npx projen build",
@@ -30,13 +34,17 @@
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen",
-    "specgen": "json2ts schema.json > src/spec/threatgile.generated.ts"
+    "specgen": "json2ts threagile/schema.json > src/spec/threatgile.generated.ts",
+    "apigen": "openapi-generator-cli generate -i threagile/openapi.yaml -g typescript-axios -o src/api/generated --additional-properties=withNodeImports=true"
   },
   "author": {
     "name": "hupe1980",
     "organization": false
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.1",
+    "@types/adm-zip": "^0.5.0",
+    "@types/fs-extra": "^9.0.13",
     "@types/jest": "28.1.1",
     "@types/node": "^14",
     "@types/uuid": "^8.3.4",
@@ -59,18 +67,40 @@
     "projen": "^0.58.15",
     "standard-version": "^9",
     "ts-jest": "^27",
-    "typescript": "^4.7.4"
+    "typescript": "^4.6"
   },
   "peerDependencies": {
     "constructs": "^10.1.42"
   },
   "dependencies": {
+    "adm-zip": "0.5.6",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "execa": "^5",
+    "form-data": "^4.0.0",
+    "fs-extra": "^10.1.0",
+    "ts-node": "^10.8.1",
     "uuid": "^8.3.2",
-    "yaml": "^2.1.1"
+    "yaml": "^2.1.1",
+    "yargs": "^17.5.1"
   },
   "bundledDependencies": [
+    "adm-zip",
+    "axios",
+    "dotenv",
+    "execa",
+    "form-data",
+    "fs-extra",
+    "ts-node",
     "uuid",
-    "yaml"
+    "yaml",
+    "yargs"
+  ],
+  "keywords": [
+    "cdk",
+    "stride",
+    "threagile",
+    "threat modeling"
   ],
   "main": "lib/index.js",
   "license": "MIT",

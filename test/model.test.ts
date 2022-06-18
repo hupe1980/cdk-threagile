@@ -1,3 +1,4 @@
+import * as path from 'path';
 import {
   Author,
   Availability,
@@ -11,6 +12,7 @@ import {
   TrustBoundaryType,
   AssetType,
   Usage,
+  Project,
   Encryption,
   Machine,
   Size,
@@ -22,10 +24,12 @@ import {
   Authorization,
 } from '../src';
 
-
 test('synth the model stub example', () => {
-  const model = new Model({
-    title: 'Model Stub',
+  const project = new Project({
+    outdir: path.join('dist', 'models'),
+  });
+
+  const model = new Model(project, 'Model Stub', {
     version: '1.0.0',
     date: new Date('2020-03-31'),
     author: new Author({
@@ -110,5 +114,5 @@ test('synth the model stub example', () => {
 
   someTraffic.sent(someData);
 
-  model.synth();
+  project.synth();
 });

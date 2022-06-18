@@ -356,12 +356,26 @@ public readonly owner: string;
 ```typescript
 import { Model } from 'cdktg'
 
-new Model(props: ModelProps)
+new Model(project: Construct, id: string, props: ModelProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdktg.Model.Initializer.parameter.project">project</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.Model.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.ModelProps">ModelProps</a></code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="cdktg.Model.Initializer.parameter.project"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Model.Initializer.parameter.id"></a>
+
+- *Type:* string
 
 ---
 
@@ -376,7 +390,6 @@ new Model(props: ModelProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.Model.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdktg.Model.synth">synth</a></code> | Synthesizes the model to the output directory. |
 
 ---
 
@@ -387,20 +400,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `synth` <a name="synth" id="cdktg.Model.synth"></a>
-
-```typescript
-public synth(outdir?: string): void
-```
-
-Synthesizes the model to the output directory.
-
-###### `outdir`<sup>Optional</sup> <a name="outdir" id="cdktg.Model.synth.parameter.outdir"></a>
-
-- *Type:* string
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -514,6 +513,127 @@ public readonly date: Date;
 ```
 
 - *Type:* Date
+
+---
+
+
+### Project <a name="Project" id="cdktg.Project"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Project.Initializer"></a>
+
+```typescript
+import { Project } from 'cdktg'
+
+new Project(props?: ProjectProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Project.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.ProjectProps">ProjectProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="cdktg.Project.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.ProjectProps">ProjectProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Project.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.Project.synth">synth</a></code> | Synthesizes the model to the output directory. |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.Project.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `synth` <a name="synth" id="cdktg.Project.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesizes the model to the output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Project.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.Project.isConstruct"></a>
+
+```typescript
+import { Project } from 'cdktg'
+
+Project.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.Project.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Project.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.Project.property.outdir">outdir</a></code> | <code>string</code> | The output directory into which models will be synthesized. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.Project.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="cdktg.Project.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+The output directory into which models will be synthesized.
 
 ---
 
@@ -1475,6 +1595,37 @@ public readonly owner: string;
 
 ---
 
+### ManifestProps <a name="ManifestProps" id="cdktg.ManifestProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.ManifestProps.Initializer"></a>
+
+```typescript
+import { ManifestProps } from 'cdktg'
+
+const manifestProps: ManifestProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.ManifestProps.property.outdir">outdir</a></code> | <code>string</code> | The directory to output the threadgile model. |
+
+---
+
+##### `outdir`<sup>Optional</sup> <a name="outdir" id="cdktg.ManifestProps.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+- *Default:* .
+
+The directory to output the threadgile model.
+
+---
+
 ### ModelProps <a name="ModelProps" id="cdktg.ModelProps"></a>
 
 #### Initializer <a name="Initializer" id="cdktg.ModelProps.Initializer"></a>
@@ -1491,9 +1642,9 @@ const modelProps: ModelProps = { ... }
 | --- | --- | --- |
 | <code><a href="#cdktg.ModelProps.property.author">author</a></code> | <code><a href="#cdktg.Author">Author</a></code> | Author of the model. |
 | <code><a href="#cdktg.ModelProps.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | Business criticality of the target. |
-| <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 | <code><a href="#cdktg.ModelProps.property.version">version</a></code> | <code>string</code> | Version of the Threagile toolkit. |
 | <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>Date</code> | Date of the model. |
+| <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 
 ---
 
@@ -1521,18 +1672,6 @@ Business criticality of the target.
 
 ---
 
-##### `title`<sup>Required</sup> <a name="title" id="cdktg.ModelProps.property.title"></a>
-
-```typescript
-public readonly title: string;
-```
-
-- *Type:* string
-
-Title of the model.
-
----
-
 ##### `version`<sup>Required</sup> <a name="version" id="cdktg.ModelProps.property.version"></a>
 
 ```typescript
@@ -1554,6 +1693,18 @@ public readonly date: Date;
 - *Type:* Date
 
 Date of the model.
+
+---
+
+##### `title`<sup>Optional</sup> <a name="title" id="cdktg.ModelProps.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+Title of the model.
 
 ---
 
@@ -1593,6 +1744,37 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+### ProjectProps <a name="ProjectProps" id="cdktg.ProjectProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.ProjectProps.Initializer"></a>
+
+```typescript
+import { ProjectProps } from 'cdktg'
+
+const projectProps: ProjectProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.ProjectProps.property.outdir">outdir</a></code> | <code>string</code> | The directory to output the threadgile model. |
+
+---
+
+##### `outdir`<sup>Optional</sup> <a name="outdir" id="cdktg.ProjectProps.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+- *Default:* .
+
+The directory to output the threadgile model.
 
 ---
 
@@ -2169,6 +2351,115 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+
+### Manifest <a name="Manifest" id="cdktg.Manifest"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Manifest.Initializer"></a>
+
+```typescript
+import { Manifest } from 'cdktg'
+
+new Manifest(props?: ManifestProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Manifest.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.ManifestProps">ManifestProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="cdktg.Manifest.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.ManifestProps">ManifestProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Manifest.addModel">addModel</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.save">save</a></code> | *No description.* |
+
+---
+
+##### `addModel` <a name="addModel" id="cdktg.Manifest.addModel"></a>
+
+```typescript
+public addModel(title: string, filePath: string): void
+```
+
+###### `title`<sup>Required</sup> <a name="title" id="cdktg.Manifest.addModel.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.Manifest.addModel.parameter.filePath"></a>
+
+- *Type:* string
+
+---
+
+##### `save` <a name="save" id="cdktg.Manifest.save"></a>
+
+```typescript
+public save(): void
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Manifest.fromFile">fromFile</a></code> | *No description.* |
+
+---
+
+##### `fromFile` <a name="fromFile" id="cdktg.Manifest.fromFile"></a>
+
+```typescript
+import { Manifest } from 'cdktg'
+
+Manifest.fromFile(dir: string)
+```
+
+###### `dir`<sup>Required</sup> <a name="dir" id="cdktg.Manifest.fromFile.parameter.dir"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Manifest.property.data">data</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#cdktg.Manifest.property.outdir">outdir</a></code> | <code>string</code> | The output directory into which models will be synthesized. |
+
+---
+
+##### `data`<sup>Required</sup> <a name="data" id="cdktg.Manifest.property.data"></a>
+
+```typescript
+public readonly data: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="cdktg.Manifest.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+The output directory into which models will be synthesized.
 
 ---
 

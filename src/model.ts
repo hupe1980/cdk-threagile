@@ -1,5 +1,3 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import { Construct } from 'constructs';
 
 import { Author } from './author';
@@ -7,7 +5,7 @@ import { DataAsset } from './data-asset';
 import { Threagile } from './spec/threatgile.generated';
 import { TechnicalAsset } from './technical-asset';
 import { TrustBoundary } from './trust-boundary';
-import { Yaml } from './yaml';
+
 
 export interface ModelProps {
   /**
@@ -18,7 +16,7 @@ export interface ModelProps {
   /**
    * Title of the model
    */
-  readonly title: string;
+  readonly title?: string;
 
   /**
    * Date of the model
@@ -43,11 +41,11 @@ export class Model extends Construct {
   public readonly author: Author;
   public readonly businessCriticality: BusinessCriticality;
 
-  constructor(props: ModelProps) {
-    super(undefined as any, '');
+  constructor(project: Construct, id: string, props: ModelProps) {
+    super(project, id);
 
     this.version = props.version;
-    this.title = props.title;
+    this.title = props.title ?? id;
     this.date = props.date;
     this.author = props.author;
     this.businessCriticality = props.businessCriticality;
@@ -115,18 +113,6 @@ export class Model extends Construct {
     }
 
     return threagile;
-  }
-
-  /**
-   * Synthesizes the model to the output directory
-   */
-  public synth(outdir = 'dist'): void {
-    fs.mkdirSync(outdir, { recursive: true });
-
-    Yaml.save(
-      path.join(outdir, 'app.yaml'), // There is no "app name", so we just hardcode the file name
-      [this._toThreagile()],
-    );
   }
 }
 
