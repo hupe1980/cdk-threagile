@@ -26,7 +26,7 @@ const project = new cdk.JsiiProject({
   },
 
   publishToGo: {
-    moduleName: 'github.com/hupe1980/cdktg-go',
+    moduleName: 'github.com/hupe1980/cdk-threagile-go',
   },
 });
 
