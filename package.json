@@ -2,7 +2,7 @@
   "name": "cdktg",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hupe1980/cdk-threagile.git"
+    "url": "https://github.com:hupe1980/cdk-threagile.git"
   },
   "scripts": {
     "build": "npx projen build",
