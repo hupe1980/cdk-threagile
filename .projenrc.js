@@ -6,6 +6,8 @@ const project = new cdk.JsiiProject({
   name: 'cdktg',
   vscode: true,
   repositoryUrl: 'git@github.com:hupe1980/cdk-threagile.git',
+  license: 'MIT',
+  copyrightOwner: 'Frank Hübner',
 
   peerDeps: ['constructs'],
   bundledDeps: ['uuid', 'yaml'],
