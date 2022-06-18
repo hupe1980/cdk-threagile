@@ -1,15 +1,26 @@
-const { JsiiProject } = require('projen');
-const project = new JsiiProject({
+const { cdk } = require('projen');
+
+const project = new cdk.JsiiProject({
   author: 'hupe1980',
-  authorAddress: 'frankhuebner1980@gmail.com',
   defaultReleaseBranch: 'main',
-  name: 'cdk-threagile',
+  name: 'cdktg',
+  vscode: true,
   repositoryUrl: 'git@github.com:hupe1980/cdk-threagile.git',
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
-  // release: undefined,      /* Add release management to this project. */
+  peerDeps: ['constructs'],
+  bundledDeps: ['uuid', 'yaml'],
+  devDeps: ['constructs', '@types/uuid', 'json-schema-to-typescript'],
+
+  publishToPypi: {
+    distName: 'cdktg',
+    module: 'cdktg',
+  },
+
+  publishToGo: {
+    moduleName: 'github.com/hupe1980/cdktg-go',
+  },
 });
+
+project.setScript('specgen', 'json2ts schema.json > src/spec/threatgile.generated.ts');
+
 project.synth();

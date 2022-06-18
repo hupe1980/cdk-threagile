@@ -1,5 +1,10 @@
-export class Hello {
-  public sayHello() {
-    return 'hello, world!';
-  }
-}
+export * from './asset';
+export * from './author';
+export * from './cia-triade';
+export * from './communication';
+export * from './data-asset';
+export * from './model';
+export * from './scope';
+export * from './technical-asset';
+export * from './trust-boundary';
+export * from './usage';
