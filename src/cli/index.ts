@@ -1,5 +1,5 @@
-import * as yargs from 'yargs';
 import { config } from 'dotenv';
+import * as yargs from 'yargs';
 
 import { AnalyseCommand } from './analyse';
 import { CheckCommand } from './check';
