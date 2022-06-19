@@ -1,8 +1,8 @@
-import { Construct } from 'constructs';
-import { v4 as uuidv4 } from 'uuid';
+import { Construct } from "constructs";
+import { v4 as uuidv4 } from "uuid";
 
-import { CIATriad } from './cia-triade';
-import { Usage } from './usage';
+import { CIATriad } from "./cia-triade";
+import { Usage } from "./usage";
 
 export interface AssetProps {
   readonly description: string;
@@ -30,7 +30,5 @@ export abstract class Asset extends Construct {
   /**
    * @internal
    */
-  public abstract _toThreagile(): any
+  public abstract _toThreagile(): any;
 }
-
-

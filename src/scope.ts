@@ -27,7 +27,6 @@ export class OutOfScope extends Scope {
   protected get isInScope(): boolean {
     return false;
   }
-
 }
 
 export class InScope extends Scope {
@@ -38,5 +37,4 @@ export class InScope extends Scope {
   protected get isInScope(): boolean {
     return true;
   }
-
 }

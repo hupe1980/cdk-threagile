@@ -1,4 +1,4 @@
 export enum Usage {
-  BUSINESS = 'business',
-  DEVOPS = 'devops',
+  BUSINESS = "business",
+  DEVOPS = "devops",
 }

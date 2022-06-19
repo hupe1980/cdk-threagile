@@ -1,7 +1,7 @@
-import { Construct } from 'constructs';
+import { Construct } from "constructs";
 
-import { Asset, AssetProps } from './asset';
-import * as spec from './spec/threatgile.generated';
+import { Asset, AssetProps } from "./asset";
+import * as spec from "./spec/threatgile.generated";
 
 export interface DataAssetProps extends AssetProps {
   readonly origin?: string;
@@ -12,7 +12,7 @@ export interface DataAssetProps extends AssetProps {
 export class DataAsset extends Asset {
   public readonly origin?: string;
   public readonly owner?: string;
-  public readonly quantity: Quantity;;
+  public readonly quantity: Quantity;
 
   constructor(model: Construct, id: string, props: DataAssetProps) {
     super(model, id, props);
@@ -25,7 +25,7 @@ export class DataAsset extends Asset {
   /**
    * @internal
    */
-  public _toThreagile(): spec.Threagile['data_assets'] {
+  public _toThreagile(): spec.Threagile["data_assets"] {
     return {
       [this.node.id]: {
         id: this.uuid,
@@ -34,18 +34,15 @@ export class DataAsset extends Asset {
         origin: this.origin,
         owner: this.owner,
         quantity: this.quantity,
-        confidentiality: 'public',
-        integrity: 'archive',
-        availability: 'archive',
-        //...this.ciaTriad._toThreagile(),
+        ...this.ciaTriad._toThreagile(),
       },
     };
   }
 }
 
 export enum Quantity {
-  VERY_FEW = 'very-few',
-  FEW = 'few',
-  MANY = 'many',
-  VERY_MANY = 'very-many'
+  VERY_FEW = "very-few",
+  FEW = "few",
+  MANY = "many",
+  VERY_MANY = "very-many",
 }

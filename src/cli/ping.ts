@@ -1,17 +1,19 @@
-import { CommandModule, Arguments, Argv, Options } from 'yargs';
+import { CommandModule, Arguments, Argv, Options } from "yargs";
 
-import { Threagile } from '../api/threagile';
+import { Threagile } from "../api/threagile";
 
 interface PingOptions extends Options {
   url: string;
 }
 
-export class PingCommand<U extends PingOptions> implements CommandModule<{}, U> {
-  public command = 'ping';
-  public describe = 'ping the api';
+export class PingCommand<U extends PingOptions>
+  implements CommandModule<{}, U>
+{
+  public command = "ping";
+  public describe = "ping the api";
 
   builder = (args: Argv): Argv<U> => {
-    args.option('url', { type: 'string', alias: 'u', describe: '' });
+    args.option("url", { type: "string", alias: "u", describe: "" });
 
     return args as unknown as Argv<U>;
   };
@@ -26,7 +28,7 @@ export class PingCommand<U extends PingOptions> implements CommandModule<{}, U> 
     if (resp.status === 200) {
       console.log(`✅  ${resp.data.message}\n`);
     } else {
-      console.log('❌  Error\n');
+      console.log("❌  Error\n");
     }
   };
 }

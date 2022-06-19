@@ -32,25 +32,25 @@ export class CIATriad {
 }
 
 export enum Confidentiality {
-  PUBLIC = 'public',
-  INTERNAL = 'internal',
-  RESTRICTED = 'restricted',
-  CONFIDENTIAL = 'confidential',
-  STRICTLY_CONFIDENTIAL = 'strictly-confidential'
+  PUBLIC = "public",
+  INTERNAL = "internal",
+  RESTRICTED = "restricted",
+  CONFIDENTIAL = "confidential",
+  STRICTLY_CONFIDENTIAL = "strictly-confidential",
 }
 
 export enum Integrity {
-  ARCHIVE = 'archive',
-  OPERATIONAL = 'operational',
-  IMPORTANT = 'important',
-  CRITICAL = 'critical',
-  MISSION_CRITICAL = 'mission-critical'
+  ARCHIVE = "archive",
+  OPERATIONAL = "operational",
+  IMPORTANT = "important",
+  CRITICAL = "critical",
+  MISSION_CRITICAL = "mission-critical",
 }
 
 export enum Availability {
-  ARCHIVE = 'archive',
-  OPERATIONAL = 'operational',
-  IMPORTANT = 'important',
-  CRITICAL = 'critical',
-  MISSION_CRITICAL = 'mission-critical'
+  ARCHIVE = "archive",
+  OPERATIONAL = "operational",
+  IMPORTANT = "important",
+  CRITICAL = "critical",
+  MISSION_CRITICAL = "mission-critical",
 }

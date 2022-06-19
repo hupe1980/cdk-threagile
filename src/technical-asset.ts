@@ -1,11 +1,11 @@
-import { Construct } from 'constructs';
+import { Construct } from "constructs";
 
-import { Asset, AssetProps } from './asset';
-import { Communication, CommunicationOptions } from './communication';
-import { DataAsset } from './data-asset';
-import { InScope, Scope } from './scope';
-import * as spec from './spec/threatgile.generated';
-import { TrustBoundary } from './trust-boundary';
+import { Asset, AssetProps } from "./asset";
+import { Communication, CommunicationOptions } from "./communication";
+import { DataAsset } from "./data-asset";
+import { InScope, Scope } from "./scope";
+import * as spec from "./spec/threatgile.generated";
+import { TrustBoundary } from "./trust-boundary";
 
 export interface TechnicalAssetProps extends AssetProps {
   readonly assetType: AssetType;
@@ -68,18 +68,22 @@ export class TechnicalAsset extends Asset {
   }
 
   public processed(...assets: DataAsset[]) {
-    assets.forEach(a => {
+    assets.forEach((a) => {
       this.dataAssetsProcessed.add(a.uuid);
     });
   }
 
   public stored(...assets: DataAsset[]) {
-    assets.forEach(a => {
+    assets.forEach((a) => {
       this.dataAssetsStored.add(a.uuid);
     });
   }
 
-  public communicatedWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication {
+  public communicatedWith(
+    id: string,
+    target: TechnicalAsset,
+    options: CommunicationOptions
+  ): Communication {
     const communication = new Communication(id, {
       target: target,
       ...options,
@@ -93,7 +97,7 @@ export class TechnicalAsset extends Asset {
   /**
    * @internal
    */
-  public _toThreagile(): spec.Threagile['technical_assets'] {
+  public _toThreagile(): spec.Threagile["technical_assets"] {
     const threagile: any = {
       [this.node.id]: {
         id: this.uuid,
@@ -108,10 +112,7 @@ export class TechnicalAsset extends Asset {
         machine: this.machine,
         encryption: this.encryption,
         owner: this.owner,
-        confidentiality: 'public',
-        integrity: 'archive',
-        availability: 'archive',
-        // ...this.ciaTriad._toThreagile(),
+        ...this.ciaTriad._toThreagile(),
         multitenant: this.multiTenant,
         redundant: this.redundant,
         data_assets_processed: Array.from(this.dataAssetsProcessed),
@@ -122,7 +123,7 @@ export class TechnicalAsset extends Asset {
     if (this.communications.length > 0) {
       threagile[this.node.id].communication_links = {};
 
-      this.communications.forEach(c => {
+      this.communications.forEach((c) => {
         threagile[this.node.id].communication_links = {
           ...threagile[this.node.id].communication_links,
           ...c._toThreagile(),
@@ -135,97 +136,96 @@ export class TechnicalAsset extends Asset {
 }
 
 export enum AssetType {
-  EXTERNAL_ENTITY = 'external-entity',
-  PROCESS = 'process',
-  DATASTORE = 'datastore',
+  EXTERNAL_ENTITY = "external-entity",
+  PROCESS = "process",
+  DATASTORE = "datastore",
 }
 
 export enum Size {
-  SYSTEM = 'system',
-  SERVICE = 'service',
-  APPLICATION = 'application',
-  COMPONENT = 'component',
+  SYSTEM = "system",
+  SERVICE = "service",
+  APPLICATION = "application",
+  COMPONENT = "component",
 }
 
 export enum Technology {
-  UNKNOWN = 'unknown-technology',
-  CLIENT_SYSTEM = 'client-system',
-  BROWSER = 'browser',
-  DESKTOP = 'desktop',
-  MOBILE_APP = 'mobile-app',
-  DEVOPS_CLIENT = 'devops-client',
-  WEB_SERVER = 'web-server',
-  WEB_APPLICATION = 'web-application',
-  APPLICATION_SERVER = 'application-server',
-  DATABASE = 'database',
-  FILE_SERVER = 'file-server',
-  LOCAL_FILE_SERVER = 'local-file-system',
-  ERP = 'erp',
-  CMS ='cms',
-  WEB_SERVICE_REST = 'web-service-rest',
-  WEB_SERVICE_SOAP = 'web-service-soap',
-  EJB = 'ejb',
-  SEARCH_INDEX = 'search-index',
-  SEARCH_ENGINE = 'search-engine',
-  SERVICE_REGISTRY = 'service-registry',
-  REVERSE_PROXY = 'reverse-proxy',
-  LOAD_BALANCER = 'load-balancer',
-  BUILD_PIPELINE = 'build-pipeline',
-  SOURCECODE_REPOSITORY = 'sourcecode-repository',
-  ARTIFACT_REGISTRY ='artifact-registry',
-  CODE_INSPECTION_PLATFORM = 'code-inspection-platform',
-  MONITORING = 'monitoring',
-  LDAP_SERVER = 'ldap-server',
-  CONTAINER_PLATFORM = 'container-platform',
-  BATCH_PROCESSING = 'batch-processing',
-  EVENT_LISTENER = 'event-listener',
-  IDENTITIY_PROVIDER = 'identity-provider',
-  IDENTITY_STORE_LDAP = 'identity-store-ldap',
-  IDENTITY_STORE_DATABASE = 'identity-store-database',
-  TOOL = 'tool',
-  CLI ='cli',
-  TASK ='task',
-  FUNCTION = 'function',
-  GATEWAY = 'gateway',
-  IOT_DEVICE = 'iot-device',
-  MESSAGE_QUEUE = 'message-queue',
-  STREAM_PROCESSING = 'stream-processing',
-  SERVICE_MESH = 'service-mesh',
-  DATA_LAKE = 'data-lake',
-  REPORT_ENGINE = 'report-engine',
-  AI = 'ai',
-  MAIL_SERVER = 'mail-server',
-  VAULT = 'vault',
-  HASM = 'hsm',
-  WAF = 'waf',
-  IDS = 'ids',
-  IPS = 'ips',
-  SCHEDULER ='scheduler',
-  MAINFRAME = 'mainframe',
-  BLOCK_STORAGE ='block-storage',
-  LIBRARY = 'library'
+  UNKNOWN = "unknown-technology",
+  CLIENT_SYSTEM = "client-system",
+  BROWSER = "browser",
+  DESKTOP = "desktop",
+  MOBILE_APP = "mobile-app",
+  DEVOPS_CLIENT = "devops-client",
+  WEB_SERVER = "web-server",
+  WEB_APPLICATION = "web-application",
+  APPLICATION_SERVER = "application-server",
+  DATABASE = "database",
+  FILE_SERVER = "file-server",
+  LOCAL_FILE_SERVER = "local-file-system",
+  ERP = "erp",
+  CMS = "cms",
+  WEB_SERVICE_REST = "web-service-rest",
+  WEB_SERVICE_SOAP = "web-service-soap",
+  EJB = "ejb",
+  SEARCH_INDEX = "search-index",
+  SEARCH_ENGINE = "search-engine",
+  SERVICE_REGISTRY = "service-registry",
+  REVERSE_PROXY = "reverse-proxy",
+  LOAD_BALANCER = "load-balancer",
+  BUILD_PIPELINE = "build-pipeline",
+  SOURCECODE_REPOSITORY = "sourcecode-repository",
+  ARTIFACT_REGISTRY = "artifact-registry",
+  CODE_INSPECTION_PLATFORM = "code-inspection-platform",
+  MONITORING = "monitoring",
+  LDAP_SERVER = "ldap-server",
+  CONTAINER_PLATFORM = "container-platform",
+  BATCH_PROCESSING = "batch-processing",
+  EVENT_LISTENER = "event-listener",
+  IDENTITIY_PROVIDER = "identity-provider",
+  IDENTITY_STORE_LDAP = "identity-store-ldap",
+  IDENTITY_STORE_DATABASE = "identity-store-database",
+  TOOL = "tool",
+  CLI = "cli",
+  TASK = "task",
+  FUNCTION = "function",
+  GATEWAY = "gateway",
+  IOT_DEVICE = "iot-device",
+  MESSAGE_QUEUE = "message-queue",
+  STREAM_PROCESSING = "stream-processing",
+  SERVICE_MESH = "service-mesh",
+  DATA_LAKE = "data-lake",
+  REPORT_ENGINE = "report-engine",
+  AI = "ai",
+  MAIL_SERVER = "mail-server",
+  VAULT = "vault",
+  HASM = "hsm",
+  WAF = "waf",
+  IDS = "ids",
+  IPS = "ips",
+  SCHEDULER = "scheduler",
+  MAINFRAME = "mainframe",
+  BLOCK_STORAGE = "block-storage",
+  LIBRARY = "library",
 }
 
 export enum Machine {
-  PHYSICAL = 'physical',
-  VIRTUAL = 'virtual',
-  CONTAINER = 'container',
-  SERVERLESS = 'serverless',
+  PHYSICAL = "physical",
+  VIRTUAL = "virtual",
+  CONTAINER = "container",
+  SERVERLESS = "serverless",
 }
 
 export enum Encryption {
-  NONE = 'none',
-  TRANSPARENT = 'transparent',
-  SYMMETRIC_SHARED_KEY = 'data-with-symmetric-shared-key',
-  ASYMMETRIC_SHARED_KEY = 'data-with-asymmetric-shared-key',
-  ENDUSER_INDIVIDUAL_KEY = 'data-with-enduser-individual-key',
+  NONE = "none",
+  TRANSPARENT = "transparent",
+  SYMMETRIC_SHARED_KEY = "data-with-symmetric-shared-key",
+  ASYMMETRIC_SHARED_KEY = "data-with-asymmetric-shared-key",
+  ENDUSER_INDIVIDUAL_KEY = "data-with-enduser-individual-key",
 }
 
 export enum DataFormat {
-  JSON = 'json',
-  XML = 'xml',
-  SERIALIZATION = 'serialization',
-  FILE = 'file',
-  CSV = 'csv',
+  JSON = "json",
+  XML = "xml",
+  SERIALIZATION = "serialization",
+  FILE = "file",
+  CSV = "csv",
 }
-

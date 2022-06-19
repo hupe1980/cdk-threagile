@@ -1,19 +1,21 @@
-import * as path from 'path';
-import { CommandModule, Arguments, Argv, Options } from 'yargs';
+import * as path from "path";
+import { CommandModule, Arguments, Argv, Options } from "yargs";
 
-import { Threagile } from '../api/threagile';
-import { Manifest } from '../manifest';
+import { Threagile } from "../api/threagile";
+import { Manifest } from "../manifest";
 
 interface CheckOptions extends Options {
   url: string;
 }
 
-export class CheckCommand<U extends CheckOptions> implements CommandModule<{}, U> {
-  public command = 'check';
-  public describe = 'check the models';
+export class CheckCommand<U extends CheckOptions>
+  implements CommandModule<{}, U>
+{
+  public command = "check";
+  public describe = "check the models";
 
   builder = (args: Argv): Argv<U> => {
-    args.option('url', { type: 'string', alias: 'u', describe: '' });
+    args.option("url", { type: "string", alias: "u", describe: "" });
 
     return args as unknown as Argv<U>;
   };
@@ -23,11 +25,11 @@ export class CheckCommand<U extends CheckOptions> implements CommandModule<{}, U
 
     const api = new Threagile(url);
 
-    const manifest = Manifest.fromFile('.cdktg.out');
+    const manifest = Manifest.fromFile(".cdktg.out");
 
     Object.keys(manifest.data).forEach(async (k) => {
       const filepath = path.join(manifest.outdir, `${manifest.data[k]}.yml`);
-      const resp = await api.check(filepath );
+      const resp = await api.check(filepath);
 
       console.log(`Results for model "${k}":`);
 

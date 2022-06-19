@@ -1,5 +1,5 @@
-import * as path from 'path';
-import * as fs from 'fs-extra';
+import * as path from "path";
+import * as fs from "fs-extra";
 
 export interface ManifestProps {
   /**
@@ -16,9 +16,9 @@ export class Manifest {
       outdir: dir,
     });
 
-    const json = fs.readJSONSync(path.join(dir, 'manifest.json'));
+    const json = fs.readJSONSync(path.join(dir, "manifest.json"));
 
-    Object.keys(json).forEach(k => {
+    Object.keys(json).forEach((k) => {
       manifest.addModel(k, json[k]);
     });
 
@@ -33,7 +33,7 @@ export class Manifest {
   public readonly data: Record<string, string>;
 
   constructor(props: ManifestProps = {}) {
-    this.outdir = props.outdir ?? '.cdktg.out';
+    this.outdir = props.outdir ?? ".cdktg.out";
     this.data = {};
   }
 
@@ -42,7 +42,7 @@ export class Manifest {
   }
 
   public save() {
-    fs.writeJSONSync(path.join(this.outdir, 'manifest.json'), this.data, {
+    fs.writeJSONSync(path.join(this.outdir, "manifest.json"), this.data, {
       spaces: 4,
     });
   }

@@ -1,11 +1,11 @@
-import * as fs from 'fs-extra';
-import { Configuration, MetaApi, DirectApi } from './generated';
+import * as fs from "fs-extra";
+import { Configuration, MetaApi, DirectApi } from "./generated";
 
 export class Threagile {
   private metaApi: MetaApi;
   private directApi: DirectApi;
 
-  constructor(baseURL:string) {
+  constructor(baseURL: string) {
     const configuration = new Configuration({
       basePath: baseURL,
     });
@@ -36,7 +36,7 @@ export class Threagile {
     const file = fs.createReadStream(filename);
 
     return this.directApi.directAnalyzePost(dpi, file, {
-      responseType: 'arraybuffer',
+      responseType: "arraybuffer",
     });
   }
 }

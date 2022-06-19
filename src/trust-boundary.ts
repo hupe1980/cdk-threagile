@@ -1,7 +1,7 @@
-import { Construct } from 'constructs';
-import { v4 as uuidv4 } from 'uuid';
-import * as spec from './spec/threatgile.generated';
-import { TechnicalAsset } from './technical-asset';
+import { Construct } from "constructs";
+import { v4 as uuidv4 } from "uuid";
+import * as spec from "./spec/threatgile.generated";
+import { TechnicalAsset } from "./technical-asset";
 
 export interface TrustBoundaryProps {
   readonly description: string;
@@ -30,7 +30,7 @@ export class TrustBoundary extends Construct {
   }
 
   public addTechnicalAssets(...assets: TechnicalAsset[]) {
-    assets.forEach(a => {
+    assets.forEach((a) => {
       this.technicalAssetsInside.add(a.uuid);
     });
   }
@@ -42,7 +42,7 @@ export class TrustBoundary extends Construct {
   /**
    * @internal
    */
-  public _toThreagile(): spec.Threagile['trust_boundaries'] {
+  public _toThreagile(): spec.Threagile["trust_boundaries"] {
     return {
       [this.node.id]: {
         id: this.uuid,
@@ -56,11 +56,11 @@ export class TrustBoundary extends Construct {
 }
 
 export enum TrustBoundaryType {
-  NETWORK_ON_PREM = 'network-on-prem',
-  NETWORK_DEDICATED_HOSTER = 'network-dedicated-hoster',
-  NETWORK_VIRTUAL_LAN = 'network-virtual-lan',
-  NETWORK_CLOUD_PROVIDER = 'network-cloud-provider',
-  NETWORK_CLOUD_SECURITY_GROUP = 'network-cloud-security-group',
-  NETWORK_POLICY_NAMESPACE_ISOLATION = 'network-policy-namespace-isolation',
-  EXECUTION_ENVIRONMENT = 'execution-environment'
+  NETWORK_ON_PREM = "network-on-prem",
+  NETWORK_DEDICATED_HOSTER = "network-dedicated-hoster",
+  NETWORK_VIRTUAL_LAN = "network-virtual-lan",
+  NETWORK_CLOUD_PROVIDER = "network-cloud-provider",
+  NETWORK_CLOUD_SECURITY_GROUP = "network-cloud-security-group",
+  NETWORK_POLICY_NAMESPACE_ISOLATION = "network-policy-namespace-isolation",
+  EXECUTION_ENVIRONMENT = "execution-environment",
 }

@@ -1,11 +1,10 @@
-import { Construct } from 'constructs';
+import { Construct } from "constructs";
 
-import { Author } from './author';
-import { DataAsset } from './data-asset';
-import { Threagile } from './spec/threatgile.generated';
-import { TechnicalAsset } from './technical-asset';
-import { TrustBoundary } from './trust-boundary';
-
+import { Author } from "./author";
+import { DataAsset } from "./data-asset";
+import { Threagile } from "./spec/threatgile.generated";
+import { TechnicalAsset } from "./technical-asset";
+import { TrustBoundary } from "./trust-boundary";
 
 export interface ModelProps {
   /**
@@ -59,7 +58,7 @@ export class Model extends Construct {
     const technicalAssets = new Array<TechnicalAsset>();
     const trustBoundaries = new Array<TrustBoundary>();
 
-    this.node.findAll().map(n => {
+    this.node.findAll().map((n) => {
       if (n instanceof DataAsset) {
         dataAssets.push(n);
       } else if (n instanceof TechnicalAsset) {
@@ -72,7 +71,7 @@ export class Model extends Construct {
     const threagile: any = {
       threagile_version: this.version,
       title: this.title,
-      data: this.date?.toISOString().split('T')[0],
+      data: this.date?.toISOString().split("T")[0],
       author: this.author._toThreagile(),
       business_criticality: this.businessCriticality,
     };
@@ -80,7 +79,7 @@ export class Model extends Construct {
     if (dataAssets.length > 0) {
       threagile.data_assets = {};
 
-      dataAssets.forEach(a => {
+      dataAssets.forEach((a) => {
         const obj = a._toThreagile();
         const k = Object.keys(obj)[0];
 
@@ -91,7 +90,7 @@ export class Model extends Construct {
     if (technicalAssets.length > 0) {
       threagile.technical_assets = {};
 
-      technicalAssets.forEach(a => {
+      technicalAssets.forEach((a) => {
         const obj = a._toThreagile();
         const k = Object.keys(obj)[0];
 
@@ -102,7 +101,7 @@ export class Model extends Construct {
     if (trustBoundaries.length > 0) {
       threagile.trust_boundaries = {};
 
-      trustBoundaries.forEach(t => {
+      trustBoundaries.forEach((t) => {
         const obj = t._toThreagile();
         if (obj) {
           const k = Object.keys(obj)[0];
@@ -117,9 +116,9 @@ export class Model extends Construct {
 }
 
 export enum BusinessCriticality {
-  ARCHIVE = 'archive',
-  OPERATIONAL= 'operational',
-  IMPORTANT = 'important',
-  CRITICAL= 'critical',
-  MISSION_CRITICAL= 'mission-critical',
+  ARCHIVE = "archive",
+  OPERATIONAL = "operational",
+  IMPORTANT = "important",
+  CRITICAL = "critical",
+  MISSION_CRITICAL = "mission-critical",
 }
