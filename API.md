@@ -390,6 +390,7 @@ new Model(project: Construct, id: string, props: ModelProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.Model.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.Model.addOverride">addOverride</a></code> | *No description.* |
 
 ---
 
@@ -401,11 +402,30 @@ public toString(): string
 
 Returns a string representation of this construct.
 
+##### `addOverride` <a name="addOverride" id="cdktg.Model.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+###### `path`<sup>Required</sup> <a name="path" id="cdktg.Model.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="cdktg.Model.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.Model.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#cdktg.Model.isModel">isModel</a></code> | *No description.* |
 
 ---
 
@@ -441,6 +461,20 @@ Any object.
 
 ---
 
+##### `isModel` <a name="isModel" id="cdktg.Model.isModel"></a>
+
+```typescript
+import { Model } from 'cdktg'
+
+Model.isModel(x: any)
+```
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.Model.isModel.parameter.x"></a>
+
+- *Type:* any
+
+---
+
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
@@ -451,6 +485,7 @@ Any object.
 | <code><a href="#cdktg.Model.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.version">version</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.date">date</a></code> | <code>Date</code> | *No description.* |
+| <code><a href="#cdktg.Model.property.synthesizer">synthesizer</a></code> | <code><a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a></code> | *No description.* |
 
 ---
 
@@ -513,6 +548,16 @@ public readonly date: Date;
 ```
 
 - *Type:* Date
+
+---
+
+##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="cdktg.Model.property.synthesizer"></a>
+
+```typescript
+public readonly synthesizer: IModelSynthesizer;
+```
+
+- *Type:* <a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a>
 
 ---
 
@@ -609,7 +654,9 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.Project.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.Project.property.manifest">manifest</a></code> | <code><a href="#cdktg.Manifest">Manifest</a></code> | *No description.* |
 | <code><a href="#cdktg.Project.property.outdir">outdir</a></code> | <code>string</code> | The output directory into which models will be synthesized. |
+| <code><a href="#cdktg.Project.property.skipValidation">skipValidation</a></code> | <code>boolean</code> | Whether to skip the validation during synthesis of the app. |
 
 ---
 
@@ -625,6 +672,16 @@ The tree node.
 
 ---
 
+##### `manifest`<sup>Required</sup> <a name="manifest" id="cdktg.Project.property.manifest"></a>
+
+```typescript
+public readonly manifest: Manifest;
+```
+
+- *Type:* <a href="#cdktg.Manifest">Manifest</a>
+
+---
+
 ##### `outdir`<sup>Required</sup> <a name="outdir" id="cdktg.Project.property.outdir"></a>
 
 ```typescript
@@ -634,6 +691,18 @@ public readonly outdir: string;
 - *Type:* string
 
 The output directory into which models will be synthesized.
+
+---
+
+##### `skipValidation`<sup>Optional</sup> <a name="skipValidation" id="cdktg.Project.property.skipValidation"></a>
+
+```typescript
+public readonly skipValidation: boolean;
+```
+
+- *Type:* boolean
+
+Whether to skip the validation during synthesis of the app.
 
 ---
 
@@ -679,9 +748,9 @@ new TechnicalAsset(model: Construct, id: string, props: TechnicalAssetProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdktg.TechnicalAsset.communicatedWith">communicatedWith</a></code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.processed">processed</a></code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.stored">stored</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.communicateWith">communicateWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.process">process</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.store">store</a></code> | *No description.* |
 
 ---
 
@@ -693,49 +762,49 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `communicatedWith` <a name="communicatedWith" id="cdktg.TechnicalAsset.communicatedWith"></a>
+##### `communicateWith` <a name="communicateWith" id="cdktg.TechnicalAsset.communicateWith"></a>
 
 ```typescript
-public communicatedWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
+public communicateWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
 ```
 
-###### `id`<sup>Required</sup> <a name="id" id="cdktg.TechnicalAsset.communicatedWith.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.TechnicalAsset.communicateWith.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `target`<sup>Required</sup> <a name="target" id="cdktg.TechnicalAsset.communicatedWith.parameter.target"></a>
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.TechnicalAsset.communicateWith.parameter.target"></a>
 
 - *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
-###### `options`<sup>Required</sup> <a name="options" id="cdktg.TechnicalAsset.communicatedWith.parameter.options"></a>
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.TechnicalAsset.communicateWith.parameter.options"></a>
 
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
 
-##### `processed` <a name="processed" id="cdktg.TechnicalAsset.processed"></a>
+##### `process` <a name="process" id="cdktg.TechnicalAsset.process"></a>
 
 ```typescript
-public processed(assets: DataAsset): void
+public process(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.processed.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.process.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
 ---
 
-##### `stored` <a name="stored" id="cdktg.TechnicalAsset.stored"></a>
+##### `store` <a name="store" id="cdktg.TechnicalAsset.store"></a>
 
 ```typescript
-public stored(assets: DataAsset): void
+public store(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.stored.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.store.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
@@ -1595,34 +1664,147 @@ public readonly owner: string;
 
 ---
 
-### ManifestProps <a name="ManifestProps" id="cdktg.ManifestProps"></a>
+### ModelAnnotation <a name="ModelAnnotation" id="cdktg.ModelAnnotation"></a>
 
-#### Initializer <a name="Initializer" id="cdktg.ManifestProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="cdktg.ModelAnnotation.Initializer"></a>
 
 ```typescript
-import { ManifestProps } from 'cdktg'
+import { ModelAnnotation } from 'cdktg'
 
-const manifestProps: ManifestProps = { ... }
+const modelAnnotation: ModelAnnotation = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdktg.ManifestProps.property.outdir">outdir</a></code> | <code>string</code> | The directory to output the threadgile model. |
+| <code><a href="#cdktg.ModelAnnotation.property.constructPath">constructPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelAnnotation.property.level">level</a></code> | <code><a href="#cdktg.AnnotationMetadataEntryType">AnnotationMetadataEntryType</a></code> | *No description.* |
+| <code><a href="#cdktg.ModelAnnotation.property.message">message</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelAnnotation.property.stacktrace">stacktrace</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
-##### `outdir`<sup>Optional</sup> <a name="outdir" id="cdktg.ManifestProps.property.outdir"></a>
+##### `constructPath`<sup>Required</sup> <a name="constructPath" id="cdktg.ModelAnnotation.property.constructPath"></a>
 
 ```typescript
-public readonly outdir: string;
+public readonly constructPath: string;
 ```
 
 - *Type:* string
-- *Default:* .
 
-The directory to output the threadgile model.
+---
+
+##### `level`<sup>Required</sup> <a name="level" id="cdktg.ModelAnnotation.property.level"></a>
+
+```typescript
+public readonly level: AnnotationMetadataEntryType;
+```
+
+- *Type:* <a href="#cdktg.AnnotationMetadataEntryType">AnnotationMetadataEntryType</a>
+
+---
+
+##### `message`<sup>Required</sup> <a name="message" id="cdktg.ModelAnnotation.property.message"></a>
+
+```typescript
+public readonly message: string;
+```
+
+- *Type:* string
+
+---
+
+##### `stacktrace`<sup>Optional</sup> <a name="stacktrace" id="cdktg.ModelAnnotation.property.stacktrace"></a>
+
+```typescript
+public readonly stacktrace: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### ModelManifest <a name="ModelManifest" id="cdktg.ModelManifest"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.ModelManifest.Initializer"></a>
+
+```typescript
+import { ModelManifest } from 'cdktg'
+
+const modelManifest: ModelManifest = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.ModelManifest.property.annotations">annotations</a></code> | <code><a href="#cdktg.ModelAnnotation">ModelAnnotation</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.ModelManifest.property.constructPath">constructPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelManifest.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelManifest.property.sanitizedName">sanitizedName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelManifest.property.synthesizedModelPath">synthesizedModelPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.ModelManifest.property.workingDirectory">workingDirectory</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `annotations`<sup>Required</sup> <a name="annotations" id="cdktg.ModelManifest.property.annotations"></a>
+
+```typescript
+public readonly annotations: ModelAnnotation[];
+```
+
+- *Type:* <a href="#cdktg.ModelAnnotation">ModelAnnotation</a>[]
+
+---
+
+##### `constructPath`<sup>Required</sup> <a name="constructPath" id="cdktg.ModelManifest.property.constructPath"></a>
+
+```typescript
+public readonly constructPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdktg.ModelManifest.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `sanitizedName`<sup>Required</sup> <a name="sanitizedName" id="cdktg.ModelManifest.property.sanitizedName"></a>
+
+```typescript
+public readonly sanitizedName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `synthesizedModelPath`<sup>Required</sup> <a name="synthesizedModelPath" id="cdktg.ModelManifest.property.synthesizedModelPath"></a>
+
+```typescript
+public readonly synthesizedModelPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `workingDirectory`<sup>Required</sup> <a name="workingDirectory" id="cdktg.ModelManifest.property.workingDirectory"></a>
+
+```typescript
+public readonly workingDirectory: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -1762,6 +1944,7 @@ const projectProps: ProjectProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.ProjectProps.property.outdir">outdir</a></code> | <code>string</code> | The directory to output the threadgile model. |
+| <code><a href="#cdktg.ProjectProps.property.skipValidation">skipValidation</a></code> | <code>boolean</code> | Whether to skip the validation during synthesis of the project. |
 
 ---
 
@@ -1775,6 +1958,19 @@ public readonly outdir: string;
 - *Default:* .
 
 The directory to output the threadgile model.
+
+---
+
+##### `skipValidation`<sup>Optional</sup> <a name="skipValidation" id="cdktg.ProjectProps.property.skipValidation"></a>
+
+```typescript
+public readonly skipValidation: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether to skip the validation during synthesis of the project.
 
 ---
 
@@ -2001,6 +2197,179 @@ public readonly type: TrustBoundaryType;
 
 ## Classes <a name="Classes" id="Classes"></a>
 
+### Annotations <a name="Annotations" id="cdktg.Annotations"></a>
+
+Includes API for attaching annotations such as warning messages to constructs.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Annotations.addError">addError</a></code> | Adds an { "error": <message> } metadata entry to this construct. |
+| <code><a href="#cdktg.Annotations.addInfo">addInfo</a></code> | Adds an info metadata entry to this construct. |
+| <code><a href="#cdktg.Annotations.addWarning">addWarning</a></code> | Adds a warning metadata entry to this construct. |
+
+---
+
+##### `addError` <a name="addError" id="cdktg.Annotations.addError"></a>
+
+```typescript
+public addError(message: string): void
+```
+
+Adds an { "error": <message> } metadata entry to this construct.
+
+The toolkit will fail synthesis when errors are reported.
+
+###### `message`<sup>Required</sup> <a name="message" id="cdktg.Annotations.addError.parameter.message"></a>
+
+- *Type:* string
+
+The error message.
+
+---
+
+##### `addInfo` <a name="addInfo" id="cdktg.Annotations.addInfo"></a>
+
+```typescript
+public addInfo(message: string): void
+```
+
+Adds an info metadata entry to this construct.
+
+The CLI will display the info message when apps are synthesized.
+
+###### `message`<sup>Required</sup> <a name="message" id="cdktg.Annotations.addInfo.parameter.message"></a>
+
+- *Type:* string
+
+The info message.
+
+---
+
+##### `addWarning` <a name="addWarning" id="cdktg.Annotations.addWarning"></a>
+
+```typescript
+public addWarning(message: string): void
+```
+
+Adds a warning metadata entry to this construct.
+
+The CLI will display the warning when an app is synthesized.
+In a future release the CLI might introduce a --strict flag which
+will then fail the synthesis if it encounters a warning.
+
+###### `message`<sup>Required</sup> <a name="message" id="cdktg.Annotations.addWarning.parameter.message"></a>
+
+- *Type:* string
+
+The warning message.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Annotations.of">of</a></code> | Returns the annotations API for a construct scope. |
+
+---
+
+##### `of` <a name="of" id="cdktg.Annotations.of"></a>
+
+```typescript
+import { Annotations } from 'cdktg'
+
+Annotations.of(scope: IConstruct)
+```
+
+Returns the annotations API for a construct scope.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="cdktg.Annotations.of.parameter.scope"></a>
+
+- *Type:* constructs.IConstruct
+
+The scope.
+
+---
+
+
+
+### Aspects <a name="Aspects" id="cdktg.Aspects"></a>
+
+Aspects can be applied to CDK tree scopes and can operate on the tree before synthesis.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Aspects.add">add</a></code> | Adds an aspect to apply this scope before synthesis. |
+
+---
+
+##### `add` <a name="add" id="cdktg.Aspects.add"></a>
+
+```typescript
+public add(aspect: IAspect): void
+```
+
+Adds an aspect to apply this scope before synthesis.
+
+###### `aspect`<sup>Required</sup> <a name="aspect" id="cdktg.Aspects.add.parameter.aspect"></a>
+
+- *Type:* <a href="#cdktg.IAspect">IAspect</a>
+
+The aspect to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Aspects.of">of</a></code> | Returns the `Aspects` object associated with a construct scope. |
+
+---
+
+##### `of` <a name="of" id="cdktg.Aspects.of"></a>
+
+```typescript
+import { Aspects } from 'cdktg'
+
+Aspects.of(scope: IConstruct)
+```
+
+Returns the `Aspects` object associated with a construct scope.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="cdktg.Aspects.of.parameter.scope"></a>
+
+- *Type:* constructs.IConstruct
+
+The scope for which these aspects will apply.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Aspects.property.all">all</a></code> | <code><a href="#cdktg.IAspect">IAspect</a>[]</code> | The list of aspects which were directly applied on this scope. |
+
+---
+
+##### `all`<sup>Required</sup> <a name="all" id="cdktg.Aspects.property.all"></a>
+
+```typescript
+public readonly all: IAspect[];
+```
+
+- *Type:* <a href="#cdktg.IAspect">IAspect</a>[]
+
+The list of aspects which were directly applied on this scope.
+
+---
+
+
 ### Author <a name="Author" id="cdktg.Author"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.Author.Initializer"></a>
@@ -2164,30 +2533,30 @@ new Communication(id: string, props: CommunicationProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdktg.Communication.received">received</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.sent">sent</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.receive">receive</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.send">send</a></code> | *No description.* |
 
 ---
 
-##### `received` <a name="received" id="cdktg.Communication.received"></a>
+##### `receive` <a name="receive" id="cdktg.Communication.receive"></a>
 
 ```typescript
-public received(assets: DataAsset): void
+public receive(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.received.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.receive.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
 ---
 
-##### `sent` <a name="sent" id="cdktg.Communication.sent"></a>
+##### `send` <a name="send" id="cdktg.Communication.send"></a>
 
 ```typescript
-public sent(assets: DataAsset): void
+public send(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.sent.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.send.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
@@ -2357,23 +2726,32 @@ public readonly justification: string;
 
 ### Manifest <a name="Manifest" id="cdktg.Manifest"></a>
 
+- *Implements:* <a href="#cdktg.IManifest">IManifest</a>
+
 #### Initializers <a name="Initializers" id="cdktg.Manifest.Initializer"></a>
 
 ```typescript
 import { Manifest } from 'cdktg'
 
-new Manifest(props?: ManifestProps)
+new Manifest(version: string, outdir: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdktg.Manifest.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.ManifestProps">ManifestProps</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.Initializer.parameter.version">version</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Manifest.Initializer.parameter.outdir">outdir</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `props`<sup>Optional</sup> <a name="props" id="cdktg.Manifest.Initializer.parameter.props"></a>
+##### `version`<sup>Required</sup> <a name="version" id="cdktg.Manifest.Initializer.parameter.version"></a>
 
-- *Type:* <a href="#cdktg.ManifestProps">ManifestProps</a>
+- *Type:* string
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="cdktg.Manifest.Initializer.parameter.outdir"></a>
+
+- *Type:* string
 
 ---
 
@@ -2381,52 +2759,53 @@ new Manifest(props?: ManifestProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdktg.Manifest.addModel">addModel</a></code> | *No description.* |
-| <code><a href="#cdktg.Manifest.save">save</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.buildManifest">buildManifest</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.forModel">forModel</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.writeToFile">writeToFile</a></code> | *No description.* |
 
 ---
 
-##### `addModel` <a name="addModel" id="cdktg.Manifest.addModel"></a>
+##### `buildManifest` <a name="buildManifest" id="cdktg.Manifest.buildManifest"></a>
 
 ```typescript
-public addModel(title: string, filePath: string): void
+public buildManifest(): IManifest
 ```
 
-###### `title`<sup>Required</sup> <a name="title" id="cdktg.Manifest.addModel.parameter.title"></a>
-
-- *Type:* string
-
----
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.Manifest.addModel.parameter.filePath"></a>
-
-- *Type:* string
-
----
-
-##### `save` <a name="save" id="cdktg.Manifest.save"></a>
+##### `forModel` <a name="forModel" id="cdktg.Manifest.forModel"></a>
 
 ```typescript
-public save(): void
+public forModel(model: Model): ModelManifest
+```
+
+###### `model`<sup>Required</sup> <a name="model" id="cdktg.Manifest.forModel.parameter.model"></a>
+
+- *Type:* <a href="#cdktg.Model">Model</a>
+
+---
+
+##### `writeToFile` <a name="writeToFile" id="cdktg.Manifest.writeToFile"></a>
+
+```typescript
+public writeToFile(): void
 ```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdktg.Manifest.fromFile">fromFile</a></code> | *No description.* |
+| <code><a href="#cdktg.Manifest.fromPath">fromPath</a></code> | *No description.* |
 
 ---
 
-##### `fromFile` <a name="fromFile" id="cdktg.Manifest.fromFile"></a>
+##### `fromPath` <a name="fromPath" id="cdktg.Manifest.fromPath"></a>
 
 ```typescript
 import { Manifest } from 'cdktg'
 
-Manifest.fromFile(dir: string)
+Manifest.fromPath(dir: string)
 ```
 
-###### `dir`<sup>Required</sup> <a name="dir" id="cdktg.Manifest.fromFile.parameter.dir"></a>
+###### `dir`<sup>Required</sup> <a name="dir" id="cdktg.Manifest.fromPath.parameter.dir"></a>
 
 - *Type:* string
 
@@ -2436,18 +2815,19 @@ Manifest.fromFile(dir: string)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdktg.Manifest.property.data">data</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#cdktg.Manifest.property.outdir">outdir</a></code> | <code>string</code> | The output directory into which models will be synthesized. |
+| <code><a href="#cdktg.Manifest.property.models">models</a></code> | <code>{[ key: string ]: <a href="#cdktg.ModelManifest">ModelManifest</a>}</code> | *No description.* |
+| <code><a href="#cdktg.Manifest.property.outdir">outdir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Manifest.property.version">version</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `data`<sup>Required</sup> <a name="data" id="cdktg.Manifest.property.data"></a>
+##### `models`<sup>Required</sup> <a name="models" id="cdktg.Manifest.property.models"></a>
 
 ```typescript
-public readonly data: {[ key: string ]: string};
+public readonly models: {[ key: string ]: ModelManifest};
 ```
 
-- *Type:* {[ key: string ]: string}
+- *Type:* {[ key: string ]: <a href="#cdktg.ModelManifest">ModelManifest</a>}
 
 ---
 
@@ -2459,9 +2839,101 @@ public readonly outdir: string;
 
 - *Type:* string
 
-The output directory into which models will be synthesized.
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="cdktg.Manifest.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
 
 ---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Manifest.property.fileName">fileName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Manifest.property.modelsFolder">modelsFolder</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `fileName`<sup>Required</sup> <a name="fileName" id="cdktg.Manifest.property.fileName"></a>
+
+```typescript
+public readonly fileName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `modelsFolder`<sup>Required</sup> <a name="modelsFolder" id="cdktg.Manifest.property.modelsFolder"></a>
+
+```typescript
+public readonly modelsFolder: string;
+```
+
+- *Type:* string
+
+---
+
+### ModelSynthesizer <a name="ModelSynthesizer" id="cdktg.ModelSynthesizer"></a>
+
+- *Implements:* <a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a>
+
+#### Initializers <a name="Initializers" id="cdktg.ModelSynthesizer.Initializer"></a>
+
+```typescript
+import { ModelSynthesizer } from 'cdktg'
+
+new ModelSynthesizer(model: Model, continueOnErrorAnnotations?: boolean)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.ModelSynthesizer.Initializer.parameter.model">model</a></code> | <code><a href="#cdktg.Model">Model</a></code> | *No description.* |
+| <code><a href="#cdktg.ModelSynthesizer.Initializer.parameter.continueOnErrorAnnotations">continueOnErrorAnnotations</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `model`<sup>Required</sup> <a name="model" id="cdktg.ModelSynthesizer.Initializer.parameter.model"></a>
+
+- *Type:* <a href="#cdktg.Model">Model</a>
+
+---
+
+##### `continueOnErrorAnnotations`<sup>Optional</sup> <a name="continueOnErrorAnnotations" id="cdktg.ModelSynthesizer.Initializer.parameter.continueOnErrorAnnotations"></a>
+
+- *Type:* boolean
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.ModelSynthesizer.synthesize">synthesize</a></code> | Synthesize the associated model to the session. |
+
+---
+
+##### `synthesize` <a name="synthesize" id="cdktg.ModelSynthesizer.synthesize"></a>
+
+```typescript
+public synthesize(session: ISynthesisSession): void
+```
+
+Synthesize the associated model to the session.
+
+###### `session`<sup>Required</sup> <a name="session" id="cdktg.ModelSynthesizer.synthesize.parameter.session"></a>
+
+- *Type:* <a href="#cdktg.ISynthesisSession">ISynthesisSession</a>
+
+---
+
+
 
 
 ### OutOfScope <a name="OutOfScope" id="cdktg.OutOfScope"></a>
@@ -2550,8 +3022,173 @@ public readonly justification: string;
 ---
 
 
+## Protocols <a name="Protocols" id="Protocols"></a>
+
+### IAspect <a name="IAspect" id="cdktg.IAspect"></a>
+
+- *Implemented By:* <a href="#cdktg.IAspect">IAspect</a>
+
+Represents an Aspect.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.IAspect.visit">visit</a></code> | All aspects can visit an IConstruct. |
+
+---
+
+##### `visit` <a name="visit" id="cdktg.IAspect.visit"></a>
+
+```typescript
+public visit(node: IConstruct): void
+```
+
+All aspects can visit an IConstruct.
+
+###### `node`<sup>Required</sup> <a name="node" id="cdktg.IAspect.visit.parameter.node"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+
+### IManifest <a name="IManifest" id="cdktg.IManifest"></a>
+
+- *Implemented By:* <a href="#cdktg.Manifest">Manifest</a>, <a href="#cdktg.IManifest">IManifest</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.IManifest.property.models">models</a></code> | <code>{[ key: string ]: <a href="#cdktg.ModelManifest">ModelManifest</a>}</code> | *No description.* |
+| <code><a href="#cdktg.IManifest.property.version">version</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `models`<sup>Required</sup> <a name="models" id="cdktg.IManifest.property.models"></a>
+
+```typescript
+public readonly models: {[ key: string ]: ModelManifest};
+```
+
+- *Type:* {[ key: string ]: <a href="#cdktg.ModelManifest">ModelManifest</a>}
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="cdktg.IManifest.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
+
+---
+
+### IModelSynthesizer <a name="IModelSynthesizer" id="cdktg.IModelSynthesizer"></a>
+
+- *Implemented By:* <a href="#cdktg.ModelSynthesizer">ModelSynthesizer</a>, <a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.IModelSynthesizer.synthesize">synthesize</a></code> | Synthesize the associated model to the session. |
+
+---
+
+##### `synthesize` <a name="synthesize" id="cdktg.IModelSynthesizer.synthesize"></a>
+
+```typescript
+public synthesize(session: ISynthesisSession): void
+```
+
+Synthesize the associated model to the session.
+
+###### `session`<sup>Required</sup> <a name="session" id="cdktg.IModelSynthesizer.synthesize.parameter.session"></a>
+
+- *Type:* <a href="#cdktg.ISynthesisSession">ISynthesisSession</a>
+
+---
+
+
+### ISynthesisSession <a name="ISynthesisSession" id="cdktg.ISynthesisSession"></a>
+
+- *Implemented By:* <a href="#cdktg.ISynthesisSession">ISynthesisSession</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.ISynthesisSession.property.manifest">manifest</a></code> | <code><a href="#cdktg.Manifest">Manifest</a></code> | *No description.* |
+| <code><a href="#cdktg.ISynthesisSession.property.outdir">outdir</a></code> | <code>string</code> | The output directory for this synthesis session. |
+| <code><a href="#cdktg.ISynthesisSession.property.skipValidation">skipValidation</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `manifest`<sup>Required</sup> <a name="manifest" id="cdktg.ISynthesisSession.property.manifest"></a>
+
+```typescript
+public readonly manifest: Manifest;
+```
+
+- *Type:* <a href="#cdktg.Manifest">Manifest</a>
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="cdktg.ISynthesisSession.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+The output directory for this synthesis session.
+
+---
+
+##### `skipValidation`<sup>Optional</sup> <a name="skipValidation" id="cdktg.ISynthesisSession.property.skipValidation"></a>
+
+```typescript
+public readonly skipValidation: boolean;
+```
+
+- *Type:* boolean
+
+---
 
 ## Enums <a name="Enums" id="Enums"></a>
+
+### AnnotationMetadataEntryType <a name="AnnotationMetadataEntryType" id="cdktg.AnnotationMetadataEntryType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.AnnotationMetadataEntryType.INFO">INFO</a></code> | *No description.* |
+| <code><a href="#cdktg.AnnotationMetadataEntryType.WARN">WARN</a></code> | *No description.* |
+| <code><a href="#cdktg.AnnotationMetadataEntryType.ERROR">ERROR</a></code> | *No description.* |
+
+---
+
+##### `INFO` <a name="INFO" id="cdktg.AnnotationMetadataEntryType.INFO"></a>
+
+---
+
+
+##### `WARN` <a name="WARN" id="cdktg.AnnotationMetadataEntryType.WARN"></a>
+
+---
+
+
+##### `ERROR` <a name="ERROR" id="cdktg.AnnotationMetadataEntryType.ERROR"></a>
+
+---
+
 
 ### AssetType <a name="AssetType" id="cdktg.AssetType"></a>
 

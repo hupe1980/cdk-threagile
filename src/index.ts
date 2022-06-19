@@ -1,3 +1,5 @@
+export * from "./annotations";
+export * from "./aspect";
 export * from "./asset";
 export * from "./author";
 export * from "./cia-triade";
@@ -7,6 +9,7 @@ export * from "./manifest";
 export * from "./model";
 export * from "./project";
 export * from "./scope";
+export * from "./synthesizer";
 export * from "./technical-asset";
 export * from "./trust-boundary";
 export * from "./usage";

@@ -3,8 +3,11 @@ import { Construct } from "constructs";
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
 import { Threagile } from "./spec/threatgile.generated";
+import { IModelSynthesizer, ModelSynthesizer } from "./synthesizer";
 import { TechnicalAsset } from "./technical-asset";
 import { TrustBoundary } from "./trust-boundary";
+
+const MODEL_SYMBOL = Symbol.for("cdktg/Model");
 
 export interface ModelProps {
   /**
@@ -34,11 +37,19 @@ export interface ModelProps {
 }
 
 export class Model extends Construct {
+  public static isModel(x: any): x is Model {
+    return x !== null && typeof x === "object" && MODEL_SYMBOL in x;
+  }
+
   public readonly version: string;
   public readonly title: string;
   public readonly date?: Date;
   public readonly author: Author;
   public readonly businessCriticality: BusinessCriticality;
+
+  public synthesizer: IModelSynthesizer;
+
+  private readonly rawOverrides: any = {};
 
   constructor(project: Construct, id: string, props: ModelProps) {
     super(project, id);
@@ -48,6 +59,36 @@ export class Model extends Construct {
     this.date = props.date;
     this.author = props.author;
     this.businessCriticality = props.businessCriticality;
+
+    this.synthesizer = new ModelSynthesizer(this, false);
+
+    Object.defineProperty(this, MODEL_SYMBOL, { value: true });
+  }
+
+  public addOverride(path: string, value: any) {
+    const parts = path.split(".");
+    let curr: any = this.rawOverrides;
+
+    while (parts.length > 1) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const key = parts.shift()!;
+
+      // if we can't recurse further or the previous value is not an
+      // object overwrite it with an object.
+      const isObject =
+        curr[key] != null &&
+        typeof curr[key] === "object" &&
+        !Array.isArray(curr[key]);
+      if (!isObject) {
+        curr[key] = {};
+      }
+
+      curr = curr[key];
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const lastKey = parts.shift()!;
+    curr[lastKey] = value;
   }
 
   /**
@@ -111,7 +152,12 @@ export class Model extends Construct {
       });
     }
 
-    return threagile;
+    return {
+      ...threagile,
+      ...(Object.keys(this.rawOverrides).length > 0
+        ? { overrides: { stack: Object.keys(this.rawOverrides) } }
+        : {}),
+    };
   }
 }
 

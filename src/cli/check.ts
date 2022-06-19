@@ -25,13 +25,16 @@ export class CheckCommand<U extends CheckOptions>
 
     const api = new Threagile(url);
 
-    const manifest = Manifest.fromFile(".cdktg.out");
+    const manifest = Manifest.fromPath(".cdktg.out");
 
-    Object.keys(manifest.data).forEach(async (k) => {
-      const filepath = path.join(manifest.outdir, `${manifest.data[k]}.yml`);
-      const resp = await api.check(filepath);
+    Object.keys(manifest.models).forEach(async (k) => {
+      const modelManifest = manifest.models[k];
 
-      console.log(`Results for model "${k}":`);
+      const resp = await api.check(
+        path.join(".cdktg.out", modelManifest.synthesizedModelPath)
+      );
+
+      console.log(`Results for model "${modelManifest.name}":`);
 
       if (resp.status === 200) {
         console.log(`✅  ${resp.data.message}\n`);

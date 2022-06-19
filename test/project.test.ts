@@ -1,4 +1,3 @@
-import * as path from "path";
 import {
   Author,
   Availability,
@@ -26,7 +25,7 @@ import {
 
 test("synth the model stub example", () => {
   const project = new Project({
-    outdir: path.join("dist", "models"),
+    outdir: "dist",
   });
 
   const model = new Model(project, "Model Stub", {

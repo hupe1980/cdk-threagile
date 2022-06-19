@@ -36,11 +36,14 @@ export class AnalyseCommand<U extends AnalyseOptions>
 
     const api = new Threagile(url);
 
-    const manifest = Manifest.fromFile(".cdktg.out");
+    const manifest = Manifest.fromPath(".cdktg.out");
 
-    Object.keys(manifest.data).forEach(async (k) => {
-      const filepath = path.join(manifest.outdir, `${manifest.data[k]}.yml`);
-      const resp = await api.analyse(filepath);
+    Object.keys(manifest.models).forEach(async (k) => {
+      const modelManifest = manifest.models[k];
+
+      const resp = await api.analyse(
+        path.join(".cdktg.out", modelManifest.synthesizedModelPath)
+      );
 
       if (resp.status === 400) {
         console.log(`Errors for model "${k}":`);
@@ -49,7 +52,7 @@ export class AnalyseCommand<U extends AnalyseOptions>
       }
 
       const zip = new AdmZip(resp.data);
-      zip.extractAllTo(path.join(args.out, manifest.data[k]));
+      zip.extractAllTo(path.join(args.out, modelManifest.sanitizedName));
     });
   };
 }
