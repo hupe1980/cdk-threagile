@@ -18,10 +18,10 @@ pip install cdktg
 ```
 
 ## How to use
+
+### Threat Model written in typescript:
 ```typescript
-const project = new Project({
-    outdir: 'dist',
-});
+const project = new Project();
 
 const model = new Model(project, 'Model Stub', {
     title: 'Model Stub',
@@ -81,7 +81,7 @@ const someOtherTechnicalAsset = new TechnicalAsset(model, 'Some Other Technical 
     humanUse: false,
     size: Size.COMPONENT,
     technology: Technology.WEB_SERVICE_REST,
-    tags: ["some-tag", "some-other-tag"],
+    tags: ['some-tag', 'some-other-tag'],
     internet: false,
     machine: Machine.VIRTUAL,
     encryption: Encryption.NONE,
@@ -119,7 +119,8 @@ someSharedRuntime.run(someTechnicalAsset, someOtherTechnicalAsset);
 project.synth();
 ```
 
-```output
+### cdktg CLI commands:
+```sh
 cdktg [command]
 
 Commands:
@@ -132,6 +133,21 @@ Commands:
 Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
+```
+
+### Analyse outputs:
+```sh
+dist
+└── ModelStub
+    ├── data-asset-diagram.png
+    ├── data-flow-diagram.png
+    ├── report.pdf
+    ├── risks.json
+    ├── risks.xlsx
+    ├── stats.json
+    ├── tags.xlsx
+    ├── technical-assets.json
+    └── threagile.yaml
 ```
 
 ## Example
