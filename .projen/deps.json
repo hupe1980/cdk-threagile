@@ -26,6 +26,10 @@
       "type": "build"
     },
     {
+      "name": "@types/which",
+      "type": "build"
+    },
+    {
       "name": "@typescript-eslint/eslint-plugin",
       "version": "^5",
       "type": "build"
@@ -151,6 +155,10 @@
     },
     {
       "name": "uuid",
+      "type": "bundled"
+    },
+    {
+      "name": "which",
       "type": "bundled"
     },
     {

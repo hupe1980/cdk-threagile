@@ -24,7 +24,7 @@ export interface ModelProps {
   /**
    * Date of the model
    */
-  readonly date?: Date;
+  readonly date?: string;
 
   /**
    * Author of the model
@@ -69,7 +69,7 @@ export class Model extends Construct {
 
   public readonly version: string;
   public readonly title: string;
-  public readonly date?: Date;
+  public readonly date?: string;
   public readonly author: Author;
   public readonly managementSummary?: string;
   public readonly businessCriticality: BusinessCriticality;
@@ -84,7 +84,9 @@ export class Model extends Construct {
 
     this.version = props.version;
     this.title = props.title ?? id;
-    this.date = props.date;
+    this.date = props.date
+      ? new Date(props.date).toISOString().split("T")[0]
+      : undefined;
     this.author = props.author;
     this.managementSummary = props.managementSummary;
     this.businessCriticality = props.businessCriticality;
@@ -153,7 +155,7 @@ export class Model extends Construct {
     const threagile: any = {
       threagile_version: this.version,
       title: this.title,
-      data: this.date?.toISOString().split("T")[0],
+      data: this.date,
       author: this.author._toThreagile(),
       management_summary_comment: this.managementSummary,
       business_criticality: this.businessCriticality,

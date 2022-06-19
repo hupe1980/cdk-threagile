@@ -26,7 +26,7 @@ const project = new Project({
 const model = new Model(project, 'Model Stub', {
     title: 'Model Stub',
     version: '1.0.0',
-    date: new Date('2020-03-31'),
+    date: '2020-03-31',
     author: new Author({
         name: 'John Doe',
     }),
@@ -136,7 +136,7 @@ Options:
 
 ## Example
 
-See a complete [example](https://github.com/hupe1980/cdk-threagile-example).
+See more complete [examples](https://github.com/hupe1980/cdk-threagile-examples).
 ## License
 
 [MIT](LICENSE)

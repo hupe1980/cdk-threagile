@@ -366,7 +366,7 @@ Model.of(construct: IConstruct)
 | <code><a href="#cdktg.Model.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.version">version</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.Model.property.date">date</a></code> | <code>Date</code> | *No description.* |
+| <code><a href="#cdktg.Model.property.date">date</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.managementSummary">managementSummary</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.synthesizer">synthesizer</a></code> | <code><a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a></code> | *No description.* |
 
@@ -427,10 +427,10 @@ public readonly version: string;
 ##### `date`<sup>Optional</sup> <a name="date" id="cdktg.Model.property.date"></a>
 
 ```typescript
-public readonly date: Date;
+public readonly date: string;
 ```
 
-- *Type:* Date
+- *Type:* string
 
 ---
 
@@ -1995,7 +1995,7 @@ const modelProps: ModelProps = { ... }
 | <code><a href="#cdktg.ModelProps.property.author">author</a></code> | <code><a href="#cdktg.Author">Author</a></code> | Author of the model. |
 | <code><a href="#cdktg.ModelProps.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | Business criticality of the target. |
 | <code><a href="#cdktg.ModelProps.property.version">version</a></code> | <code>string</code> | Version of the Threagile toolkit. |
-| <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>Date</code> | Date of the model. |
+| <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>string</code> | Date of the model. |
 | <code><a href="#cdktg.ModelProps.property.managementSummary">managementSummary</a></code> | <code>string</code> | Individual management summary for the report. |
 | <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 
@@ -2040,10 +2040,10 @@ Version of the Threagile toolkit.
 ##### `date`<sup>Optional</sup> <a name="date" id="cdktg.ModelProps.property.date"></a>
 
 ```typescript
-public readonly date: Date;
+public readonly date: string;
 ```
 
-- *Type:* Date
+- *Type:* string
 
 Date of the model.
 

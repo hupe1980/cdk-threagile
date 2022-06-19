@@ -26,11 +26,13 @@ const project = new cdk.JsiiProject({
     "form-data",
     "adm-zip",
     "dotenv",
+    "which",
   ],
   devDeps: [
     "@types/uuid",
     "@types/fs-extra",
     "@types/adm-zip",
+    "@types/which",
     "constructs",
     "json-schema-to-typescript",
     "@openapitools/openapi-generator-cli",

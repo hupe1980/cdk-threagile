@@ -1,5 +1,7 @@
+import * as path from "path";
 import * as execa from "execa";
 import * as fs from "fs-extra";
+import * as which from "which";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
 
 interface SynthOptions extends Options {
@@ -31,7 +33,16 @@ export class SynthCommand<U extends SynthOptions>
       throw new Error(`File ${filename} not exist!`);
     }
 
-    const command = require.resolve("ts-node/dist/bin");
+    const command = (() => {
+      switch (path.extname(filename)) {
+        case ".ts":
+          return require.resolve("ts-node/dist/bin");
+        case ".py":
+          return which.sync("python3", { all: false });
+        default:
+          throw new Error("Unknown file extension");
+      }
+    })();
 
     execa(command, [filename], {
       stdio: ["ignore", "inherit", "inherit"],
