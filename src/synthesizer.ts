@@ -6,7 +6,7 @@ import { Annotations, AnnotationMetadataEntryType } from "./annotations";
 import { Aspects, IAspect } from "./aspect";
 import { Manifest, ModelAnnotation } from "./manifest";
 import { Model } from "./model";
-import { Yaml } from "./yaml";
+import { Yaml } from "./private/yaml";
 
 export interface ISynthesisSession {
   /**
@@ -17,11 +17,6 @@ export interface ISynthesisSession {
   readonly skipValidation?: boolean;
 
   readonly manifest: Manifest;
-
-  /**
-   * Additional context passed to synthesizeNode through `sessionContext`.
-   */
-  [key: string]: any;
 }
 
 export interface IModelSynthesizer {

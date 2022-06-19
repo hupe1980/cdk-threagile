@@ -1,6 +1,6 @@
 export * from "./annotations";
 export * from "./aspect";
-export * from "./asset";
+export * from "./resource";
 export * from "./author";
 export * from "./cia-triade";
 export * from "./communication";
@@ -9,6 +9,7 @@ export * from "./manifest";
 export * from "./model";
 export * from "./project";
 export * from "./scope";
+export * from "./shared-runtime";
 export * from "./synthesizer";
 export * from "./technical-asset";
 export * from "./trust-boundary";

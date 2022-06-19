@@ -1,59 +1,68 @@
 import { Construct } from "constructs";
 
-import { Asset, AssetProps } from "./asset";
+import { CIATriad } from "./cia-triade";
 import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
+import { Model } from "./model";
+import { Resource, ResourceProps } from "./resource";
 import { InScope, Scope } from "./scope";
 import * as spec from "./spec/threatgile.generated";
 import { TrustBoundary } from "./trust-boundary";
+import { Usage } from "./usage";
 
-export interface TechnicalAssetProps extends AssetProps {
-  readonly assetType: AssetType;
+export interface TechnicalAssetProps extends ResourceProps {
+  readonly type: TechnicalAssetType;
+  readonly usage: Usage;
   readonly humanUse: boolean;
   readonly scope?: Scope;
   readonly size: Size;
   readonly technology: Technology;
+  readonly tags?: string[];
   readonly internet: boolean;
   readonly machine: Machine;
   readonly encryption: Encryption;
   readonly owner: string;
+  readonly ciaTriad: CIATriad;
   readonly multiTenant: boolean;
   readonly redundant: boolean;
   readonly trustBoundary?: TrustBoundary;
 }
 
-export class TechnicalAsset extends Asset {
-  public readonly assetType: AssetType;
+export class TechnicalAsset extends Resource {
+  public readonly type: TechnicalAssetType;
+  public readonly usage: Usage;
   public readonly internet: boolean;
   public readonly humanUse: boolean;
-
   public readonly scope?: Scope;
-
   public readonly size: Size;
   public readonly technology: Technology;
+  public readonly tags?: string[];
   public readonly machine: Machine;
   public readonly encryption: Encryption;
   public readonly owner: string;
+  public readonly ciaTriad: CIATriad;
   public readonly multiTenant: boolean;
   public readonly redundant: boolean;
 
   private dataAssetsProcessed: Set<string>;
   private dataAssetsStored: Set<string>;
-
   private communications: Communication[];
 
-  constructor(model: Construct, id: string, props: TechnicalAssetProps) {
-    super(model, id, props);
+  constructor(scope: Construct, id: string, props: TechnicalAssetProps) {
+    super(scope, id, props);
 
-    this.assetType = props.assetType;
+    this.type = props.type;
+    this.usage = props.usage;
     this.humanUse = props.humanUse;
     this.internet = props.internet;
     this.scope = props.scope ?? new InScope();
     this.size = props.size;
     this.technology = props.technology;
+    this.tags = props.tags;
     this.machine = props.machine;
     this.encryption = props.encryption;
     this.owner = props.owner;
+    this.ciaTriad = props.ciaTriad;
     this.multiTenant = props.multiTenant;
     this.redundant = props.redundant;
 
@@ -61,6 +70,11 @@ export class TechnicalAsset extends Asset {
     this.dataAssetsStored = new Set<string>();
 
     this.communications = new Array<Communication>();
+
+    if (this.tags && this.tags.length > 0) {
+      const model = Model.of(this);
+      model.addTags(...this.tags);
+    }
 
     if (props.trustBoundary) {
       props.trustBoundary.addTechnicalAssets(this);
@@ -102,12 +116,13 @@ export class TechnicalAsset extends Asset {
       [this.node.id]: {
         id: this.uuid,
         description: this.description,
-        type: this.assetType,
+        type: this.type,
         usage: this.usage,
         used_as_client_by_human: this.humanUse,
         ...this.scope?._toThreagile(),
         size: this.size,
         technology: this.technology,
+        tags: Array.from(new Set(this.tags)),
         internet: this.internet,
         machine: this.machine,
         encryption: this.encryption,
@@ -135,7 +150,7 @@ export class TechnicalAsset extends Asset {
   }
 }
 
-export enum AssetType {
+export enum TechnicalAssetType {
   EXTERNAL_ENTITY = "external-entity",
   PROCESS = "process",
   DATASTORE = "datastore",

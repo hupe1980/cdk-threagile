@@ -1,32 +1,34 @@
 import { Construct } from "constructs";
-import { v4 as uuidv4 } from "uuid";
+import { Model } from "./model";
+import { Resource, ResourceProps } from "./resource";
 import * as spec from "./spec/threatgile.generated";
 import { TechnicalAsset } from "./technical-asset";
 
-export interface TrustBoundaryProps {
-  readonly description: string;
+export interface TrustBoundaryProps extends ResourceProps {
   readonly type: TrustBoundaryType;
+  readonly tags?: string[];
 }
 
-export class TrustBoundary extends Construct {
-  public readonly uuid: string;
-
-  public readonly description: string;
+export class TrustBoundary extends Resource {
   public readonly type: TrustBoundaryType;
+  public readonly tags?: string[];
 
   private technicalAssetsInside: Set<string>;
   private trustBoundariesNested: Set<string>;
 
-  constructor(model: Construct, id: string, props: TrustBoundaryProps) {
-    super(model, id);
+  constructor(scope: Construct, id: string, props: TrustBoundaryProps) {
+    super(scope, id, props);
 
-    this.uuid = uuidv4();
-
-    this.description = props.description;
     this.type = props.type;
+    this.tags = props.tags;
 
     this.technicalAssetsInside = new Set<string>();
     this.trustBoundariesNested = new Set<string>();
+
+    if (this.tags && this.tags.length > 0) {
+      const model = Model.of(this);
+      model.addTags(...this.tags);
+    }
   }
 
   public addTechnicalAssets(...assets: TechnicalAsset[]) {
@@ -48,6 +50,7 @@ export class TrustBoundary extends Construct {
         id: this.uuid,
         description: this.description,
         type: this.type,
+        tags: Array.from(new Set(this.tags)),
         technical_assets_inside: Array.from(this.technicalAssetsInside),
         trust_boundaries_nested: Array.from(this.trustBoundariesNested),
       },
