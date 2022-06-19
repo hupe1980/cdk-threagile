@@ -43,12 +43,13 @@ export class AnalyseCommand<U extends AnalyseOptions>
       const resp = await api.analyse(filepath);
 
       if (resp.status === 400) {
+        console.log(`Errors for model "${k}":`);
         console.log(resp.data.error);
         return;
       }
 
       const zip = new AdmZip(resp.data);
-      zip.extractAllTo(path.join(args.out, k));
+      zip.extractAllTo(path.join(args.out, manifest.data[k]));
     });
   };
 }
