@@ -12,6 +12,7 @@ const project = new cdk.JsiiProject({
   copyrightOwner: "Frank Hübner",
 
   prettier: true,
+  depsUpgrade: false,
 
   peerDeps: ["constructs"],
   bundledDeps: [
