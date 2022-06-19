@@ -77,7 +77,7 @@ test("synth the model stub example", () => {
     redundant: true,
   });
 
-  someTechnicalAsset.processed(someData);
+  someTechnicalAsset.process(someData);
 
   const someOtherTechnicalAsset = new TechnicalAsset(
     model,
@@ -103,9 +103,9 @@ test("synth the model stub example", () => {
     }
   );
 
-  someOtherTechnicalAsset.processed(someData);
+  someOtherTechnicalAsset.process(someData);
 
-  const someTraffic = someTechnicalAsset.communicatedWith(
+  const someTraffic = someTechnicalAsset.communicateWith(
     "Some Traffic",
     someOtherTechnicalAsset,
     {
@@ -120,7 +120,7 @@ test("synth the model stub example", () => {
     }
   );
 
-  someTraffic.sent(someData);
+  someTraffic.send(someData);
 
   project.synth();
 });

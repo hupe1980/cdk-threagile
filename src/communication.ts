@@ -48,13 +48,13 @@ export class Communication {
     this.dataAssetsReceived = new Set<string>();
   }
 
-  public sent(...assets: DataAsset[]) {
+  public send(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsSent.add(a.uuid);
     });
   }
 
-  public received(...assets: DataAsset[]) {
+  public receive(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsReceived.add(a.uuid);
     });

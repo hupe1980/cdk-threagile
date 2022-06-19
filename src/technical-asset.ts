@@ -67,19 +67,19 @@ export class TechnicalAsset extends Asset {
     }
   }
 
-  public processed(...assets: DataAsset[]) {
+  public process(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsProcessed.add(a.uuid);
     });
   }
 
-  public stored(...assets: DataAsset[]) {
+  public store(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsStored.add(a.uuid);
     });
   }
 
-  public communicatedWith(
+  public communicateWith(
     id: string,
     target: TechnicalAsset,
     options: CommunicationOptions

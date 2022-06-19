@@ -72,7 +72,7 @@ const someTechnicalAsset = new TechnicalAsset(model, 'Some Technical Asset', {
     redundant: true,
 });
 
-someTechnicalAsset.processed(someData);
+someTechnicalAsset.process(someData);
 
 const someOtherTechnicalAsset = new TechnicalAsset(model, 'Some Other Technical Asset', {
     description: 'Some Description',
@@ -94,9 +94,9 @@ const someOtherTechnicalAsset = new TechnicalAsset(model, 'Some Other Technical 
     redundant: true,
 });
 
-someOtherTechnicalAsset.processed(someData);
+someOtherTechnicalAsset.process(someData);
 
-const someTraffic = someTechnicalAsset.communicatedWith('Some Traffic', someOtherTechnicalAsset, {
+const someTraffic = someTechnicalAsset.communicateWith('Some Traffic', someOtherTechnicalAsset, {
     description: 'Some Description',
     protocol: Protocol.HTTPS,
     authentication: Authentication.NONE,
@@ -107,7 +107,7 @@ const someTraffic = someTechnicalAsset.communicatedWith('Some Traffic', someOthe
     usage: Usage.BUSINESS,
 });
 
-someTraffic.sent(someData);
+someTraffic.send(someData);
 
 project.synth();
 ```
