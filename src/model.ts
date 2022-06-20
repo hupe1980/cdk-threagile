@@ -10,6 +10,12 @@ import { TrustBoundary } from "./trust-boundary";
 
 const MODEL_SYMBOL = Symbol.for("cdktg/Model");
 
+export interface Question {
+  readonly question: string;
+
+  readonly answer: string;
+}
+
 export interface ModelProps {
   /**
    * Version of the Threagile toolkit
@@ -40,6 +46,11 @@ export interface ModelProps {
    * Business criticality of the target
    */
   readonly businessCriticality: BusinessCriticality;
+
+  /**
+   * Custom questions for the report
+   */
+  readonly questions?: Question[];
 }
 
 export class Model extends Construct {
@@ -76,6 +87,7 @@ export class Model extends Construct {
 
   public synthesizer: IModelSynthesizer;
 
+  private readonly questions: Map<string, string>;
   private readonly tags: Set<string>;
   private readonly rawOverrides: Record<string, unknown>;
 
@@ -91,6 +103,7 @@ export class Model extends Construct {
     this.managementSummary = props.managementSummary;
     this.businessCriticality = props.businessCriticality;
 
+    this.questions = new Map<string, string>();
     this.tags = new Set<string>();
     this.rawOverrides = {};
 
@@ -99,10 +112,23 @@ export class Model extends Construct {
     Object.defineProperty(this, MODEL_SYMBOL, { value: true });
   }
 
+  public addTag(tag: string) {
+    this.addTags(tag);
+  }
+
   public addTags(...tags: string[]) {
     tags.forEach((tag) => {
       this.tags.add(tag);
     });
+  }
+
+  public addQuestion(question: string, answer = "") {
+    // "" as answer signals "unanswered"
+    if (this.questions.has(question)) {
+      throw new Error(`Duplicated question "${question}"`);
+    }
+
+    this.questions.set(question, answer);
   }
 
   public addOverride(path: string, value: unknown) {
@@ -159,54 +185,29 @@ export class Model extends Construct {
       author: this.author._toThreagile(),
       management_summary_comment: this.managementSummary,
       business_criticality: this.businessCriticality,
+      questions: Object.fromEntries(this.questions),
       tags_available: Array.from(this.tags),
     };
 
-    if (dataAssets.length > 0) {
-      threagile.data_assets = {};
+    threagile.data_assets = dataAssets.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
 
-      dataAssets.forEach((a) => {
-        const obj = a._toThreagile();
-        const k = Object.keys(obj)[0];
+    threagile.technical_assets = technicalAssets.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
 
-        threagile.data_assets[k] = obj[k];
-      });
-    }
+    threagile.trust_boundaries = trustBoundaries.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
 
-    if (technicalAssets.length > 0) {
-      threagile.technical_assets = {};
-
-      technicalAssets.forEach((a) => {
-        const obj = a._toThreagile();
-        const k = Object.keys(obj)[0];
-
-        threagile.technical_assets[k] = obj[k];
-      });
-    }
-
-    if (trustBoundaries.length > 0) {
-      threagile.trust_boundaries = {};
-
-      trustBoundaries.forEach((t) => {
-        const obj = t._toThreagile();
-        if (obj) {
-          const k = Object.keys(obj)[0];
-
-          threagile.trust_boundaries[k] = obj[k];
-        }
-      });
-    }
-
-    if (sharedRuntimes.length > 0) {
-      threagile.shared_runtimes = {};
-
-      sharedRuntimes.forEach((a) => {
-        const obj = a._toThreagile();
-        const k = Object.keys(obj)[0];
-
-        threagile.shared_runtimes[k] = obj[k];
-      });
-    }
+    threagile.shared_runtimes = sharedRuntimes.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
 
     return {
       ...threagile,
