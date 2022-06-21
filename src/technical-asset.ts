@@ -26,6 +26,8 @@ export interface TechnicalAssetProps extends ResourceProps {
   readonly multiTenant: boolean;
   readonly redundant: boolean;
   readonly trustBoundary?: TrustBoundary;
+  readonly customDevelopedParts?: boolean;
+  readonly dataFormatsAccepted?: DataFormat[];
 }
 
 export class TechnicalAsset extends Resource {
@@ -43,6 +45,8 @@ export class TechnicalAsset extends Resource {
   public readonly ciaTriad: CIATriad;
   public readonly multiTenant: boolean;
   public readonly redundant: boolean;
+  public readonly customDevelopedParts: boolean;
+  public readonly dataFormatsAccepted?: DataFormat[];
 
   private dataAssetsProcessed: Set<string>;
   private dataAssetsStored: Set<string>;
@@ -65,6 +69,8 @@ export class TechnicalAsset extends Resource {
     this.ciaTriad = props.ciaTriad;
     this.multiTenant = props.multiTenant;
     this.redundant = props.redundant;
+    this.customDevelopedParts = props.customDevelopedParts ?? false;
+    this.dataFormatsAccepted = props.dataFormatsAccepted;
 
     this.dataAssetsProcessed = new Set<string>();
     this.dataAssetsStored = new Set<string>();
@@ -131,8 +137,10 @@ export class TechnicalAsset extends Resource {
         ...this.ciaTriad._toThreagile(),
         multitenant: this.multiTenant,
         redundant: this.redundant,
+        custom_developed_parts: this.customDevelopedParts,
         data_assets_processed: Array.from(this.dataAssetsProcessed),
         data_assets_stored: Array.from(this.dataAssetsStored),
+        data_formats_accepted: this.dataFormatsAccepted,
       },
     };
 

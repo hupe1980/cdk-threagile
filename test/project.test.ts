@@ -136,7 +136,7 @@ test("synth the model stub example", () => {
     description: "Some Description",
   });
 
-  someSharedRuntime.run(someTechnicalAsset, someOtherTechnicalAsset);
+  someSharedRuntime.runs(someTechnicalAsset, someOtherTechnicalAsset);
 
   const riskCategory = new RiskCategory(model, "Some Individual Risk Example", {
     description: "Some text describing the risk category...",

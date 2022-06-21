@@ -114,7 +114,7 @@ const someSharedRuntime = new SharedRuntime(model, "Some Shared Runtime", {
     description: "Some Description",
 });
 
-someSharedRuntime.run(someTechnicalAsset, someOtherTechnicalAsset);
+someSharedRuntime.runs(someTechnicalAsset, someOtherTechnicalAsset);
 
 project.synth();
 ```

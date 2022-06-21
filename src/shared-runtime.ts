@@ -26,7 +26,7 @@ export class SharedRuntime extends Resource {
     }
   }
 
-  public run(...assets: TechnicalAsset[]) {
+  public runs(...assets: TechnicalAsset[]) {
     assets.forEach((a) => {
       this.technicalAssetsRunning.add(a.uuid);
     });

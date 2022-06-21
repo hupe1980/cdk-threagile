@@ -1201,7 +1201,7 @@ new SharedRuntime(scope: Construct, id: string, props: SharedRuntimeProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.SharedRuntime.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdktg.SharedRuntime.run">run</a></code> | *No description.* |
+| <code><a href="#cdktg.SharedRuntime.runs">runs</a></code> | *No description.* |
 
 ---
 
@@ -1213,13 +1213,13 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `run` <a name="run" id="cdktg.SharedRuntime.run"></a>
+##### `runs` <a name="runs" id="cdktg.SharedRuntime.runs"></a>
 
 ```typescript
-public run(assets: TechnicalAsset): void
+public runs(assets: TechnicalAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.SharedRuntime.run.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.SharedRuntime.runs.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
@@ -1470,6 +1470,7 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
@@ -1481,6 +1482,7 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 
@@ -1525,6 +1527,16 @@ public readonly ciaTriad: CIATriad;
 ```
 
 - *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `customDevelopedParts`<sup>Required</sup> <a name="customDevelopedParts" id="cdktg.TechnicalAsset.property.customDevelopedParts"></a>
+
+```typescript
+public readonly customDevelopedParts: boolean;
+```
+
+- *Type:* boolean
 
 ---
 
@@ -1635,6 +1647,16 @@ public readonly usage: Usage;
 ```
 
 - *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `dataFormatsAccepted`<sup>Optional</sup> <a name="dataFormatsAccepted" id="cdktg.TechnicalAsset.property.dataFormatsAccepted"></a>
+
+```typescript
+public readonly dataFormatsAccepted: DataFormat[];
+```
+
+- *Type:* <a href="#cdktg.DataFormat">DataFormat</a>[]
 
 ---
 
@@ -3213,6 +3235,8 @@ const technicalAssetProps: TechnicalAssetProps = { ... }
 | <code><a href="#cdktg.TechnicalAssetProps.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAssetProps.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAssetProps.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
@@ -3346,6 +3370,26 @@ public readonly usage: Usage;
 ```
 
 - *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `customDevelopedParts`<sup>Optional</sup> <a name="customDevelopedParts" id="cdktg.TechnicalAssetProps.property.customDevelopedParts"></a>
+
+```typescript
+public readonly customDevelopedParts: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `dataFormatsAccepted`<sup>Optional</sup> <a name="dataFormatsAccepted" id="cdktg.TechnicalAssetProps.property.dataFormatsAccepted"></a>
+
+```typescript
+public readonly dataFormatsAccepted: DataFormat[];
+```
+
+- *Type:* <a href="#cdktg.DataFormat">DataFormat</a>[]
 
 ---
 
