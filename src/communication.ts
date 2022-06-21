@@ -14,11 +14,13 @@ export interface CommunicationOptions {
 }
 
 export interface CommunicationProps extends CommunicationOptions {
+  readonly caller: TechnicalAsset;
   readonly target: TechnicalAsset;
 }
 
 export class Communication {
   public readonly id: string;
+  public readonly caller: TechnicalAsset;
   public readonly target: TechnicalAsset;
   public readonly description: string;
   public readonly protocol: Protocol;
@@ -34,6 +36,7 @@ export class Communication {
 
   constructor(id: string, props: CommunicationProps) {
     this.id = id;
+    this.caller = props.caller;
     this.target = props.target;
     this.description = props.description;
     this.protocol = props.protocol;

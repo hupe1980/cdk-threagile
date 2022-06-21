@@ -247,6 +247,7 @@ new Model(project: Construct, id: string, props: ModelProps)
 | <code><a href="#cdktg.Model.addAbuseCases">addAbuseCases</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addOverride">addOverride</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addQuestion">addQuestion</a></code> | *No description.* |
+| <code><a href="#cdktg.Model.addSecurityRequirements">addSecurityRequirements</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addTag">addTag</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addTags">addTags</a></code> | *No description.* |
 
@@ -305,6 +306,18 @@ public addQuestion(text: string, answer?: string): void
 ###### `answer`<sup>Optional</sup> <a name="answer" id="cdktg.Model.addQuestion.parameter.answer"></a>
 
 - *Type:* string
+
+---
+
+##### `addSecurityRequirements` <a name="addSecurityRequirements" id="cdktg.Model.addSecurityRequirements"></a>
+
+```typescript
+public addSecurityRequirements(requirements: SecurityRequirement): void
+```
+
+###### `requirements`<sup>Required</sup> <a name="requirements" id="cdktg.Model.addSecurityRequirements.parameter.requirements"></a>
+
+- *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>
 
 ---
 
@@ -776,6 +789,360 @@ public readonly uuid: string;
 ```
 
 - *Type:* string
+
+---
+
+
+### RiskCategory <a name="RiskCategory" id="cdktg.RiskCategory"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.RiskCategory.Initializer"></a>
+
+```typescript
+import { RiskCategory } from 'cdktg'
+
+new RiskCategory(scope: Construct, id: string, props: RiskCategoryProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskCategory.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.RiskCategoryProps">RiskCategoryProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.RiskCategory.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.RiskCategory.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.RiskCategory.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.RiskCategoryProps">RiskCategoryProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.RiskCategory.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.RiskCategory.identifiedAtDataAsset">identifiedAtDataAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.identifiedAtSharedRuntime">identifiedAtSharedRuntime</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.identifiedAtTechnicalAsset">identifiedAtTechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.identifiedAtTrustBoundary">identifiedAtTrustBoundary</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.RiskCategory.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `identifiedAtDataAsset` <a name="identifiedAtDataAsset" id="cdktg.RiskCategory.identifiedAtDataAsset"></a>
+
+```typescript
+public identifiedAtDataAsset(target: DataAsset, options: RiskOptions): void
+```
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.RiskCategory.identifiedAtDataAsset.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.RiskCategory.identifiedAtDataAsset.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.RiskOptions">RiskOptions</a>
+
+---
+
+##### `identifiedAtSharedRuntime` <a name="identifiedAtSharedRuntime" id="cdktg.RiskCategory.identifiedAtSharedRuntime"></a>
+
+```typescript
+public identifiedAtSharedRuntime(target: SharedRuntime, options: RiskOptions): void
+```
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.RiskCategory.identifiedAtSharedRuntime.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.SharedRuntime">SharedRuntime</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.RiskCategory.identifiedAtSharedRuntime.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.RiskOptions">RiskOptions</a>
+
+---
+
+##### `identifiedAtTechnicalAsset` <a name="identifiedAtTechnicalAsset" id="cdktg.RiskCategory.identifiedAtTechnicalAsset"></a>
+
+```typescript
+public identifiedAtTechnicalAsset(target: TechnicalAsset, options: RiskOptions): void
+```
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.RiskCategory.identifiedAtTechnicalAsset.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.RiskCategory.identifiedAtTechnicalAsset.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.RiskOptions">RiskOptions</a>
+
+---
+
+##### `identifiedAtTrustBoundary` <a name="identifiedAtTrustBoundary" id="cdktg.RiskCategory.identifiedAtTrustBoundary"></a>
+
+```typescript
+public identifiedAtTrustBoundary(target: SharedRuntime, options: RiskOptions): void
+```
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.RiskCategory.identifiedAtTrustBoundary.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.SharedRuntime">SharedRuntime</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.RiskCategory.identifiedAtTrustBoundary.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.RiskOptions">RiskOptions</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.RiskCategory.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.RiskCategory.isConstruct"></a>
+
+```typescript
+import { RiskCategory } from 'cdktg'
+
+RiskCategory.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.RiskCategory.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskCategory.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.RiskCategory.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.cheatSheat">cheatSheat</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.check">check</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.cwe">cwe</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.detectionLogic">detectionLogic</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.falsePositives">falsePositives</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.function">function</a></code> | <code><a href="#cdktg.RiskFunction">RiskFunction</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.impact">impact</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.mitigation">mitigation</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.riskAssessment">riskAssessment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.stride">stride</a></code> | <code><a href="#cdktg.Stride">Stride</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.modelFailurePossibleReason">modelFailurePossibleReason</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.RiskCategory.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.RiskCategory.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.RiskCategory.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdktg.RiskCategory.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `asvs`<sup>Required</sup> <a name="asvs" id="cdktg.RiskCategory.property.asvs"></a>
+
+```typescript
+public readonly asvs: string;
+```
+
+- *Type:* string
+
+---
+
+##### `cheatSheat`<sup>Required</sup> <a name="cheatSheat" id="cdktg.RiskCategory.property.cheatSheat"></a>
+
+```typescript
+public readonly cheatSheat: string;
+```
+
+- *Type:* string
+
+---
+
+##### `check`<sup>Required</sup> <a name="check" id="cdktg.RiskCategory.property.check"></a>
+
+```typescript
+public readonly check: string;
+```
+
+- *Type:* string
+
+---
+
+##### `cwe`<sup>Required</sup> <a name="cwe" id="cdktg.RiskCategory.property.cwe"></a>
+
+```typescript
+public readonly cwe: number;
+```
+
+- *Type:* number
+
+---
+
+##### `detectionLogic`<sup>Required</sup> <a name="detectionLogic" id="cdktg.RiskCategory.property.detectionLogic"></a>
+
+```typescript
+public readonly detectionLogic: string;
+```
+
+- *Type:* string
+
+---
+
+##### `falsePositives`<sup>Required</sup> <a name="falsePositives" id="cdktg.RiskCategory.property.falsePositives"></a>
+
+```typescript
+public readonly falsePositives: string;
+```
+
+- *Type:* string
+
+---
+
+##### `function`<sup>Required</sup> <a name="function" id="cdktg.RiskCategory.property.function"></a>
+
+```typescript
+public readonly function: RiskFunction;
+```
+
+- *Type:* <a href="#cdktg.RiskFunction">RiskFunction</a>
+
+---
+
+##### `impact`<sup>Required</sup> <a name="impact" id="cdktg.RiskCategory.property.impact"></a>
+
+```typescript
+public readonly impact: string;
+```
+
+- *Type:* string
+
+---
+
+##### `mitigation`<sup>Required</sup> <a name="mitigation" id="cdktg.RiskCategory.property.mitigation"></a>
+
+```typescript
+public readonly mitigation: string;
+```
+
+- *Type:* string
+
+---
+
+##### `riskAssessment`<sup>Required</sup> <a name="riskAssessment" id="cdktg.RiskCategory.property.riskAssessment"></a>
+
+```typescript
+public readonly riskAssessment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `stride`<sup>Required</sup> <a name="stride" id="cdktg.RiskCategory.property.stride"></a>
+
+```typescript
+public readonly stride: Stride;
+```
+
+- *Type:* <a href="#cdktg.Stride">Stride</a>
+
+---
+
+##### `modelFailurePossibleReason`<sup>Optional</sup> <a name="modelFailurePossibleReason" id="cdktg.RiskCategory.property.modelFailurePossibleReason"></a>
+
+```typescript
+public readonly modelFailurePossibleReason: boolean;
+```
+
+- *Type:* boolean
 
 ---
 
@@ -1730,6 +2097,7 @@ const communicationProps: CommunicationProps = { ... }
 | <code><a href="#cdktg.CommunicationProps.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.CommunicationProps.property.caller">caller</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 
 ---
@@ -1811,6 +2179,16 @@ public readonly vpn: boolean;
 ```
 
 - *Type:* boolean
+
+---
+
+##### `caller`<sup>Required</sup> <a name="caller" id="cdktg.CommunicationProps.property.caller"></a>
+
+```typescript
+public readonly caller: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
@@ -2083,6 +2461,7 @@ const modelProps: ModelProps = { ... }
 | <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>string</code> | Date of the model. |
 | <code><a href="#cdktg.ModelProps.property.managementSummary">managementSummary</a></code> | <code>string</code> | Individual management summary for the report. |
 | <code><a href="#cdktg.ModelProps.property.questions">questions</a></code> | <code><a href="#cdktg.Question">Question</a>[]</code> | Custom questions for the report. |
+| <code><a href="#cdktg.ModelProps.property.securityRequirements">securityRequirements</a></code> | <code><a href="#cdktg.SecurityRequirement">SecurityRequirement</a>[]</code> | Custom security requirements for the report. |
 | <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 
 ---
@@ -2168,6 +2547,18 @@ public readonly questions: Question[];
 - *Type:* <a href="#cdktg.Question">Question</a>[]
 
 Custom questions for the report.
+
+---
+
+##### `securityRequirements`<sup>Optional</sup> <a name="securityRequirements" id="cdktg.ModelProps.property.securityRequirements"></a>
+
+```typescript
+public readonly securityRequirements: SecurityRequirement[];
+```
+
+- *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>[]
+
+Custom security requirements for the report.
 
 ---
 
@@ -2328,6 +2719,415 @@ const resourceProps: ResourceProps = { ... }
 
 ```typescript
 public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+### RiskCategoryProps <a name="RiskCategoryProps" id="cdktg.RiskCategoryProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.RiskCategoryProps.Initializer"></a>
+
+```typescript
+import { RiskCategoryProps } from 'cdktg'
+
+const riskCategoryProps: RiskCategoryProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskCategoryProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.cheatSheat">cheatSheat</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.check">check</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.cwe">cwe</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.detectionLogic">detectionLogic</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.falsePositives">falsePositives</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.function">function</a></code> | <code><a href="#cdktg.RiskFunction">RiskFunction</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.impact">impact</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.mitigation">mitigation</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.riskAssessment">riskAssessment</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.stride">stride</a></code> | <code><a href="#cdktg.Stride">Stride</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.modelFailurePossibleReason">modelFailurePossibleReason</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.RiskCategoryProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdktg.RiskCategoryProps.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `asvs`<sup>Required</sup> <a name="asvs" id="cdktg.RiskCategoryProps.property.asvs"></a>
+
+```typescript
+public readonly asvs: string;
+```
+
+- *Type:* string
+
+---
+
+##### `cheatSheat`<sup>Required</sup> <a name="cheatSheat" id="cdktg.RiskCategoryProps.property.cheatSheat"></a>
+
+```typescript
+public readonly cheatSheat: string;
+```
+
+- *Type:* string
+
+---
+
+##### `check`<sup>Required</sup> <a name="check" id="cdktg.RiskCategoryProps.property.check"></a>
+
+```typescript
+public readonly check: string;
+```
+
+- *Type:* string
+
+---
+
+##### `cwe`<sup>Required</sup> <a name="cwe" id="cdktg.RiskCategoryProps.property.cwe"></a>
+
+```typescript
+public readonly cwe: number;
+```
+
+- *Type:* number
+
+---
+
+##### `detectionLogic`<sup>Required</sup> <a name="detectionLogic" id="cdktg.RiskCategoryProps.property.detectionLogic"></a>
+
+```typescript
+public readonly detectionLogic: string;
+```
+
+- *Type:* string
+
+---
+
+##### `falsePositives`<sup>Required</sup> <a name="falsePositives" id="cdktg.RiskCategoryProps.property.falsePositives"></a>
+
+```typescript
+public readonly falsePositives: string;
+```
+
+- *Type:* string
+
+---
+
+##### `function`<sup>Required</sup> <a name="function" id="cdktg.RiskCategoryProps.property.function"></a>
+
+```typescript
+public readonly function: RiskFunction;
+```
+
+- *Type:* <a href="#cdktg.RiskFunction">RiskFunction</a>
+
+---
+
+##### `impact`<sup>Required</sup> <a name="impact" id="cdktg.RiskCategoryProps.property.impact"></a>
+
+```typescript
+public readonly impact: string;
+```
+
+- *Type:* string
+
+---
+
+##### `mitigation`<sup>Required</sup> <a name="mitigation" id="cdktg.RiskCategoryProps.property.mitigation"></a>
+
+```typescript
+public readonly mitigation: string;
+```
+
+- *Type:* string
+
+---
+
+##### `riskAssessment`<sup>Required</sup> <a name="riskAssessment" id="cdktg.RiskCategoryProps.property.riskAssessment"></a>
+
+```typescript
+public readonly riskAssessment: string;
+```
+
+- *Type:* string
+
+---
+
+##### `stride`<sup>Required</sup> <a name="stride" id="cdktg.RiskCategoryProps.property.stride"></a>
+
+```typescript
+public readonly stride: Stride;
+```
+
+- *Type:* <a href="#cdktg.Stride">Stride</a>
+
+---
+
+##### `modelFailurePossibleReason`<sup>Optional</sup> <a name="modelFailurePossibleReason" id="cdktg.RiskCategoryProps.property.modelFailurePossibleReason"></a>
+
+```typescript
+public readonly modelFailurePossibleReason: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+### RiskOptions <a name="RiskOptions" id="cdktg.RiskOptions"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.RiskOptions.Initializer"></a>
+
+```typescript
+import { RiskOptions } from 'cdktg'
+
+const riskOptions: RiskOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskOptions.property.dataBreachProbability">dataBreachProbability</a></code> | <code><a href="#cdktg.DataBreachProbability">DataBreachProbability</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskOptions.property.dataBreachTechnicalAssets">dataBreachTechnicalAssets</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.RiskOptions.property.exploitationImpact">exploitationImpact</a></code> | <code><a href="#cdktg.ExploitationImpact">ExploitationImpact</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskOptions.property.exploitationLikelihood">exploitationLikelihood</a></code> | <code><a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskOptions.property.severity">severity</a></code> | <code><a href="#cdktg.Severity">Severity</a></code> | *No description.* |
+
+---
+
+##### `dataBreachProbability`<sup>Required</sup> <a name="dataBreachProbability" id="cdktg.RiskOptions.property.dataBreachProbability"></a>
+
+```typescript
+public readonly dataBreachProbability: DataBreachProbability;
+```
+
+- *Type:* <a href="#cdktg.DataBreachProbability">DataBreachProbability</a>
+
+---
+
+##### `dataBreachTechnicalAssets`<sup>Required</sup> <a name="dataBreachTechnicalAssets" id="cdktg.RiskOptions.property.dataBreachTechnicalAssets"></a>
+
+```typescript
+public readonly dataBreachTechnicalAssets: TechnicalAsset[];
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]
+
+---
+
+##### `exploitationImpact`<sup>Required</sup> <a name="exploitationImpact" id="cdktg.RiskOptions.property.exploitationImpact"></a>
+
+```typescript
+public readonly exploitationImpact: ExploitationImpact;
+```
+
+- *Type:* <a href="#cdktg.ExploitationImpact">ExploitationImpact</a>
+
+---
+
+##### `exploitationLikelihood`<sup>Required</sup> <a name="exploitationLikelihood" id="cdktg.RiskOptions.property.exploitationLikelihood"></a>
+
+```typescript
+public readonly exploitationLikelihood: ExploitationLikelihood;
+```
+
+- *Type:* <a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a>
+
+---
+
+##### `severity`<sup>Required</sup> <a name="severity" id="cdktg.RiskOptions.property.severity"></a>
+
+```typescript
+public readonly severity: Severity;
+```
+
+- *Type:* <a href="#cdktg.Severity">Severity</a>
+
+---
+
+### RiskProps <a name="RiskProps" id="cdktg.RiskProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.RiskProps.Initializer"></a>
+
+```typescript
+import { RiskProps } from 'cdktg'
+
+const riskProps: RiskProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskProps.property.dataBreachProbability">dataBreachProbability</a></code> | <code><a href="#cdktg.DataBreachProbability">DataBreachProbability</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.dataBreachTechnicalAssets">dataBreachTechnicalAssets</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.exploitationImpact">exploitationImpact</a></code> | <code><a href="#cdktg.ExploitationImpact">ExploitationImpact</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.exploitationLikelihood">exploitationLikelihood</a></code> | <code><a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.severity">severity</a></code> | <code><a href="#cdktg.Severity">Severity</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.mostRelevantCommunicationLink">mostRelevantCommunicationLink</a></code> | <code><a href="#cdktg.Communication">Communication</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.mostRelevantDataAsset">mostRelevantDataAsset</a></code> | <code><a href="#cdktg.DataAsset">DataAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.mostRelevantSharedRuntime">mostRelevantSharedRuntime</a></code> | <code><a href="#cdktg.SharedRuntime">SharedRuntime</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.mostRelevantTechnicalAsset">mostRelevantTechnicalAsset</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskProps.property.mostRelevantTrustBoundary">mostRelevantTrustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+
+---
+
+##### `dataBreachProbability`<sup>Required</sup> <a name="dataBreachProbability" id="cdktg.RiskProps.property.dataBreachProbability"></a>
+
+```typescript
+public readonly dataBreachProbability: DataBreachProbability;
+```
+
+- *Type:* <a href="#cdktg.DataBreachProbability">DataBreachProbability</a>
+
+---
+
+##### `dataBreachTechnicalAssets`<sup>Required</sup> <a name="dataBreachTechnicalAssets" id="cdktg.RiskProps.property.dataBreachTechnicalAssets"></a>
+
+```typescript
+public readonly dataBreachTechnicalAssets: TechnicalAsset[];
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]
+
+---
+
+##### `exploitationImpact`<sup>Required</sup> <a name="exploitationImpact" id="cdktg.RiskProps.property.exploitationImpact"></a>
+
+```typescript
+public readonly exploitationImpact: ExploitationImpact;
+```
+
+- *Type:* <a href="#cdktg.ExploitationImpact">ExploitationImpact</a>
+
+---
+
+##### `exploitationLikelihood`<sup>Required</sup> <a name="exploitationLikelihood" id="cdktg.RiskProps.property.exploitationLikelihood"></a>
+
+```typescript
+public readonly exploitationLikelihood: ExploitationLikelihood;
+```
+
+- *Type:* <a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a>
+
+---
+
+##### `severity`<sup>Required</sup> <a name="severity" id="cdktg.RiskProps.property.severity"></a>
+
+```typescript
+public readonly severity: Severity;
+```
+
+- *Type:* <a href="#cdktg.Severity">Severity</a>
+
+---
+
+##### `mostRelevantCommunicationLink`<sup>Optional</sup> <a name="mostRelevantCommunicationLink" id="cdktg.RiskProps.property.mostRelevantCommunicationLink"></a>
+
+```typescript
+public readonly mostRelevantCommunicationLink: Communication;
+```
+
+- *Type:* <a href="#cdktg.Communication">Communication</a>
+
+---
+
+##### `mostRelevantDataAsset`<sup>Optional</sup> <a name="mostRelevantDataAsset" id="cdktg.RiskProps.property.mostRelevantDataAsset"></a>
+
+```typescript
+public readonly mostRelevantDataAsset: DataAsset;
+```
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `mostRelevantSharedRuntime`<sup>Optional</sup> <a name="mostRelevantSharedRuntime" id="cdktg.RiskProps.property.mostRelevantSharedRuntime"></a>
+
+```typescript
+public readonly mostRelevantSharedRuntime: SharedRuntime;
+```
+
+- *Type:* <a href="#cdktg.SharedRuntime">SharedRuntime</a>
+
+---
+
+##### `mostRelevantTechnicalAsset`<sup>Optional</sup> <a name="mostRelevantTechnicalAsset" id="cdktg.RiskProps.property.mostRelevantTechnicalAsset"></a>
+
+```typescript
+public readonly mostRelevantTechnicalAsset: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `mostRelevantTrustBoundary`<sup>Optional</sup> <a name="mostRelevantTrustBoundary" id="cdktg.RiskProps.property.mostRelevantTrustBoundary"></a>
+
+```typescript
+public readonly mostRelevantTrustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+### SecurityRequirementProps <a name="SecurityRequirementProps" id="cdktg.SecurityRequirementProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.SecurityRequirementProps.Initializer"></a>
+
+```typescript
+import { SecurityRequirementProps } from 'cdktg'
+
+const securityRequirementProps: SecurityRequirementProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.SecurityRequirementProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.SecurityRequirementProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.SecurityRequirementProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdktg.SecurityRequirementProps.property.name"></a>
+
+```typescript
+public readonly name: string;
 ```
 
 - *Type:* string
@@ -2675,8 +3475,21 @@ public readonly name: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdktg.AbuseCase.property.CPU_CYCLE_THEFT">CPU_CYCLE_THEFT</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
 | <code><a href="#cdktg.AbuseCase.property.DENIAL_OF_SERVICE">DENIAL_OF_SERVICE</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
+| <code><a href="#cdktg.AbuseCase.property.IDENTITY_THEFT">IDENTITY_THEFT</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
+| <code><a href="#cdktg.AbuseCase.property.PII_THEFT">PII_THEFT</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
 | <code><a href="#cdktg.AbuseCase.property.RANSOMWARE">RANSOMWARE</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
+
+---
+
+##### `CPU_CYCLE_THEFT`<sup>Required</sup> <a name="CPU_CYCLE_THEFT" id="cdktg.AbuseCase.property.CPU_CYCLE_THEFT"></a>
+
+```typescript
+public readonly CPU_CYCLE_THEFT: AbuseCase;
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
 
 ---
 
@@ -2684,6 +3497,26 @@ public readonly name: string;
 
 ```typescript
 public readonly DENIAL_OF_SERVICE: AbuseCase;
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
+
+---
+
+##### `IDENTITY_THEFT`<sup>Required</sup> <a name="IDENTITY_THEFT" id="cdktg.AbuseCase.property.IDENTITY_THEFT"></a>
+
+```typescript
+public readonly IDENTITY_THEFT: AbuseCase;
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
+
+---
+
+##### `PII_THEFT`<sup>Required</sup> <a name="PII_THEFT" id="cdktg.AbuseCase.property.PII_THEFT"></a>
+
+```typescript
+public readonly PII_THEFT: AbuseCase;
 ```
 
 - *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
@@ -3072,6 +3905,7 @@ public send(assets: DataAsset): void
 | --- | --- | --- |
 | <code><a href="#cdktg.Communication.property.authentication">authentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.authorization">authorization</a></code> | <code><a href="#cdktg.Authorization">Authorization</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.caller">caller</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.ipFiltered">ipFiltered</a></code> | <code>boolean</code> | *No description.* |
@@ -3100,6 +3934,16 @@ public readonly authorization: Authorization;
 ```
 
 - *Type:* <a href="#cdktg.Authorization">Authorization</a>
+
+---
+
+##### `caller`<sup>Required</sup> <a name="caller" id="cdktg.Communication.property.caller"></a>
+
+```typescript
+public readonly caller: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
@@ -3482,6 +4326,166 @@ public readonly justification: string;
 ---
 
 
+### Risk <a name="Risk" id="cdktg.Risk"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Risk.Initializer"></a>
+
+```typescript
+import { Risk } from 'cdktg'
+
+new Risk(id: string, props: RiskProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Risk.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Risk.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.RiskProps">RiskProps</a></code> | *No description.* |
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Risk.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.Risk.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.RiskProps">RiskProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Risk.property.dataBreachProbability">dataBreachProbability</a></code> | <code><a href="#cdktg.DataBreachProbability">DataBreachProbability</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.dataBreachTechnicalAssets">dataBreachTechnicalAssets</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.exploitationImpact">exploitationImpact</a></code> | <code><a href="#cdktg.ExploitationImpact">ExploitationImpact</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.exploitationLikelihood">exploitationLikelihood</a></code> | <code><a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.severity">severity</a></code> | <code><a href="#cdktg.Severity">Severity</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.mostRelevantCommunicationLink">mostRelevantCommunicationLink</a></code> | <code><a href="#cdktg.Communication">Communication</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.mostRelevantDataAsset">mostRelevantDataAsset</a></code> | <code><a href="#cdktg.DataAsset">DataAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.mostRelevantSharedRuntime">mostRelevantSharedRuntime</a></code> | <code><a href="#cdktg.SharedRuntime">SharedRuntime</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.mostRelevantTechnicalAsset">mostRelevantTechnicalAsset</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.Risk.property.mostRelevantTrustBoundary">mostRelevantTrustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+
+---
+
+##### `dataBreachProbability`<sup>Required</sup> <a name="dataBreachProbability" id="cdktg.Risk.property.dataBreachProbability"></a>
+
+```typescript
+public readonly dataBreachProbability: DataBreachProbability;
+```
+
+- *Type:* <a href="#cdktg.DataBreachProbability">DataBreachProbability</a>
+
+---
+
+##### `dataBreachTechnicalAssets`<sup>Required</sup> <a name="dataBreachTechnicalAssets" id="cdktg.Risk.property.dataBreachTechnicalAssets"></a>
+
+```typescript
+public readonly dataBreachTechnicalAssets: TechnicalAsset[];
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>[]
+
+---
+
+##### `exploitationImpact`<sup>Required</sup> <a name="exploitationImpact" id="cdktg.Risk.property.exploitationImpact"></a>
+
+```typescript
+public readonly exploitationImpact: ExploitationImpact;
+```
+
+- *Type:* <a href="#cdktg.ExploitationImpact">ExploitationImpact</a>
+
+---
+
+##### `exploitationLikelihood`<sup>Required</sup> <a name="exploitationLikelihood" id="cdktg.Risk.property.exploitationLikelihood"></a>
+
+```typescript
+public readonly exploitationLikelihood: ExploitationLikelihood;
+```
+
+- *Type:* <a href="#cdktg.ExploitationLikelihood">ExploitationLikelihood</a>
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Risk.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `severity`<sup>Required</sup> <a name="severity" id="cdktg.Risk.property.severity"></a>
+
+```typescript
+public readonly severity: Severity;
+```
+
+- *Type:* <a href="#cdktg.Severity">Severity</a>
+
+---
+
+##### `mostRelevantCommunicationLink`<sup>Optional</sup> <a name="mostRelevantCommunicationLink" id="cdktg.Risk.property.mostRelevantCommunicationLink"></a>
+
+```typescript
+public readonly mostRelevantCommunicationLink: Communication;
+```
+
+- *Type:* <a href="#cdktg.Communication">Communication</a>
+
+---
+
+##### `mostRelevantDataAsset`<sup>Optional</sup> <a name="mostRelevantDataAsset" id="cdktg.Risk.property.mostRelevantDataAsset"></a>
+
+```typescript
+public readonly mostRelevantDataAsset: DataAsset;
+```
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `mostRelevantSharedRuntime`<sup>Optional</sup> <a name="mostRelevantSharedRuntime" id="cdktg.Risk.property.mostRelevantSharedRuntime"></a>
+
+```typescript
+public readonly mostRelevantSharedRuntime: SharedRuntime;
+```
+
+- *Type:* <a href="#cdktg.SharedRuntime">SharedRuntime</a>
+
+---
+
+##### `mostRelevantTechnicalAsset`<sup>Optional</sup> <a name="mostRelevantTechnicalAsset" id="cdktg.Risk.property.mostRelevantTechnicalAsset"></a>
+
+```typescript
+public readonly mostRelevantTechnicalAsset: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `mostRelevantTrustBoundary`<sup>Optional</sup> <a name="mostRelevantTrustBoundary" id="cdktg.Risk.property.mostRelevantTrustBoundary"></a>
+
+```typescript
+public readonly mostRelevantTrustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+
 ### Scope <a name="Scope" id="cdktg.Scope"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.Scope.Initializer"></a>
@@ -3524,6 +4528,88 @@ public readonly justification: string;
 
 ---
 
+
+### SecurityRequirement <a name="SecurityRequirement" id="cdktg.SecurityRequirement"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.SecurityRequirement.Initializer"></a>
+
+```typescript
+import { SecurityRequirement } from 'cdktg'
+
+new SecurityRequirement(props: SecurityRequirementProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.SecurityRequirement.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.SecurityRequirementProps">SecurityRequirementProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.SecurityRequirement.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.SecurityRequirementProps">SecurityRequirementProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.SecurityRequirement.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.SecurityRequirement.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.SecurityRequirement.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdktg.SecurityRequirement.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.SecurityRequirement.property.INPUT_VALIDATION">INPUT_VALIDATION</a></code> | <code><a href="#cdktg.SecurityRequirement">SecurityRequirement</a></code> | *No description.* |
+| <code><a href="#cdktg.SecurityRequirement.property.SECURING_ADMINISTRATIVE_ACCESS">SECURING_ADMINISTRATIVE_ACCESS</a></code> | <code><a href="#cdktg.SecurityRequirement">SecurityRequirement</a></code> | *No description.* |
+
+---
+
+##### `INPUT_VALIDATION`<sup>Required</sup> <a name="INPUT_VALIDATION" id="cdktg.SecurityRequirement.property.INPUT_VALIDATION"></a>
+
+```typescript
+public readonly INPUT_VALIDATION: SecurityRequirement;
+```
+
+- *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>
+
+---
+
+##### `SECURING_ADMINISTRATIVE_ACCESS`<sup>Required</sup> <a name="SECURING_ADMINISTRATIVE_ACCESS" id="cdktg.SecurityRequirement.property.SECURING_ADMINISTRATIVE_ACCESS"></a>
+
+```typescript
+public readonly SECURING_ADMINISTRATIVE_ACCESS: SecurityRequirement;
+```
+
+- *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>
+
+---
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
@@ -3888,6 +4974,33 @@ public readonly skipValidation: boolean;
 ---
 
 
+### DataBreachProbability <a name="DataBreachProbability" id="cdktg.DataBreachProbability"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.DataBreachProbability.IMPROBABLE">IMPROBABLE</a></code> | *No description.* |
+| <code><a href="#cdktg.DataBreachProbability.POSSIBLE">POSSIBLE</a></code> | *No description.* |
+| <code><a href="#cdktg.DataBreachProbability.PROBABLE">PROBABLE</a></code> | *No description.* |
+
+---
+
+##### `IMPROBABLE` <a name="IMPROBABLE" id="cdktg.DataBreachProbability.IMPROBABLE"></a>
+
+---
+
+
+##### `POSSIBLE` <a name="POSSIBLE" id="cdktg.DataBreachProbability.POSSIBLE"></a>
+
+---
+
+
+##### `PROBABLE` <a name="PROBABLE" id="cdktg.DataBreachProbability.PROBABLE"></a>
+
+---
+
+
 ### DataFormat <a name="DataFormat" id="cdktg.DataFormat"></a>
 
 #### Members <a name="Members" id="Members"></a>
@@ -3962,6 +5075,72 @@ public readonly skipValidation: boolean;
 
 
 ##### `ENDUSER_INDIVIDUAL_KEY` <a name="ENDUSER_INDIVIDUAL_KEY" id="cdktg.Encryption.ENDUSER_INDIVIDUAL_KEY"></a>
+
+---
+
+
+### ExploitationImpact <a name="ExploitationImpact" id="cdktg.ExploitationImpact"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.ExploitationImpact.LOW">LOW</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationImpact.MEDIUM">MEDIUM</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationImpact.HIGH">HIGH</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationImpact.VERY_HIGH">VERY_HIGH</a></code> | *No description.* |
+
+---
+
+##### `LOW` <a name="LOW" id="cdktg.ExploitationImpact.LOW"></a>
+
+---
+
+
+##### `MEDIUM` <a name="MEDIUM" id="cdktg.ExploitationImpact.MEDIUM"></a>
+
+---
+
+
+##### `HIGH` <a name="HIGH" id="cdktg.ExploitationImpact.HIGH"></a>
+
+---
+
+
+##### `VERY_HIGH` <a name="VERY_HIGH" id="cdktg.ExploitationImpact.VERY_HIGH"></a>
+
+---
+
+
+### ExploitationLikelihood <a name="ExploitationLikelihood" id="cdktg.ExploitationLikelihood"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.ExploitationLikelihood.UNLIKELY">UNLIKELY</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationLikelihood.LIKELY">LIKELY</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationLikelihood.VERY_LIKELY">VERY_LIKELY</a></code> | *No description.* |
+| <code><a href="#cdktg.ExploitationLikelihood.FREQUENT">FREQUENT</a></code> | *No description.* |
+
+---
+
+##### `UNLIKELY` <a name="UNLIKELY" id="cdktg.ExploitationLikelihood.UNLIKELY"></a>
+
+---
+
+
+##### `LIKELY` <a name="LIKELY" id="cdktg.ExploitationLikelihood.LIKELY"></a>
+
+---
+
+
+##### `VERY_LIKELY` <a name="VERY_LIKELY" id="cdktg.ExploitationLikelihood.VERY_LIKELY"></a>
+
+---
+
+
+##### `FREQUENT` <a name="FREQUENT" id="cdktg.ExploitationLikelihood.FREQUENT"></a>
 
 ---
 
@@ -4362,6 +5541,78 @@ public readonly skipValidation: boolean;
 ---
 
 
+### RiskFunction <a name="RiskFunction" id="cdktg.RiskFunction"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.RiskFunction.BUSINESS_SIDE">BUSINESS_SIDE</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskFunction.ARCHITECTURE">ARCHITECTURE</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskFunction.DEVELOPMENT">DEVELOPMENT</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskFunction.OPERATIONS">OPERATIONS</a></code> | *No description.* |
+
+---
+
+##### `BUSINESS_SIDE` <a name="BUSINESS_SIDE" id="cdktg.RiskFunction.BUSINESS_SIDE"></a>
+
+---
+
+
+##### `ARCHITECTURE` <a name="ARCHITECTURE" id="cdktg.RiskFunction.ARCHITECTURE"></a>
+
+---
+
+
+##### `DEVELOPMENT` <a name="DEVELOPMENT" id="cdktg.RiskFunction.DEVELOPMENT"></a>
+
+---
+
+
+##### `OPERATIONS` <a name="OPERATIONS" id="cdktg.RiskFunction.OPERATIONS"></a>
+
+---
+
+
+### Severity <a name="Severity" id="cdktg.Severity"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Severity.LOW">LOW</a></code> | *No description.* |
+| <code><a href="#cdktg.Severity.MEDIUM">MEDIUM</a></code> | *No description.* |
+| <code><a href="#cdktg.Severity.ELEVATED">ELEVATED</a></code> | *No description.* |
+| <code><a href="#cdktg.Severity.HIGH">HIGH</a></code> | *No description.* |
+| <code><a href="#cdktg.Severity.CRITICAL">CRITICAL</a></code> | *No description.* |
+
+---
+
+##### `LOW` <a name="LOW" id="cdktg.Severity.LOW"></a>
+
+---
+
+
+##### `MEDIUM` <a name="MEDIUM" id="cdktg.Severity.MEDIUM"></a>
+
+---
+
+
+##### `ELEVATED` <a name="ELEVATED" id="cdktg.Severity.ELEVATED"></a>
+
+---
+
+
+##### `HIGH` <a name="HIGH" id="cdktg.Severity.HIGH"></a>
+
+---
+
+
+##### `CRITICAL` <a name="CRITICAL" id="cdktg.Severity.CRITICAL"></a>
+
+---
+
+
 ### Size <a name="Size" id="cdktg.Size"></a>
 
 #### Members <a name="Members" id="Members"></a>
@@ -4391,6 +5642,51 @@ public readonly skipValidation: boolean;
 
 
 ##### `COMPONENT` <a name="COMPONENT" id="cdktg.Size.COMPONENT"></a>
+
+---
+
+
+### Stride <a name="Stride" id="cdktg.Stride"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Stride.SPOOFING">SPOOFING</a></code> | *No description.* |
+| <code><a href="#cdktg.Stride.TAMPERING">TAMPERING</a></code> | *No description.* |
+| <code><a href="#cdktg.Stride.REPUDIATION">REPUDIATION</a></code> | *No description.* |
+| <code><a href="#cdktg.Stride.INFORMATION_DISCLOSURE">INFORMATION_DISCLOSURE</a></code> | *No description.* |
+| <code><a href="#cdktg.Stride.DENIAL_OF_SERVICE">DENIAL_OF_SERVICE</a></code> | *No description.* |
+| <code><a href="#cdktg.Stride.ELEVATION_OF_PRIVILEGE">ELEVATION_OF_PRIVILEGE</a></code> | *No description.* |
+
+---
+
+##### `SPOOFING` <a name="SPOOFING" id="cdktg.Stride.SPOOFING"></a>
+
+---
+
+
+##### `TAMPERING` <a name="TAMPERING" id="cdktg.Stride.TAMPERING"></a>
+
+---
+
+
+##### `REPUDIATION` <a name="REPUDIATION" id="cdktg.Stride.REPUDIATION"></a>
+
+---
+
+
+##### `INFORMATION_DISCLOSURE` <a name="INFORMATION_DISCLOSURE" id="cdktg.Stride.INFORMATION_DISCLOSURE"></a>
+
+---
+
+
+##### `DENIAL_OF_SERVICE` <a name="DENIAL_OF_SERVICE" id="cdktg.Stride.DENIAL_OF_SERVICE"></a>
+
+---
+
+
+##### `ELEVATION_OF_PRIVILEGE` <a name="ELEVATION_OF_PRIVILEGE" id="cdktg.Stride.ELEVATION_OF_PRIVILEGE"></a>
 
 ---
 

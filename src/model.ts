@@ -3,6 +3,8 @@ import { AbuseCase } from "./abuse-case";
 
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
+import { RiskCategory } from "./risk-category";
+import { SecurityRequirement } from "./security-requirement";
 import { SharedRuntime } from "./shared-runtime";
 import { Threagile } from "./spec/threatgile.generated";
 import { IModelSynthesizer, ModelSynthesizer } from "./synthesizer";
@@ -13,7 +15,6 @@ const MODEL_SYMBOL = Symbol.for("cdktg/Model");
 
 export interface Question {
   readonly text: string;
-
   readonly answer?: string;
 }
 
@@ -57,6 +58,11 @@ export interface ModelProps {
    * Custom abuse cases for the report
    */
   readonly abuseCases?: AbuseCase[];
+
+  /**
+   * Custom security requirements for the report
+   */
+  readonly securityRequirements?: SecurityRequirement[];
 }
 
 export class Model extends Construct {
@@ -95,6 +101,7 @@ export class Model extends Construct {
 
   private readonly questions: Map<string, string>;
   private readonly abuseCases: Map<string, string>;
+  private readonly securityRequirements: Map<string, string>;
   private readonly tags: Set<string>;
   private readonly rawOverrides: Record<string, unknown>;
 
@@ -118,6 +125,11 @@ export class Model extends Construct {
     this.abuseCases = new Map<string, string>();
     if (props.abuseCases && props.abuseCases.length > 0) {
       this.addAbuseCases(...props.abuseCases);
+    }
+
+    this.securityRequirements = new Map<string, string>();
+    if (props.securityRequirements && props.securityRequirements.length > 0) {
+      this.addSecurityRequirements(...props.securityRequirements);
     }
 
     this.tags = new Set<string>();
@@ -157,6 +169,16 @@ export class Model extends Construct {
     });
   }
 
+  public addSecurityRequirements(...requirements: SecurityRequirement[]) {
+    requirements.forEach((r) => {
+      if (this.abuseCases.has(r.name)) {
+        throw new Error(`Duplicated security requirement "${r.name}"`);
+      }
+
+      this.securityRequirements.set(r.name, r.description);
+    });
+  }
+
   public addOverride(path: string, value: unknown) {
     const parts = path.split(".");
     let curr: any = this.rawOverrides;
@@ -191,6 +213,7 @@ export class Model extends Construct {
     const technicalAssets = new Array<TechnicalAsset>();
     const trustBoundaries = new Array<TrustBoundary>();
     const sharedRuntimes = new Array<SharedRuntime>();
+    const individualRiskCategories = new Array<RiskCategory>();
 
     this.node.findAll().map((n) => {
       if (n instanceof DataAsset) {
@@ -201,6 +224,8 @@ export class Model extends Construct {
         trustBoundaries.push(n);
       } else if (n instanceof SharedRuntime) {
         sharedRuntimes.push(n);
+      } else if (n instanceof RiskCategory) {
+        individualRiskCategories.push(n);
       }
     });
 
@@ -213,6 +238,7 @@ export class Model extends Construct {
       business_criticality: this.businessCriticality,
       questions: Object.fromEntries(this.questions),
       abuse_cases: Object.fromEntries(this.abuseCases),
+      security_requirements: Object.fromEntries(this.securityRequirements),
       tags_available: Array.from(this.tags),
     };
 
@@ -232,6 +258,11 @@ export class Model extends Construct {
     );
 
     threagile.shared_runtimes = sharedRuntimes.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
+
+    threagile.individual_risk_categories = individualRiskCategories.reduce(
       (prev, current) => Object.assign(prev, current._toThreagile()),
       {}
     );

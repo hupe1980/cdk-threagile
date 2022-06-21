@@ -23,6 +23,15 @@ import {
   Authorization,
   SharedRuntime,
 } from "../src";
+import {
+  DataBreachProbability,
+  ExploitationImpact,
+  ExploitationLikelihood,
+  RiskCategory,
+  RiskFunction,
+  Severity,
+  Stride,
+} from "../src/risk-category";
 
 test("synth the model stub example", () => {
   const project = new Project({
@@ -128,6 +137,32 @@ test("synth the model stub example", () => {
   });
 
   someSharedRuntime.run(someTechnicalAsset, someOtherTechnicalAsset);
+
+  const riskCategory = new RiskCategory(model, "Some Individual Risk Example", {
+    description: "Some text describing the risk category...",
+    impact: "Some text describing the impact...",
+    asvs: "V0 - Something Strange",
+    cheatSheat: "https://example.com",
+    action: "Some text describing the action...",
+    mitigation: "Some text describing the mitigation...",
+    check: "Check if XYZ...",
+    function: RiskFunction.BUSINESS_SIDE,
+    stride: Stride.REPUDIATION,
+    detectionLogic: "Some text describing the detection logic...",
+    riskAssessment: "Some text describing the risk assessment...",
+    falsePositives:
+      "Some text describing the most common types of false positives...",
+    modelFailurePossibleReason: false,
+    cwe: 693,
+  });
+
+  riskCategory.identifiedAtTechnicalAsset(someTechnicalAsset, {
+    severity: Severity.CRITICAL,
+    exploitationLikelihood: ExploitationLikelihood.LIKELY,
+    exploitationImpact: ExploitationImpact.MEDIUM,
+    dataBreachProbability: DataBreachProbability.PROBABLE,
+    dataBreachTechnicalAssets: [someTechnicalAsset],
+  });
 
   project.synth();
 });

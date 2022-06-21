@@ -99,6 +99,7 @@ export class TechnicalAsset extends Resource {
     options: CommunicationOptions
   ): Communication {
     const communication = new Communication(id, {
+      caller: this,
       target: target,
       ...options,
     });
@@ -135,16 +136,10 @@ export class TechnicalAsset extends Resource {
       },
     };
 
-    if (this.communications.length > 0) {
-      threagile[this.node.id].communication_links = {};
-
-      this.communications.forEach((c) => {
-        threagile[this.node.id].communication_links = {
-          ...threagile[this.node.id].communication_links,
-          ...c._toThreagile(),
-        };
-      });
-    }
+    threagile.communication_links = this.communications.reduce(
+      (prev, current) => Object.assign(prev, current._toThreagile()),
+      {}
+    );
 
     return threagile;
   }

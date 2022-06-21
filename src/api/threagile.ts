@@ -6,6 +6,10 @@ export class Threagile {
   private directApi: DirectApi;
 
   constructor(baseURL: string) {
+    if (!baseURL) {
+      throw new Error("Base url is missing!");
+    }
+
     const configuration = new Configuration({
       basePath: baseURL,
     });
