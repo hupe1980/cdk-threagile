@@ -3,6 +3,7 @@ import { AbuseCase } from "./abuse-case";
 
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
+import { Overview } from "./overview";
 import { RiskCategory } from "./risk-category";
 import { RiskTracking, RiskTrackingProps } from "./rist-tracking";
 import { SecurityRequirement } from "./security-requirement";
@@ -51,6 +52,16 @@ export interface ModelProps {
   readonly businessCriticality: BusinessCriticality;
 
   /**
+   * Individual business overview for the report
+   */
+  readonly businessOverview?: Overview;
+
+  /**
+   * Individual technical overview for the report
+   */
+  readonly technicalOverview?: Overview;
+
+  /**
    * Custom questions for the report
    */
   readonly questions?: Question[];
@@ -96,6 +107,8 @@ export class Model extends Construct {
   public readonly date?: string;
   public readonly author: Author;
   public readonly managementSummary?: string;
+  public readonly businessOverview?: Overview;
+  public readonly technicalOverview?: Overview;
   public readonly businessCriticality: BusinessCriticality;
 
   public synthesizer: IModelSynthesizer;
@@ -118,6 +131,17 @@ export class Model extends Construct {
     this.author = props.author;
     this.managementSummary = props.managementSummary;
     this.businessCriticality = props.businessCriticality;
+
+    this.businessOverview = props.businessOverview;
+    if (
+      this.businessOverview &&
+      this.businessOverview.images &&
+      this.businessOverview.images.length > 0
+    ) {
+      this.businessOverview.images.forEach((i) => i._bind(this));
+    }
+
+    this.technicalOverview = props.technicalOverview;
 
     this.questions = new Map<string, string>();
     props.questions?.forEach((q) => {
@@ -246,6 +270,8 @@ export class Model extends Construct {
       data: this.date,
       author: this.author._toThreagile(),
       management_summary_comment: this.managementSummary,
+      business_overview: this.businessOverview?._toThreagile(),
+      technical_overview: this.technicalOverview?._toThreagile(),
       business_criticality: this.businessCriticality,
       questions: Object.fromEntries(this.questions),
       abuse_cases: Object.fromEntries(this.abuseCases),

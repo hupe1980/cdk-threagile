@@ -443,8 +443,10 @@ Model.of(construct: IConstruct)
 | <code><a href="#cdktg.Model.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.version">version</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Model.property.businessOverview">businessOverview</a></code> | <code><a href="#cdktg.Overview">Overview</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.property.date">date</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Model.property.managementSummary">managementSummary</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Model.property.technicalOverview">technicalOverview</a></code> | <code><a href="#cdktg.Overview">Overview</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.property.synthesizer">synthesizer</a></code> | <code><a href="#cdktg.IModelSynthesizer">IModelSynthesizer</a></code> | *No description.* |
 
 ---
@@ -501,6 +503,16 @@ public readonly version: string;
 
 ---
 
+##### `businessOverview`<sup>Optional</sup> <a name="businessOverview" id="cdktg.Model.property.businessOverview"></a>
+
+```typescript
+public readonly businessOverview: Overview;
+```
+
+- *Type:* <a href="#cdktg.Overview">Overview</a>
+
+---
+
 ##### `date`<sup>Optional</sup> <a name="date" id="cdktg.Model.property.date"></a>
 
 ```typescript
@@ -518,6 +530,16 @@ public readonly managementSummary: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `technicalOverview`<sup>Optional</sup> <a name="technicalOverview" id="cdktg.Model.property.technicalOverview"></a>
+
+```typescript
+public readonly technicalOverview: Overview;
+```
+
+- *Type:* <a href="#cdktg.Overview">Overview</a>
 
 ---
 
@@ -2512,10 +2534,12 @@ const modelProps: ModelProps = { ... }
 | <code><a href="#cdktg.ModelProps.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | Business criticality of the target. |
 | <code><a href="#cdktg.ModelProps.property.version">version</a></code> | <code>string</code> | Version of the Threagile toolkit. |
 | <code><a href="#cdktg.ModelProps.property.abuseCases">abuseCases</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a>[]</code> | Custom abuse cases for the report. |
+| <code><a href="#cdktg.ModelProps.property.businessOverview">businessOverview</a></code> | <code><a href="#cdktg.Overview">Overview</a></code> | Individual business overview for the report. |
 | <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>string</code> | Date of the model. |
 | <code><a href="#cdktg.ModelProps.property.managementSummary">managementSummary</a></code> | <code>string</code> | Individual management summary for the report. |
 | <code><a href="#cdktg.ModelProps.property.questions">questions</a></code> | <code><a href="#cdktg.Question">Question</a>[]</code> | Custom questions for the report. |
 | <code><a href="#cdktg.ModelProps.property.securityRequirements">securityRequirements</a></code> | <code><a href="#cdktg.SecurityRequirement">SecurityRequirement</a>[]</code> | Custom security requirements for the report. |
+| <code><a href="#cdktg.ModelProps.property.technicalOverview">technicalOverview</a></code> | <code><a href="#cdktg.Overview">Overview</a></code> | Individual technical overview for the report. |
 | <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 
 ---
@@ -2568,6 +2592,18 @@ Custom abuse cases for the report.
 
 ---
 
+##### `businessOverview`<sup>Optional</sup> <a name="businessOverview" id="cdktg.ModelProps.property.businessOverview"></a>
+
+```typescript
+public readonly businessOverview: Overview;
+```
+
+- *Type:* <a href="#cdktg.Overview">Overview</a>
+
+Individual business overview for the report.
+
+---
+
 ##### `date`<sup>Optional</sup> <a name="date" id="cdktg.ModelProps.property.date"></a>
 
 ```typescript
@@ -2613,6 +2649,18 @@ public readonly securityRequirements: SecurityRequirement[];
 - *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>[]
 
 Custom security requirements for the report.
+
+---
+
+##### `technicalOverview`<sup>Optional</sup> <a name="technicalOverview" id="cdktg.ModelProps.property.technicalOverview"></a>
+
+```typescript
+public readonly technicalOverview: Overview;
+```
+
+- *Type:* <a href="#cdktg.Overview">Overview</a>
+
+Individual technical overview for the report.
 
 ---
 
@@ -2664,6 +2712,45 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+### OverviewProps <a name="OverviewProps" id="cdktg.OverviewProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.OverviewProps.Initializer"></a>
+
+```typescript
+import { OverviewProps } from 'cdktg'
+
+const overviewProps: OverviewProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.OverviewProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.OverviewProps.property.images">images</a></code> | <code><a href="#cdktg.Image">Image</a>[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.OverviewProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `images`<sup>Optional</sup> <a name="images" id="cdktg.OverviewProps.property.images"></a>
+
+```typescript
+public readonly images: Image[];
+```
+
+- *Type:* <a href="#cdktg.Image">Image</a>[]
 
 ---
 
@@ -4176,6 +4263,67 @@ public readonly vpn: boolean;
 ---
 
 
+### Image <a name="Image" id="cdktg.Image"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Image.Initializer"></a>
+
+```typescript
+import { Image } from 'cdktg'
+
+new Image(filePath: string, title: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Image.Initializer.parameter.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Image.Initializer.parameter.title">title</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.Image.Initializer.parameter.filePath"></a>
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Image.Initializer.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Image.property.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Image.property.title">title</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.Image.property.filePath"></a>
+
+```typescript
+public readonly filePath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Image.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### InScope <a name="InScope" id="cdktg.InScope"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.InScope.Initializer"></a>
@@ -4470,6 +4618,60 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+
+### Overview <a name="Overview" id="cdktg.Overview"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Overview.Initializer"></a>
+
+```typescript
+import { Overview } from 'cdktg'
+
+new Overview(props: OverviewProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Overview.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.OverviewProps">OverviewProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.Overview.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.OverviewProps">OverviewProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Overview.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Overview.property.images">images</a></code> | <code><a href="#cdktg.Image">Image</a>[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.Overview.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `images`<sup>Optional</sup> <a name="images" id="cdktg.Overview.property.images"></a>
+
+```typescript
+public readonly images: Image[];
+```
+
+- *Type:* <a href="#cdktg.Image">Image</a>[]
 
 ---
 

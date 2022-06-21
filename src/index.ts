@@ -10,6 +10,7 @@ export * from "./communication";
 export * from "./data-asset";
 export * from "./manifest";
 export * from "./model";
+export * from "./overview";
 export * from "./project";
 export * from "./scope";
 export * from "./security-requirement";

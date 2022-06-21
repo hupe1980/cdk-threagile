@@ -2,6 +2,7 @@ export interface AuthorProps {
   readonly name: string;
   readonly homepage?: string;
 }
+
 export class Author {
   public readonly name: string;
   public readonly homepage?: string;
