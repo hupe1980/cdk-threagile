@@ -33,19 +33,50 @@ export class SynthCommand<U extends SynthOptions>
       throw new Error(`File ${filename} not exist!`);
     }
 
-    const command = (() => {
-      switch (path.extname(filename)) {
-        case ".ts":
-          return require.resolve("ts-node/dist/bin");
-        case ".py":
-          return which.sync("python3", { all: false });
-        default:
-          throw new Error("Unknown file extension");
-      }
-    })();
+    const exitCode = await trySynth();
 
-    execa(command, [filename], {
-      stdio: ["ignore", "inherit", "inherit"],
-    });
+    if (args.watch) {
+      watchLoop();
+    } else {
+      process.exit(exitCode);
+    }
+
+    function watchLoop() {
+      console.log(`Watching for changes in ${filename}...`);
+
+      const watch = fs.watch(filename, { recursive: true });
+
+      watch.on("change", (event) => {
+        if (event !== "change") {
+          return;
+        }
+
+        process.stdout.write("\x1Bc"); // clear the screen
+        watch.close();
+
+        trySynth()
+          .then(() => watchLoop())
+          .catch(() => watchLoop());
+      });
+    }
+
+    async function trySynth(): Promise<number> {
+      const command = await (async () => {
+        switch (path.extname(filename)) {
+          case ".ts":
+            return require.resolve("ts-node/dist/bin");
+          case ".py":
+            return which("python3", { all: false });
+          default:
+            throw new Error("Unknown file extension");
+        }
+      })();
+
+      const result = await execa(command, [filename], {
+        stdio: ["ignore", "inherit", "inherit"],
+      });
+
+      return result.exitCode;
+    }
   };
 }
