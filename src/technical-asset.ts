@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 
-import { CIATriad } from "./cia-triade";
+import { CIATriad } from "./cia-triad";
 import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
 import { Model } from "./model";

@@ -4,7 +4,7 @@ export * from "./aspect";
 export * from "./resource";
 export * from "./risk-category";
 export * from "./author";
-export * from "./cia-triade";
+export * from "./cia-triad";
 export * from "./communication";
 export * from "./data-asset";
 export * from "./manifest";

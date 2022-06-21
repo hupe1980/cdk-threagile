@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 
-import { CIATriad } from "./cia-triade";
+import { CIATriad } from "./cia-triad";
 import { Model } from "./model";
 import { Resource, ResourceProps } from "./resource";
 import * as spec from "./spec/threatgile.generated";
