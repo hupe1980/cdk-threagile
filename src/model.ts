@@ -4,6 +4,7 @@ import { AbuseCase } from "./abuse-case";
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
 import { RiskCategory } from "./risk-category";
+import { RiskTracking, RiskTrackingProps } from "./rist-tracking";
 import { SecurityRequirement } from "./security-requirement";
 import { SharedRuntime } from "./shared-runtime";
 import { Threagile } from "./spec/threatgile.generated";
@@ -103,6 +104,7 @@ export class Model extends Construct {
   private readonly abuseCases: Map<string, string>;
   private readonly securityRequirements: Map<string, string>;
   private readonly tags: Set<string>;
+  private readonly riskTracking: Map<string, RiskTracking>;
   private readonly rawOverrides: Record<string, unknown>;
 
   constructor(project: Construct, id: string, props: ModelProps) {
@@ -133,6 +135,7 @@ export class Model extends Construct {
     }
 
     this.tags = new Set<string>();
+    this.riskTracking = new Map<string, RiskTracking>();
     this.rawOverrides = {};
 
     this.synthesizer = new ModelSynthesizer(this, false);
@@ -177,6 +180,14 @@ export class Model extends Construct {
 
       this.securityRequirements.set(r.name, r.description);
     });
+  }
+
+  public trackRisk(id: string, options: RiskTrackingProps = {}) {
+    if (this.riskTracking.has(id)) {
+      throw new Error(`Duplicated risk tracking "${id}"`);
+    }
+
+    this.riskTracking.set(id, new RiskTracking(id, options));
   }
 
   public addOverride(path: string, value: unknown) {
@@ -266,6 +277,13 @@ export class Model extends Construct {
       (prev, current) => Object.assign(prev, current._toThreagile()),
       {}
     );
+
+    if (this.riskTracking.size > 0) {
+      threagile.risk_tracking = Array.from(this.riskTracking.values()).reduce(
+        (prev, current) => Object.assign(prev, current._toThreagile()),
+        {}
+      );
+    }
 
     return {
       ...threagile,

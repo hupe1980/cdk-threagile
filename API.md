@@ -250,6 +250,7 @@ new Model(project: Construct, id: string, props: ModelProps)
 | <code><a href="#cdktg.Model.addSecurityRequirements">addSecurityRequirements</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addTag">addTag</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addTags">addTags</a></code> | *No description.* |
+| <code><a href="#cdktg.Model.trackRisk">trackRisk</a></code> | *No description.* |
 
 ---
 
@@ -342,6 +343,24 @@ public addTags(tags: string): void
 ###### `tags`<sup>Required</sup> <a name="tags" id="cdktg.Model.addTags.parameter.tags"></a>
 
 - *Type:* string
+
+---
+
+##### `trackRisk` <a name="trackRisk" id="cdktg.Model.trackRisk"></a>
+
+```typescript
+public trackRisk(id: string, options?: RiskTrackingProps): void
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.Model.trackRisk.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="cdktg.Model.trackRisk.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.RiskTrackingProps">RiskTrackingProps</a>
 
 ---
 
@@ -3130,6 +3149,78 @@ public readonly mostRelevantTrustBoundary: TrustBoundary;
 
 ---
 
+### RiskTrackingProps <a name="RiskTrackingProps" id="cdktg.RiskTrackingProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.RiskTrackingProps.Initializer"></a>
+
+```typescript
+import { RiskTrackingProps } from 'cdktg'
+
+const riskTrackingProps: RiskTrackingProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskTrackingProps.property.checkedBy">checkedBy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingProps.property.date">date</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingProps.property.justification">justification</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingProps.property.status">status</a></code> | <code><a href="#cdktg.RiskTrackingStatus">RiskTrackingStatus</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingProps.property.ticket">ticket</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `checkedBy`<sup>Optional</sup> <a name="checkedBy" id="cdktg.RiskTrackingProps.property.checkedBy"></a>
+
+```typescript
+public readonly checkedBy: string;
+```
+
+- *Type:* string
+
+---
+
+##### `date`<sup>Optional</sup> <a name="date" id="cdktg.RiskTrackingProps.property.date"></a>
+
+```typescript
+public readonly date: string;
+```
+
+- *Type:* string
+
+---
+
+##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.RiskTrackingProps.property.justification"></a>
+
+```typescript
+public readonly justification: string;
+```
+
+- *Type:* string
+
+---
+
+##### `status`<sup>Optional</sup> <a name="status" id="cdktg.RiskTrackingProps.property.status"></a>
+
+```typescript
+public readonly status: RiskTrackingStatus;
+```
+
+- *Type:* <a href="#cdktg.RiskTrackingStatus">RiskTrackingStatus</a>
+
+---
+
+##### `ticket`<sup>Optional</sup> <a name="ticket" id="cdktg.RiskTrackingProps.property.ticket"></a>
+
+```typescript
+public readonly ticket: string;
+```
+
+- *Type:* string
+
+---
+
 ### SecurityRequirementProps <a name="SecurityRequirementProps" id="cdktg.SecurityRequirementProps"></a>
 
 #### Initializer <a name="Initializer" id="cdktg.SecurityRequirementProps.Initializer"></a>
@@ -4543,6 +4634,111 @@ public readonly mostRelevantTrustBoundary: TrustBoundary;
 ---
 
 
+### RiskTracking <a name="RiskTracking" id="cdktg.RiskTracking"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.RiskTracking.Initializer"></a>
+
+```typescript
+import { RiskTracking } from 'cdktg'
+
+new RiskTracking(id: string, props: RiskTrackingProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskTracking.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.RiskTrackingProps">RiskTrackingProps</a></code> | *No description.* |
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.RiskTracking.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.RiskTracking.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.RiskTrackingProps">RiskTrackingProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.RiskTracking.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.property.status">status</a></code> | <code><a href="#cdktg.RiskTrackingStatus">RiskTrackingStatus</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.property.checkedBy">checkedBy</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.property.date">date</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.property.justification">justification</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskTracking.property.ticket">ticket</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.RiskTracking.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `status`<sup>Required</sup> <a name="status" id="cdktg.RiskTracking.property.status"></a>
+
+```typescript
+public readonly status: RiskTrackingStatus;
+```
+
+- *Type:* <a href="#cdktg.RiskTrackingStatus">RiskTrackingStatus</a>
+
+---
+
+##### `checkedBy`<sup>Optional</sup> <a name="checkedBy" id="cdktg.RiskTracking.property.checkedBy"></a>
+
+```typescript
+public readonly checkedBy: string;
+```
+
+- *Type:* string
+
+---
+
+##### `date`<sup>Optional</sup> <a name="date" id="cdktg.RiskTracking.property.date"></a>
+
+```typescript
+public readonly date: string;
+```
+
+- *Type:* string
+
+---
+
+##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.RiskTracking.property.justification"></a>
+
+```typescript
+public readonly justification: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ticket`<sup>Optional</sup> <a name="ticket" id="cdktg.RiskTracking.property.ticket"></a>
+
+```typescript
+public readonly ticket: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### Scope <a name="Scope" id="cdktg.Scope"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.Scope.Initializer"></a>
@@ -5627,6 +5823,51 @@ public readonly skipValidation: boolean;
 
 
 ##### `OPERATIONS` <a name="OPERATIONS" id="cdktg.RiskFunction.OPERATIONS"></a>
+
+---
+
+
+### RiskTrackingStatus <a name="RiskTrackingStatus" id="cdktg.RiskTrackingStatus"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.RiskTrackingStatus.UNCHECKED">UNCHECKED</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingStatus.IN_DISCUSSION">IN_DISCUSSION</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingStatus.ACCEPTED">ACCEPTED</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingStatus.IN_PROGRESS">IN_PROGRESS</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingStatus.MITIGATED">MITIGATED</a></code> | *No description.* |
+| <code><a href="#cdktg.RiskTrackingStatus.FALSE_POSITIVE">FALSE_POSITIVE</a></code> | *No description.* |
+
+---
+
+##### `UNCHECKED` <a name="UNCHECKED" id="cdktg.RiskTrackingStatus.UNCHECKED"></a>
+
+---
+
+
+##### `IN_DISCUSSION` <a name="IN_DISCUSSION" id="cdktg.RiskTrackingStatus.IN_DISCUSSION"></a>
+
+---
+
+
+##### `ACCEPTED` <a name="ACCEPTED" id="cdktg.RiskTrackingStatus.ACCEPTED"></a>
+
+---
+
+
+##### `IN_PROGRESS` <a name="IN_PROGRESS" id="cdktg.RiskTrackingStatus.IN_PROGRESS"></a>
+
+---
+
+
+##### `MITIGATED` <a name="MITIGATED" id="cdktg.RiskTrackingStatus.MITIGATED"></a>
+
+---
+
+
+##### `FALSE_POSITIVE` <a name="FALSE_POSITIVE" id="cdktg.RiskTrackingStatus.FALSE_POSITIVE"></a>
 
 ---
 
