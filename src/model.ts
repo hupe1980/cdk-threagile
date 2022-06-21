@@ -1,4 +1,5 @@
 import { Construct, IConstruct } from "constructs";
+import { AbuseCase } from "./abuse-case";
 
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
@@ -11,9 +12,9 @@ import { TrustBoundary } from "./trust-boundary";
 const MODEL_SYMBOL = Symbol.for("cdktg/Model");
 
 export interface Question {
-  readonly question: string;
+  readonly text: string;
 
-  readonly answer: string;
+  readonly answer?: string;
 }
 
 export interface ModelProps {
@@ -51,6 +52,11 @@ export interface ModelProps {
    * Custom questions for the report
    */
   readonly questions?: Question[];
+
+  /**
+   * Custom abuse cases for the report
+   */
+  readonly abuseCases?: AbuseCase[];
 }
 
 export class Model extends Construct {
@@ -88,6 +94,7 @@ export class Model extends Construct {
   public synthesizer: IModelSynthesizer;
 
   private readonly questions: Map<string, string>;
+  private readonly abuseCases: Map<string, string>;
   private readonly tags: Set<string>;
   private readonly rawOverrides: Record<string, unknown>;
 
@@ -104,6 +111,15 @@ export class Model extends Construct {
     this.businessCriticality = props.businessCriticality;
 
     this.questions = new Map<string, string>();
+    props.questions?.forEach((q) => {
+      this.addQuestion(q.text, q.answer);
+    });
+
+    this.abuseCases = new Map<string, string>();
+    if (props.abuseCases && props.abuseCases.length > 0) {
+      this.addAbuseCases(...props.abuseCases);
+    }
+
     this.tags = new Set<string>();
     this.rawOverrides = {};
 
@@ -122,13 +138,23 @@ export class Model extends Construct {
     });
   }
 
-  public addQuestion(question: string, answer = "") {
+  public addQuestion(text: string, answer = "") {
     // "" as answer signals "unanswered"
-    if (this.questions.has(question)) {
-      throw new Error(`Duplicated question "${question}"`);
+    if (this.questions.has(text)) {
+      throw new Error(`Duplicated question "${text}"`);
     }
 
-    this.questions.set(question, answer);
+    this.questions.set(text, answer);
+  }
+
+  public addAbuseCases(...cases: AbuseCase[]) {
+    cases.forEach((c) => {
+      if (this.abuseCases.has(c.name)) {
+        throw new Error(`Duplicated abuse case "${c.name}"`);
+      }
+
+      this.abuseCases.set(c.name, c.description);
+    });
   }
 
   public addOverride(path: string, value: unknown) {
@@ -186,6 +212,7 @@ export class Model extends Construct {
       management_summary_comment: this.managementSummary,
       business_criticality: this.businessCriticality,
       questions: Object.fromEntries(this.questions),
+      abuse_cases: Object.fromEntries(this.abuseCases),
       tags_available: Array.from(this.tags),
     };
 

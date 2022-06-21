@@ -1,5 +1,5 @@
 import { Construct } from "constructs";
-import { v4 as uuidv4 } from "uuid";
+import { kebabCase } from "./private/util";
 
 export interface ResourceProps {
   readonly description: string;
@@ -13,7 +13,7 @@ export abstract class Resource extends Construct {
   constructor(model: Construct, id: string, props: ResourceProps) {
     super(model, id);
 
-    this.uuid = uuidv4();
+    this.uuid = kebabCase(id);
 
     this.description = props.description;
   }

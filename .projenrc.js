@@ -17,7 +17,6 @@ const project = new cdk.JsiiProject({
   peerDeps: ["constructs"],
   bundledDeps: [
     "axios",
-    "uuid",
     "yaml",
     "yargs",
     "ts-node",
@@ -29,7 +28,6 @@ const project = new cdk.JsiiProject({
     "which",
   ],
   devDeps: [
-    "@types/uuid",
     "@types/fs-extra",
     "@types/adm-zip",
     "@types/which",

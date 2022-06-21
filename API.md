@@ -244,7 +244,10 @@ new Model(project: Construct, id: string, props: ModelProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.Model.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.Model.addAbuseCases">addAbuseCases</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addOverride">addOverride</a></code> | *No description.* |
+| <code><a href="#cdktg.Model.addQuestion">addQuestion</a></code> | *No description.* |
+| <code><a href="#cdktg.Model.addTag">addTag</a></code> | *No description.* |
 | <code><a href="#cdktg.Model.addTags">addTags</a></code> | *No description.* |
 
 ---
@@ -256,6 +259,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addAbuseCases` <a name="addAbuseCases" id="cdktg.Model.addAbuseCases"></a>
+
+```typescript
+public addAbuseCases(cases: AbuseCase): void
+```
+
+###### `cases`<sup>Required</sup> <a name="cases" id="cdktg.Model.addAbuseCases.parameter.cases"></a>
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
+
+---
 
 ##### `addOverride` <a name="addOverride" id="cdktg.Model.addOverride"></a>
 
@@ -272,6 +287,36 @@ public addOverride(path: string, value: any): void
 ###### `value`<sup>Required</sup> <a name="value" id="cdktg.Model.addOverride.parameter.value"></a>
 
 - *Type:* any
+
+---
+
+##### `addQuestion` <a name="addQuestion" id="cdktg.Model.addQuestion"></a>
+
+```typescript
+public addQuestion(text: string, answer?: string): void
+```
+
+###### `text`<sup>Required</sup> <a name="text" id="cdktg.Model.addQuestion.parameter.text"></a>
+
+- *Type:* string
+
+---
+
+###### `answer`<sup>Optional</sup> <a name="answer" id="cdktg.Model.addQuestion.parameter.answer"></a>
+
+- *Type:* string
+
+---
+
+##### `addTag` <a name="addTag" id="cdktg.Model.addTag"></a>
+
+```typescript
+public addTag(tag: string): void
+```
+
+###### `tag`<sup>Required</sup> <a name="tag" id="cdktg.Model.addTag.parameter.tag"></a>
+
+- *Type:* string
 
 ---
 
@@ -1419,6 +1464,45 @@ public readonly tags: string[];
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### AbuseCaseProps <a name="AbuseCaseProps" id="cdktg.AbuseCaseProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.AbuseCaseProps.Initializer"></a>
+
+```typescript
+import { AbuseCaseProps } from 'cdktg'
+
+const abuseCaseProps: AbuseCaseProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.AbuseCaseProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.AbuseCaseProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.AbuseCaseProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdktg.AbuseCaseProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
 ### AuthorProps <a name="AuthorProps" id="cdktg.AuthorProps"></a>
 
 #### Initializer <a name="Initializer" id="cdktg.AuthorProps.Initializer"></a>
@@ -1995,8 +2079,10 @@ const modelProps: ModelProps = { ... }
 | <code><a href="#cdktg.ModelProps.property.author">author</a></code> | <code><a href="#cdktg.Author">Author</a></code> | Author of the model. |
 | <code><a href="#cdktg.ModelProps.property.businessCriticality">businessCriticality</a></code> | <code><a href="#cdktg.BusinessCriticality">BusinessCriticality</a></code> | Business criticality of the target. |
 | <code><a href="#cdktg.ModelProps.property.version">version</a></code> | <code>string</code> | Version of the Threagile toolkit. |
+| <code><a href="#cdktg.ModelProps.property.abuseCases">abuseCases</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a>[]</code> | Custom abuse cases for the report. |
 | <code><a href="#cdktg.ModelProps.property.date">date</a></code> | <code>string</code> | Date of the model. |
 | <code><a href="#cdktg.ModelProps.property.managementSummary">managementSummary</a></code> | <code>string</code> | Individual management summary for the report. |
+| <code><a href="#cdktg.ModelProps.property.questions">questions</a></code> | <code><a href="#cdktg.Question">Question</a>[]</code> | Custom questions for the report. |
 | <code><a href="#cdktg.ModelProps.property.title">title</a></code> | <code>string</code> | Title of the model. |
 
 ---
@@ -2037,6 +2123,18 @@ Version of the Threagile toolkit.
 
 ---
 
+##### `abuseCases`<sup>Optional</sup> <a name="abuseCases" id="cdktg.ModelProps.property.abuseCases"></a>
+
+```typescript
+public readonly abuseCases: AbuseCase[];
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>[]
+
+Custom abuse cases for the report.
+
+---
+
 ##### `date`<sup>Optional</sup> <a name="date" id="cdktg.ModelProps.property.date"></a>
 
 ```typescript
@@ -2058,6 +2156,18 @@ public readonly managementSummary: string;
 - *Type:* string
 
 Individual management summary for the report.
+
+---
+
+##### `questions`<sup>Optional</sup> <a name="questions" id="cdktg.ModelProps.property.questions"></a>
+
+```typescript
+public readonly questions: Question[];
+```
+
+- *Type:* <a href="#cdktg.Question">Question</a>[]
+
+Custom questions for the report.
 
 ---
 
@@ -2154,6 +2264,45 @@ public readonly skipValidation: boolean;
 - *Default:* false
 
 Whether to skip the validation during synthesis of the project.
+
+---
+
+### Question <a name="Question" id="cdktg.Question"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.Question.Initializer"></a>
+
+```typescript
+import { Question } from 'cdktg'
+
+const question: Question = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Question.property.text">text</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Question.property.answer">answer</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `text`<sup>Required</sup> <a name="text" id="cdktg.Question.property.text"></a>
+
+```typescript
+public readonly text: string;
+```
+
+- *Type:* string
+
+---
+
+##### `answer`<sup>Optional</sup> <a name="answer" id="cdktg.Question.property.answer"></a>
+
+```typescript
+public readonly answer: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -2468,6 +2617,88 @@ public readonly tags: string[];
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
+
+### AbuseCase <a name="AbuseCase" id="cdktg.AbuseCase"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.AbuseCase.Initializer"></a>
+
+```typescript
+import { AbuseCase } from 'cdktg'
+
+new AbuseCase(props: AbuseCaseProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.AbuseCase.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.AbuseCaseProps">AbuseCaseProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.AbuseCase.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.AbuseCaseProps">AbuseCaseProps</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.AbuseCase.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.AbuseCase.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.AbuseCase.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdktg.AbuseCase.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.AbuseCase.property.DENIAL_OF_SERVICE">DENIAL_OF_SERVICE</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
+| <code><a href="#cdktg.AbuseCase.property.RANSOMWARE">RANSOMWARE</a></code> | <code><a href="#cdktg.AbuseCase">AbuseCase</a></code> | *No description.* |
+
+---
+
+##### `DENIAL_OF_SERVICE`<sup>Required</sup> <a name="DENIAL_OF_SERVICE" id="cdktg.AbuseCase.property.DENIAL_OF_SERVICE"></a>
+
+```typescript
+public readonly DENIAL_OF_SERVICE: AbuseCase;
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
+
+---
+
+##### `RANSOMWARE`<sup>Required</sup> <a name="RANSOMWARE" id="cdktg.AbuseCase.property.RANSOMWARE"></a>
+
+```typescript
+public readonly RANSOMWARE: AbuseCase;
+```
+
+- *Type:* <a href="#cdktg.AbuseCase">AbuseCase</a>
+
+---
 
 ### Annotations <a name="Annotations" id="cdktg.Annotations"></a>
 

@@ -19,7 +19,6 @@ class MyConstruct extends Construct {
 
 class VisitOnce implements IAspect {
   public visit(node: IConstruct): void {
-    console.log("AAAABBBCCC");
     if (MyConstruct.IsMyConstruct(node)) {
       node.visitCounter += 1;
     }

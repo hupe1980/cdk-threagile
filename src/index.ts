@@ -1,3 +1,4 @@
+export * from "./abuse-case";
 export * from "./annotations";
 export * from "./aspect";
 export * from "./resource";

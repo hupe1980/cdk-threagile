@@ -22,10 +22,6 @@
       "type": "build"
     },
     {
-      "name": "@types/uuid",
-      "type": "build"
-    },
-    {
       "name": "@types/which",
       "type": "build"
     },
@@ -151,10 +147,6 @@
     },
     {
       "name": "ts-node",
-      "type": "bundled"
-    },
-    {
-      "name": "uuid",
       "type": "bundled"
     },
     {
