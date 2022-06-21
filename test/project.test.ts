@@ -87,7 +87,7 @@ test("synth the model stub example", () => {
     redundant: true,
   });
 
-  someTechnicalAsset.process(someData);
+  someTechnicalAsset.processes(someData);
 
   const someOtherTechnicalAsset = new TechnicalAsset(
     model,
@@ -113,9 +113,9 @@ test("synth the model stub example", () => {
     }
   );
 
-  someOtherTechnicalAsset.process(someData);
+  someOtherTechnicalAsset.processes(someData);
 
-  const someTraffic = someTechnicalAsset.communicateWith(
+  const someTraffic = someTechnicalAsset.communicatesWith(
     "Some Traffic",
     someOtherTechnicalAsset,
     {
@@ -130,7 +130,7 @@ test("synth the model stub example", () => {
     }
   );
 
-  someTraffic.send(someData);
+  someTraffic.sends(someData);
 
   const someSharedRuntime = new SharedRuntime(model, "Some Shared Runtime", {
     description: "Some Description",

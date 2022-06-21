@@ -81,19 +81,19 @@ export class TechnicalAsset extends Resource {
     }
   }
 
-  public process(...assets: DataAsset[]) {
+  public processes(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsProcessed.add(a.uuid);
     });
   }
 
-  public store(...assets: DataAsset[]) {
+  public stores(...assets: DataAsset[]) {
     assets.forEach((a) => {
       this.dataAssetsStored.add(a.uuid);
     });
   }
 
-  public communicateWith(
+  public communicatesWith(
     id: string,
     target: TechnicalAsset,
     options: CommunicationOptions
@@ -136,7 +136,7 @@ export class TechnicalAsset extends Resource {
       },
     };
 
-    threagile.communication_links = this.communications.reduce(
+    threagile[this.node.id].communication_links = this.communications.reduce(
       (prev, current) => Object.assign(prev, current._toThreagile()),
       {}
     );

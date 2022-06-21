@@ -834,6 +834,7 @@ new RiskCategory(scope: Construct, id: string, props: RiskCategoryProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.RiskCategory.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.RiskCategory.addIdentifiedRisk">addIdentifiedRisk</a></code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.identifiedAtDataAsset">identifiedAtDataAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.identifiedAtSharedRuntime">identifiedAtSharedRuntime</a></code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.identifiedAtTechnicalAsset">identifiedAtTechnicalAsset</a></code> | *No description.* |
@@ -848,6 +849,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addIdentifiedRisk` <a name="addIdentifiedRisk" id="cdktg.RiskCategory.addIdentifiedRisk"></a>
+
+```typescript
+public addIdentifiedRisk(risk: Risk): void
+```
+
+###### `risk`<sup>Required</sup> <a name="risk" id="cdktg.RiskCategory.addIdentifiedRisk.parameter.risk"></a>
+
+- *Type:* <a href="#cdktg.Risk">Risk</a>
+
+---
 
 ##### `identifiedAtDataAsset` <a name="identifiedAtDataAsset" id="cdktg.RiskCategory.identifiedAtDataAsset"></a>
 
@@ -1347,9 +1360,9 @@ new TechnicalAsset(scope: Construct, id: string, props: TechnicalAssetProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdktg.TechnicalAsset.communicateWith">communicateWith</a></code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.process">process</a></code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.store">store</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.processes">processes</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.stores">stores</a></code> | *No description.* |
 
 ---
 
@@ -1361,49 +1374,49 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `communicateWith` <a name="communicateWith" id="cdktg.TechnicalAsset.communicateWith"></a>
+##### `communicatesWith` <a name="communicatesWith" id="cdktg.TechnicalAsset.communicatesWith"></a>
 
 ```typescript
-public communicateWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
+public communicatesWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
 ```
 
-###### `id`<sup>Required</sup> <a name="id" id="cdktg.TechnicalAsset.communicateWith.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.TechnicalAsset.communicatesWith.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `target`<sup>Required</sup> <a name="target" id="cdktg.TechnicalAsset.communicateWith.parameter.target"></a>
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.TechnicalAsset.communicatesWith.parameter.target"></a>
 
 - *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
-###### `options`<sup>Required</sup> <a name="options" id="cdktg.TechnicalAsset.communicateWith.parameter.options"></a>
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.TechnicalAsset.communicatesWith.parameter.options"></a>
 
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
 
-##### `process` <a name="process" id="cdktg.TechnicalAsset.process"></a>
+##### `processes` <a name="processes" id="cdktg.TechnicalAsset.processes"></a>
 
 ```typescript
-public process(assets: DataAsset): void
+public processes(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.process.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.processes.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
 ---
 
-##### `store` <a name="store" id="cdktg.TechnicalAsset.store"></a>
+##### `stores` <a name="stores" id="cdktg.TechnicalAsset.stores"></a>
 
 ```typescript
-public store(assets: DataAsset): void
+public stores(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.store.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.TechnicalAsset.stores.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
@@ -3869,30 +3882,30 @@ new Communication(id: string, props: CommunicationProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdktg.Communication.receive">receive</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.send">send</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.receives">receives</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.sends">sends</a></code> | *No description.* |
 
 ---
 
-##### `receive` <a name="receive" id="cdktg.Communication.receive"></a>
+##### `receives` <a name="receives" id="cdktg.Communication.receives"></a>
 
 ```typescript
-public receive(assets: DataAsset): void
+public receives(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.receive.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.receives.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 
 ---
 
-##### `send` <a name="send" id="cdktg.Communication.send"></a>
+##### `sends` <a name="sends" id="cdktg.Communication.sends"></a>
 
 ```typescript
-public send(assets: DataAsset): void
+public sends(assets: DataAsset): void
 ```
 
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.send.parameter.assets"></a>
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.sends.parameter.assets"></a>
 
 - *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
 

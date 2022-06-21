@@ -129,46 +129,45 @@ export class RiskCategory extends Resource {
   }
 
   public identifiedAtDataAsset(target: DataAsset, options: RiskOptions) {
-    this.risks.push(
-      new Risk(`<b>${this.node.id}</b> risk at <b>${target.node.id}</b>`, {
-        ...options,
-        mostRelevantDataAsset: target,
-      })
-    );
+    this.identifiedAtResource(target, options);
   }
 
   public identifiedAtTechnicalAsset(
     target: TechnicalAsset,
     options: RiskOptions
   ) {
-    this.risks.push(
-      new Risk(`<b>${this.node.id}</b> risk at <b>${target.node.id}</b>`, {
-        ...options,
-        mostRelevantTechnicalAsset: target,
-      })
-    );
+    this.identifiedAtResource(target, options);
   }
 
   public identifiedAtTrustBoundary(
     target: SharedRuntime,
     options: RiskOptions
   ) {
-    this.risks.push(
-      new Risk(`<b>${this.node.id}</b> risk at <b>${target.node.id}</b>`, {
-        ...options,
-        mostRelevantSharedRuntime: target,
-      })
-    );
+    this.identifiedAtResource(target, options);
   }
 
   public identifiedAtSharedRuntime(
     target: SharedRuntime,
     options: RiskOptions
   ) {
-    this.risks.push(
+    this.identifiedAtResource(target, options);
+  }
+
+  public addIdentifiedRisk(risk: Risk) {
+    this.risks.push(risk);
+  }
+
+  private identifiedAtResource(target: Resource, options: RiskOptions) {
+    this.addIdentifiedRisk(
       new Risk(`<b>${this.node.id}</b> risk at <b>${target.node.id}</b>`, {
         ...options,
-        mostRelevantSharedRuntime: target,
+        mostRelevantDataAsset: target instanceof DataAsset ? target : undefined,
+        mostRelevantTechnicalAsset:
+          target instanceof TechnicalAsset ? target : undefined,
+        mostRelevantTrustBoundary:
+          target instanceof TrustBoundary ? target : undefined,
+        mostRelevantSharedRuntime:
+          target instanceof SharedRuntime ? target : undefined,
       })
     );
   }
@@ -197,7 +196,7 @@ export class RiskCategory extends Resource {
       },
     };
 
-    threagile.risks_identified = this.risks.reduce(
+    threagile[this.node.id].risks_identified = this.risks.reduce(
       (prev, current) => Object.assign(prev, current._toThreagile()),
       {}
     );
