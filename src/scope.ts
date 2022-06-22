@@ -3,38 +3,24 @@ export interface OutOfScopeProps {
   readonly justification?: string;
 }
 
-export abstract class Scope {
-  constructor(public readonly justification?: string) {}
+export class Scope {
+  public static inScope(justification?: string) {
+    return new Scope(false, justification);
+  }
 
-  protected abstract get isInScope(): boolean;
+  public static outOfScope(justification?: string) {
+    return new Scope(true, justification);
+  }
+
+  constructor(public out: boolean, public readonly justification?: string) {}
 
   /**
    * @internal
    */
   public _toThreagile() {
     return {
-      out_of_scope: !this.isInScope,
+      out_of_scope: this.out,
       justification_out_of_scope: this.justification,
     };
-  }
-}
-
-export class OutOfScope extends Scope {
-  constructor(justification?: string) {
-    super(justification);
-  }
-
-  protected get isInScope(): boolean {
-    return false;
-  }
-}
-
-export class InScope extends Scope {
-  constructor(justification?: string) {
-    super(justification);
-  }
-
-  protected get isInScope(): boolean {
-    return true;
   }
 }

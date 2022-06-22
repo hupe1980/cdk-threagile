@@ -5,7 +5,7 @@ import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
 import { Model } from "./model";
 import { Resource, ResourceProps } from "./resource";
-import { InScope, Scope } from "./scope";
+import { Scope } from "./scope";
 import * as spec from "./spec/threatgile.generated";
 import { TrustBoundary } from "./trust-boundary";
 import { Usage } from "./usage";
@@ -59,7 +59,7 @@ export class TechnicalAsset extends Resource {
     this.usage = props.usage;
     this.humanUse = props.humanUse;
     this.internet = props.internet;
-    this.scope = props.scope ?? new InScope();
+    this.scope = props.scope ?? Scope.inScope();
     this.size = props.size;
     this.technology = props.technology;
     this.tags = props.tags;
