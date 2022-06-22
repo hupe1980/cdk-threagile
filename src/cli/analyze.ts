@@ -1,4 +1,5 @@
 import * as path from "path";
+//import { Readable } from "stream";
 import * as AdmZip from "adm-zip";
 import * as fs from "fs-extra";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
@@ -6,20 +7,24 @@ import { CommandModule, Arguments, Argv, Options } from "yargs";
 import { Threagile } from "../api/threagile";
 import { Manifest } from "../manifest";
 
-interface AnalyseOptions extends Options {
+interface AnalyzeOptions extends Options {
   url: string;
-  out: string;
+  output: string;
 }
 
-export class AnalyseCommand<U extends AnalyseOptions>
+export class AnalyzeCommand<U extends AnalyzeOptions>
   implements CommandModule<{}, U>
 {
-  public command = "analyse";
+  public command = "analyze";
   public describe = "analyze the models";
 
   builder = (args: Argv): Argv<U> => {
-    args.option("url", { type: "string", alias: "u", describe: "" });
-    args.option("out", {
+    args.option("url", {
+      type: "string",
+      alias: "u",
+      describe: "URL of the threagile rest api",
+    });
+    args.option("output", {
       type: "string",
       alias: "o",
       describe: "",
@@ -32,7 +37,7 @@ export class AnalyseCommand<U extends AnalyseOptions>
   public handler = async (args: Arguments<U>) => {
     const url = args.url ?? process.env.CDKTG_THREAGILE_BASE_URL;
 
-    fs.mkdirSync(args.out, { recursive: true });
+    fs.mkdirSync(args.output, { recursive: true });
 
     const api = new Threagile(url);
 
@@ -41,7 +46,7 @@ export class AnalyseCommand<U extends AnalyseOptions>
     Object.keys(manifest.models).forEach(async (k) => {
       const modelManifest = manifest.models[k];
 
-      const resp = await api.analyse(
+      const resp = await api.analyze(
         path.join(".cdktg.out", modelManifest.synthesizedModelPath)
       );
 
@@ -52,7 +57,7 @@ export class AnalyseCommand<U extends AnalyseOptions>
       }
 
       const zip = new AdmZip(resp.data);
-      zip.extractAllTo(path.join(args.out, modelManifest.sanitizedName));
+      zip.extractAllTo(path.join(args.output, modelManifest.sanitizedName));
     });
   };
 }

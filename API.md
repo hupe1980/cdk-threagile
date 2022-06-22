@@ -4558,7 +4558,20 @@ new ModelSynthesizer(model: Model, continueOnErrorAnnotations?: boolean)
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#cdktg.ModelSynthesizer.addFileAsset">addFileAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.ModelSynthesizer.synthesize">synthesize</a></code> | Synthesize the associated model to the session. |
+
+---
+
+##### `addFileAsset` <a name="addFileAsset" id="cdktg.ModelSynthesizer.addFileAsset"></a>
+
+```typescript
+public addFileAsset(filePath: string): void
+```
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.ModelSynthesizer.addFileAsset.parameter.filePath"></a>
+
+- *Type:* string
 
 ---
 
@@ -5097,6 +5110,38 @@ All aspects can visit an IConstruct.
 ---
 
 
+### ICustomSynthesis <a name="ICustomSynthesis" id="cdktg.ICustomSynthesis"></a>
+
+- *Implemented By:* <a href="#cdktg.ICustomSynthesis">ICustomSynthesis</a>
+
+Interface for constructs that want to do something custom during synthesis.
+
+This feature is intended for use by cdktg only; 3rd party
+library authors and CDK users should not use this function.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.ICustomSynthesis.onSynthesize">onSynthesize</a></code> | Called when the construct is synthesized. |
+
+---
+
+##### `onSynthesize` <a name="onSynthesize" id="cdktg.ICustomSynthesis.onSynthesize"></a>
+
+```typescript
+public onSynthesize(session: ISynthesisSession): void
+```
+
+Called when the construct is synthesized.
+
+###### `session`<sup>Required</sup> <a name="session" id="cdktg.ICustomSynthesis.onSynthesize.parameter.session"></a>
+
+- *Type:* <a href="#cdktg.ISynthesisSession">ISynthesisSession</a>
+
+---
+
+
 ### IManifest <a name="IManifest" id="cdktg.IManifest"></a>
 
 - *Implemented By:* <a href="#cdktg.Manifest">Manifest</a>, <a href="#cdktg.IManifest">IManifest</a>
@@ -5139,7 +5184,20 @@ public readonly version: string;
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#cdktg.IModelSynthesizer.addFileAsset">addFileAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.IModelSynthesizer.synthesize">synthesize</a></code> | Synthesize the associated model to the session. |
+
+---
+
+##### `addFileAsset` <a name="addFileAsset" id="cdktg.IModelSynthesizer.addFileAsset"></a>
+
+```typescript
+public addFileAsset(filePath: string): void
+```
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="cdktg.IModelSynthesizer.addFileAsset.parameter.filePath"></a>
+
+- *Type:* string
 
 ---
 

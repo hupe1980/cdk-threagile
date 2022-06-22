@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import * as yargs from "yargs";
 
-import { AnalyseCommand } from "./analyse";
+import { AnalyzeCommand } from "./analyze";
 import { CheckCommand } from "./check";
 import { PingCommand } from "./ping";
 import { SynthCommand } from "./synth";
@@ -14,7 +14,7 @@ async function main() {
   ya.command(new SynthCommand());
   ya.command(new PingCommand());
   ya.command(new CheckCommand());
-  ya.command(new AnalyseCommand());
+  ya.command(new AnalyzeCommand());
   ya.recommendCommands();
   ya.strictCommands();
   ya.showHelpOnFail(false);
@@ -37,7 +37,7 @@ async function main() {
   }
 }
 
-main().catch((e) => {
-  console.error(e.stack);
+main().catch((e: Error) => {
+  console.error(e.message);
   process.exit(1);
 });

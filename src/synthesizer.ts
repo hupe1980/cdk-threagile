@@ -1,5 +1,5 @@
 import * as path from "path";
-import { IConstruct, MetadataEntry } from "constructs";
+import { IConstruct, MetadataEntry, ConstructOrder } from "constructs";
 import * as fs from "fs-extra";
 
 import { Annotations, AnnotationMetadataEntryType } from "./annotations";
@@ -24,13 +24,23 @@ export interface IModelSynthesizer {
    * Synthesize the associated model to the session
    */
   synthesize(session: ISynthesisSession): void;
+
+  addFileAsset(filePath: string): void;
 }
 
 export class ModelSynthesizer implements IModelSynthesizer {
+  private fileAssets: string[];
+
   constructor(
     protected model: Model,
     private continueOnErrorAnnotations = false
-  ) {}
+  ) {
+    this.fileAssets = new Array<string>();
+  }
+
+  public addFileAsset(filePath: string) {
+    this.fileAssets.push(filePath);
+  }
 
   synthesize(session: ISynthesisSession) {
     invokeAspects(this.model);
@@ -55,6 +65,7 @@ export class ModelSynthesizer implements IModelSynthesizer {
       }
 
       const manifest = session.manifest;
+
       const modelManifest = manifest.forModel(this.model);
 
       const workingDirectory = path.join(
@@ -64,7 +75,18 @@ export class ModelSynthesizer implements IModelSynthesizer {
 
       if (!fs.existsSync(workingDirectory)) fs.mkdirSync(workingDirectory);
 
-      // collect Annotations into Manifest
+      // call custom synthesis on child nodes (leafs first)
+      this.model.node
+        .findAll(ConstructOrder.POSTORDER)
+        .forEach((node) => getCustomSynthesis(node)?.onSynthesize(session));
+
+      // copy file assets
+      this.fileAssets.forEach((asset) => {
+        const targetPath = path.join(workingDirectory, path.basename(asset));
+        fs.copyFileSync(asset, targetPath);
+      });
+
+      // collect annotations into manifest
       const annotations = this.model.node
         .findAll()
         .map((node) => ({
@@ -79,10 +101,9 @@ export class ModelSynthesizer implements IModelSynthesizer {
             stacktrace: metadata.trace,
           }))
         )
-        .reduce((list, metadatas) => [...list, ...metadatas], []); // Array.flat()
+        .reduce((list, metadatas) => [...list, ...metadatas], []);
 
-      // it is readonly but this is the place where we are allowed to write to it
-      (modelManifest.annotations as any) = annotations;
+      modelManifest.annotations.push(...annotations);
 
       // abort if one or more error annotations have been encountered
       if (
@@ -166,4 +187,36 @@ function isAnnotationMetadata(metadata: MetadataEntry): boolean {
 
 function isErrorAnnotation(annotation: ModelAnnotation): boolean {
   return annotation.level === AnnotationMetadataEntryType.ERROR;
+}
+
+//  originally from https://github.com/aws/aws-cdk/blob/9cee4d00539bed61872126a07bdc14aedba041d8/packages/%40aws-cdk/core/lib/private/synthesis.ts#L44
+const CUSTOM_SYNTHESIS_SYM = Symbol.for("cdktg/customSynthesis");
+
+/**
+ * Interface for constructs that want to do something custom during synthesis
+ *
+ * This feature is intended for use by cdktg only; 3rd party
+ * library authors and CDK users should not use this function.
+ */
+export interface ICustomSynthesis {
+  /**
+   * Called when the construct is synthesized
+   */
+  onSynthesize(session: ISynthesisSession): void;
+}
+
+export function addCustomSynthesis(
+  construct: IConstruct,
+  synthesis: ICustomSynthesis
+): void {
+  Object.defineProperty(construct, CUSTOM_SYNTHESIS_SYM, {
+    value: synthesis,
+    enumerable: false,
+  });
+}
+
+function getCustomSynthesis(
+  construct: IConstruct
+): ICustomSynthesis | undefined {
+  return (construct as any)[CUSTOM_SYNTHESIS_SYM];
 }

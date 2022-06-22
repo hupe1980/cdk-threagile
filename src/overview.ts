@@ -1,18 +1,29 @@
 import * as path from "path";
 import { Construct } from "constructs";
+import * as fs from "fs-extra";
 
 import { Annotations } from "./annotations";
+import { Model } from "./model";
 
 export class Image {
-  constructor(
-    public readonly filePath: string,
-    public readonly title: string
-  ) {}
+  private declare model: Model;
+
+  constructor(public readonly filePath: string, public readonly title: string) {
+    if (!fs.existsSync(this.filePath)) {
+      throw new Error(`Image file "${this.filePath}" does not exist.`);
+    }
+
+    if (!fs.lstatSync(this.filePath).isFile()) {
+      throw new Error(`File path "${this.filePath}" is not a file.`);
+    }
+  }
 
   /**
    * @internal
    */
   public _bind(scope: Construct) {
+    this.model = Model.of(scope);
+
     const extension = path.extname(this.filePath);
 
     if (![".jpeg", ".jpg", ".png", ".gif"].includes(extension)) {
@@ -20,6 +31,8 @@ export class Image {
         `Unsupported file extension. Image "${this.filePath}" may be ignored.`
       );
     }
+
+    this.model.synthesizer.addFileAsset(this.filePath);
   }
 
   /**

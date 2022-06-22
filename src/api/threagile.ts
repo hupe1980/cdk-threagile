@@ -32,7 +32,7 @@ export class Threagile {
     return this.directApi.directCheckPost(file);
   }
 
-  public async analyse(filename: string, dpi = 120) {
+  public async analyze(filename: string, dpi = 120) {
     if (!fs.existsSync(filename)) {
       throw new Error(`File ${filename} not exist!`);
     }

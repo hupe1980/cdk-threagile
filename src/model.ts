@@ -123,6 +123,10 @@ export class Model extends Construct {
   constructor(project: Construct, id: string, props: ModelProps) {
     super(project, id);
 
+    Object.defineProperty(this, MODEL_SYMBOL, { value: true });
+
+    this.synthesizer = new ModelSynthesizer(this, false);
+
     this.version = props.version;
     this.title = props.title ?? id;
     this.date = props.date
@@ -161,10 +165,6 @@ export class Model extends Construct {
     this.tags = new Set<string>();
     this.riskTracking = new Map<string, RiskTracking>();
     this.rawOverrides = {};
-
-    this.synthesizer = new ModelSynthesizer(this, false);
-
-    Object.defineProperty(this, MODEL_SYMBOL, { value: true });
   }
 
   public addTag(tag: string) {
