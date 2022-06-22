@@ -706,18 +706,18 @@ Whether to skip the validation during synthesis of the app.
 ```typescript
 import { Resource } from 'cdktg'
 
-new Resource(model: Construct, id: string, props: ResourceProps)
+new Resource(scope: Construct, id: string, props: ResourceProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdktg.Resource.Initializer.parameter.model">model</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.Resource.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#cdktg.Resource.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Resource.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.ResourceProps">ResourceProps</a></code> | *No description.* |
 
 ---
 
-##### `model`<sup>Required</sup> <a name="model" id="cdktg.Resource.Initializer.parameter.model"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.Resource.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 

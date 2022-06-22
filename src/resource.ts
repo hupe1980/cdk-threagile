@@ -10,8 +10,8 @@ export abstract class Resource extends Construct {
 
   public readonly description: string;
 
-  constructor(model: Construct, id: string, props: ResourceProps) {
-    super(model, id);
+  constructor(scope: Construct, id: string, props: ResourceProps) {
+    super(scope, id);
 
     this.uuid = kebabCase(id);
 

@@ -18,11 +18,9 @@ export class RiskTracking {
     this.status = props.status ?? RiskTrackingStatus.UNCHECKED;
     this.justification = props.justification;
     this.ticket = props.ticket;
-
-    if (props.date) {
-      this.date = new Date(props.date).toISOString().split("T")[0];
-    }
-
+    this.date = props.date
+      ? new Date(props.date).toISOString().split("T")[0]
+      : undefined;
     this.checkedBy = props.checkedBy;
   }
 

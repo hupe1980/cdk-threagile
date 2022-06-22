@@ -5,7 +5,7 @@ import { Author } from "./author";
 import { DataAsset } from "./data-asset";
 import { Overview } from "./overview";
 import { RiskCategory } from "./risk-category";
-import { RiskTracking, RiskTrackingProps } from "./rist-tracking";
+import { RiskTracking, RiskTrackingProps } from "./risk-tracking";
 import { SecurityRequirement } from "./security-requirement";
 import { SharedRuntime } from "./shared-runtime";
 import { Threagile } from "./spec/threatgile.generated";

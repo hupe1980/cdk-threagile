@@ -3,7 +3,7 @@ export * from "./annotations";
 export * from "./aspect";
 export * from "./resource";
 export * from "./risk-category";
-export * from "./rist-tracking";
+export * from "./risk-tracking";
 export * from "./author";
 export * from "./cia-triad";
 export * from "./communication";
