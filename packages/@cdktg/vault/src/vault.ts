@@ -14,6 +14,8 @@ import {
   TechnicalAsset,
   TechnicalAssetType,
   Technology,
+  TrustBoundary,
+  TrustBoundaryType,
   Usage,
 } from "cdktg";
 import { Construct } from "constructs";
@@ -23,6 +25,8 @@ export interface VaultProps {
   readonly storageType: StorageType;
   readonly authtenticationType: AuthenticationType;
   readonly multiTenant: boolean;
+  readonly tags?: string[];
+  readonly trustBoundary?: TrustBoundary;
 }
 
 export class Vault extends TechnicalAsset {
@@ -39,6 +43,7 @@ export class Vault extends TechnicalAsset {
       type: TechnicalAssetType.PROCESS,
       usage: Usage.DEVOPS,
       humanUse: false,
+      tags: props.tags,
       size: Size.SERVICE,
       technology: Technology.VAULT,
       internet: false,
@@ -145,6 +150,29 @@ export class Vault extends TechnicalAsset {
 
       vaultStorageAccess.sends(this.configurationSecrets);
       vaultStorageAccess.receives(this.configurationSecrets);
+    }
+
+    if (props.storageType === StorageType.FILESYSTEM) {
+      const vaultEnvironment = new TrustBoundary(this, "Vault Environment", {
+        description: "Vault Environment",
+        type: TrustBoundaryType.EXECUTION_ENVIRONMENT,
+      });
+
+      vaultEnvironment.addTechnicalAssets(this, this.vaultStorage!);
+
+      if (props.trustBoundary) {
+        // nest as execution-environment trust boundary
+        props.trustBoundary.addTrustBoundary(vaultEnvironment);
+      }
+    } else {
+      if (props.trustBoundary) {
+        // place assets inside directly
+        props.trustBoundary.addTechnicalAssets(this);
+
+        if (this.vaultStorage) {
+          props.trustBoundary.addTechnicalAssets(this.vaultStorage);
+        }
+      }
     }
   }
 
