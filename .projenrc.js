@@ -56,3 +56,30 @@ project.setScript(
 );
 
 project.synth();
+
+const buildPipelineProject = new cdk.JsiiProject({
+  author: "hupe1980",
+  defaultReleaseBranch: "main",
+  name: "@cdktg/vault",
+  parent: project,
+  outdir: "packages/@cdktg/vault",
+  license: "MIT",
+  copyrightOwner: "Frank Hübner",
+
+  prettier: true,
+
+  peerDeps: ["constructs", "cdktg"],
+
+  devDeps: ["constructs", "cdktg"],
+
+  publishToPypi: {
+    distName: "cdktg_vault",
+    module: "cdktg_vault",
+  },
+
+  publishToGo: {
+    moduleName: "github.com/hupe1980/cdk-threagile-go",
+  },
+});
+
+buildPipelineProject.synth();
