@@ -56,3 +56,30 @@ project.setScript(
 );
 
 project.synth();
+
+const awsProject = new cdk.JsiiProject({
+  author: "hupe1980",
+  defaultReleaseBranch: "main",
+  name: "@cdktg/aws",
+  parent: project,
+  outdir: "packages/@cdktg/aws",
+  license: "MIT",
+  copyrightOwner: "Frank Hübner",
+
+  prettier: true,
+
+  peerDeps: ["constructs", "cdktg"],
+
+  devDeps: ["constructs", "cdktg"],
+
+  publishToPypi: {
+    distName: "cdktg_aws",
+    module: "cdktg_aws",
+  },
+
+  publishToGo: {
+    moduleName: "github.com/hupe1980/cdk-threagile-go",
+  },
+});
+
+awsProject.synth();
