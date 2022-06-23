@@ -3,6 +3,7 @@ import * as yargs from "yargs";
 
 import { AnalyzeCommand } from "./analyze";
 import { CheckCommand } from "./check";
+import { InitCommand } from "./init";
 import { PingCommand } from "./ping";
 import { SynthCommand } from "./synth";
 
@@ -11,6 +12,7 @@ async function main() {
 
   const ya = yargs;
 
+  ya.command(new InitCommand());
   ya.command(new SynthCommand());
   ya.command(new PingCommand());
   ya.command(new CheckCommand());

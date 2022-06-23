@@ -18,6 +18,13 @@ pip install cdktg
 ```
 
 ## How to use
+Initialize a project:
+
+```bash
+mkdir threagile
+cd threagile
+cdktg init
+```
 
 ### Threat Model written in typescript:
 ```typescript
@@ -127,6 +134,7 @@ The examples can be used with the [threagile playground](https://run.threagile.i
 cdktg [command]
 
 Commands:
+  cdktg init              create a new cdk-threagile project
   cdktg synth <filename>  synthesize the models
   cdktg ping              ping the api
   cdktg check             check the models
@@ -134,8 +142,8 @@ Commands:
   cdktg completion        generate completion script
 
 Options:
-  --help     Show help                                                 [boolean]
-  --version  Show version number                                       [boolean]
+  --help     Show help                               [boolean]
+  --version  Show version number                     [boolean]
 ```
 ### Analyze outputs:
 ```sh
