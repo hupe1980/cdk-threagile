@@ -1402,6 +1402,8 @@ new TechnicalAsset(scope: Construct, id: string, props: TechnicalAssetProps)
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TechnicalAsset.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isWebApplication">isWebApplication</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.processes">processes</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.stores">stores</a></code> | *No description.* |
 
@@ -1438,6 +1440,18 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isWebApplication` <a name="isWebApplication" id="cdktg.TechnicalAsset.isWebApplication"></a>
+
+```typescript
+public isWebApplication(): boolean
+```
+
+##### `isWebService` <a name="isWebService" id="cdktg.TechnicalAsset.isWebService"></a>
+
+```typescript
+public isWebService(): boolean
+```
 
 ##### `processes` <a name="processes" id="cdktg.TechnicalAsset.processes"></a>
 
@@ -1765,6 +1779,8 @@ new TrustBoundary(scope: Construct, id: string, props: TrustBoundaryProps)
 | <code><a href="#cdktg.TrustBoundary.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TrustBoundary.addTechnicalAssets">addTechnicalAssets</a></code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.addTrustBoundary">addTrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.isNetworkBoundary">isNetworkBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.isWithinCloud">isWithinCloud</a></code> | *No description.* |
 
 ---
 
@@ -1799,6 +1815,18 @@ public addTrustBoundary(boundary: TrustBoundary): void
 - *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
+
+##### `isNetworkBoundary` <a name="isNetworkBoundary" id="cdktg.TrustBoundary.isNetworkBoundary"></a>
+
+```typescript
+public isNetworkBoundary(): boolean
+```
+
+##### `isWithinCloud` <a name="isWithinCloud" id="cdktg.TrustBoundary.isWithinCloud"></a>
+
+```typescript
+public isWithinCloud(): boolean
+```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -4104,10 +4132,24 @@ new Communication(id: string, props: CommunicationProps)
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#cdktg.Communication.isEncrypted">isEncrypted</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.isProcessLocal">isProcessLocal</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.receives">receives</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.sends">sends</a></code> | *No description.* |
 
 ---
+
+##### `isEncrypted` <a name="isEncrypted" id="cdktg.Communication.isEncrypted"></a>
+
+```typescript
+public isEncrypted(): boolean
+```
+
+##### `isProcessLocal` <a name="isProcessLocal" id="cdktg.Communication.isProcessLocal"></a>
+
+```typescript
+public isProcessLocal(): boolean
+```
 
 ##### `receives` <a name="receives" id="cdktg.Communication.receives"></a>
 

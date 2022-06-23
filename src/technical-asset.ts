@@ -99,6 +99,24 @@ export class TechnicalAsset extends Resource {
     });
   }
 
+  public isWebApplication(): boolean {
+    return [
+      Technology.WEB_SERVER,
+      Technology.WEB_APPLICATION,
+      Technology.APPLICATION_SERVER,
+      Technology.ERP,
+      Technology.CMS,
+      Technology.IDENTITIY_PROVIDER,
+      Technology.REPORT_ENGINE,
+    ].includes(this.technology);
+  }
+
+  public isWebService(): boolean {
+    return [Technology.WEB_SERVICE_REST, Technology.WEB_SERVICE_SOAP].includes(
+      this.technology
+    );
+  }
+
   public communicatesWith(
     id: string,
     target: TechnicalAsset,
