@@ -57,7 +57,7 @@ project.setScript(
 
 project.synth();
 
-const buildPipelineProject = new cdk.JsiiProject({
+const vaultProject = new cdk.JsiiProject({
   author: "hupe1980",
   defaultReleaseBranch: "main",
   name: "@cdktg/vault",
@@ -82,4 +82,4 @@ const buildPipelineProject = new cdk.JsiiProject({
   },
 });
 
-buildPipelineProject.synth();
+vaultProject.synth();
