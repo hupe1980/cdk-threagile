@@ -44,7 +44,7 @@ export class SynthCommand<U extends SynthOptions>
     function watchLoop() {
       console.log(`Watching for changes in ${filename}...`);
 
-      const watch = fs.watch(filename, { recursive: true });
+      const watch = fs.watch(filename);
 
       watch.on("change", (event) => {
         if (event !== "change") {
@@ -52,6 +52,7 @@ export class SynthCommand<U extends SynthOptions>
         }
 
         process.stdout.write("\x1Bc"); // clear the screen
+
         watch.close();
 
         trySynth()
