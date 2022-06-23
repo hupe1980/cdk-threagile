@@ -16,6 +16,7 @@ test("synth the model stub example", () => {
   });
 
   new Vault(model, "Vault", {
+    vendor: "HashiCorp",
     storageType: StorageType.FILESYSTEM,
     authtenticationType: AuthenticationType.CREDENTIALS,
     multiTenant: false,

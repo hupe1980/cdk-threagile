@@ -21,7 +21,7 @@ import {
 import { Construct } from "constructs";
 
 export interface VaultProps {
-  readonly vaultName?: string;
+  readonly vendor?: string;
   readonly storageType: StorageType;
   readonly authtenticationType: AuthenticationType;
   readonly multiTenant: boolean;
@@ -37,9 +37,7 @@ export class Vault extends TechnicalAsset {
 
   constructor(scope: Construct, id: string, props: VaultProps) {
     super(scope, id, {
-      description: props.vaultName
-        ? `${props.vaultName} Vault`
-        : "No Name Vault",
+      description: props.vendor ? `${props.vendor} Vault` : "No Name Vault",
       type: TechnicalAssetType.PROCESS,
       usage: Usage.DEVOPS,
       humanUse: false,
