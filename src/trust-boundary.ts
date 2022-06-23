@@ -41,6 +41,24 @@ export class TrustBoundary extends Resource {
     this.trustBoundariesNested.add(boundary.uuid);
   }
 
+  public isWithinCloud(): boolean {
+    return [
+      TrustBoundaryType.NETWORK_CLOUD_PROVIDER,
+      TrustBoundaryType.NETWORK_CLOUD_SECURITY_GROUP,
+    ].includes(this.type);
+  }
+
+  public isNetworkBoundary(): boolean {
+    return [
+      TrustBoundaryType.NETWORK_ON_PREM,
+      TrustBoundaryType.NETWORK_DEDICATED_HOSTER,
+      TrustBoundaryType.NETWORK_VIRTUAL_LAN,
+      TrustBoundaryType.NETWORK_CLOUD_PROVIDER,
+      TrustBoundaryType.NETWORK_CLOUD_SECURITY_GROUP,
+      TrustBoundaryType.NETWORK_POLICY_NAMESPACE_ISOLATION,
+    ].includes(this.type);
+  }
+
   /**
    * @internal
    */

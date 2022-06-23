@@ -1,5 +1,4 @@
 import * as path from "path";
-//import { Readable } from "stream";
 import * as AdmZip from "adm-zip";
 import * as fs from "fs-extra";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
@@ -43,21 +42,25 @@ export class AnalyzeCommand<U extends AnalyzeOptions>
 
     const manifest = Manifest.fromPath(".cdktg.out");
 
-    Object.keys(manifest.models).forEach(async (k) => {
-      const modelManifest = manifest.models[k];
+    for (const k in manifest.models) {
+      try {
+        const modelManifest = manifest.models[k];
 
-      const resp = await api.analyze(
-        path.join(".cdktg.out", modelManifest.synthesizedModelPath)
-      );
+        const resp = await api.analyze(
+          path.join(".cdktg.out", modelManifest.synthesizedModelPath)
+        );
 
-      if (resp.status === 400) {
-        console.log(`Errors for model "${k}":`);
-        console.log(resp.data.error);
-        return;
+        if (resp.status === 400) {
+          console.log(`❌  Errors for model "${k}":`);
+          console.log(resp.data.error);
+          continue;
+        }
+
+        const zip = new AdmZip(resp.data);
+        zip.extractAllTo(path.join(args.output, modelManifest.sanitizedName));
+      } catch (e) {
+        console.log(`❌  ${(e as Error).message}`);
       }
-
-      const zip = new AdmZip(resp.data);
-      zip.extractAllTo(path.join(args.output, modelManifest.sanitizedName));
-    });
+    }
   };
 }

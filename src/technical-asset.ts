@@ -5,7 +5,7 @@ import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
 import { Model } from "./model";
 import { Resource, ResourceProps } from "./resource";
-import { InScope, Scope } from "./scope";
+import { Scope } from "./scope";
 import * as spec from "./spec/threatgile.generated";
 import { TrustBoundary } from "./trust-boundary";
 import { Usage } from "./usage";
@@ -59,7 +59,7 @@ export class TechnicalAsset extends Resource {
     this.usage = props.usage;
     this.humanUse = props.humanUse;
     this.internet = props.internet;
-    this.scope = props.scope ?? new InScope();
+    this.scope = props.scope ?? Scope.inScope();
     this.size = props.size;
     this.technology = props.technology;
     this.tags = props.tags;
@@ -97,6 +97,24 @@ export class TechnicalAsset extends Resource {
     assets.forEach((a) => {
       this.dataAssetsStored.add(a.uuid);
     });
+  }
+
+  public isWebApplication(): boolean {
+    return [
+      Technology.WEB_SERVER,
+      Technology.WEB_APPLICATION,
+      Technology.APPLICATION_SERVER,
+      Technology.ERP,
+      Technology.CMS,
+      Technology.IDENTITIY_PROVIDER,
+      Technology.REPORT_ENGINE,
+    ].includes(this.technology);
+  }
+
+  public isWebService(): boolean {
+    return [Technology.WEB_SERVICE_REST, Technology.WEB_SERVICE_SOAP].includes(
+      this.technology
+    );
   }
 
   public communicatesWith(

@@ -27,20 +27,24 @@ export class CheckCommand<U extends CheckOptions>
 
     const manifest = Manifest.fromPath(".cdktg.out");
 
-    Object.keys(manifest.models).forEach(async (k) => {
-      const modelManifest = manifest.models[k];
+    for (const k in manifest.models) {
+      try {
+        const modelManifest = manifest.models[k];
 
-      const resp = await api.check(
-        path.join(".cdktg.out", modelManifest.synthesizedModelPath)
-      );
+        const resp = await api.check(
+          path.join(".cdktg.out", modelManifest.synthesizedModelPath)
+        );
 
-      console.log(`Results for model "${modelManifest.name}":`);
+        console.log(`Results for model "${modelManifest.name}":`);
 
-      if (resp.status === 200) {
-        console.log(`✅  ${resp.data.message}\n`);
-      } else {
-        console.log(`❌  ${resp.data.message}\n`);
+        if (resp.status === 200) {
+          console.log(`✅  ${resp.data.message}\n`);
+        } else {
+          console.log(`❌  ${resp.data.message}\n`);
+        }
+      } catch (e) {
+        console.log(`❌  ${(e as Error).message}`);
       }
-    });
+    }
   };
 }

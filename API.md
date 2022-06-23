@@ -1402,6 +1402,8 @@ new TechnicalAsset(scope: Construct, id: string, props: TechnicalAssetProps)
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TechnicalAsset.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isWebApplication">isWebApplication</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.processes">processes</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.stores">stores</a></code> | *No description.* |
 
@@ -1438,6 +1440,18 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isWebApplication` <a name="isWebApplication" id="cdktg.TechnicalAsset.isWebApplication"></a>
+
+```typescript
+public isWebApplication(): boolean
+```
+
+##### `isWebService` <a name="isWebService" id="cdktg.TechnicalAsset.isWebService"></a>
+
+```typescript
+public isWebService(): boolean
+```
 
 ##### `processes` <a name="processes" id="cdktg.TechnicalAsset.processes"></a>
 
@@ -1765,6 +1779,8 @@ new TrustBoundary(scope: Construct, id: string, props: TrustBoundaryProps)
 | <code><a href="#cdktg.TrustBoundary.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TrustBoundary.addTechnicalAssets">addTechnicalAssets</a></code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.addTrustBoundary">addTrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.isNetworkBoundary">isNetworkBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.isWithinCloud">isWithinCloud</a></code> | *No description.* |
 
 ---
 
@@ -1799,6 +1815,18 @@ public addTrustBoundary(boundary: TrustBoundary): void
 - *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
+
+##### `isNetworkBoundary` <a name="isNetworkBoundary" id="cdktg.TrustBoundary.isNetworkBoundary"></a>
+
+```typescript
+public isNetworkBoundary(): boolean
+```
+
+##### `isWithinCloud` <a name="isWithinCloud" id="cdktg.TrustBoundary.isWithinCloud"></a>
+
+```typescript
+public isWithinCloud(): boolean
+```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -4104,10 +4132,24 @@ new Communication(id: string, props: CommunicationProps)
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#cdktg.Communication.isEncrypted">isEncrypted</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.isProcessLocal">isProcessLocal</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.receives">receives</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.sends">sends</a></code> | *No description.* |
 
 ---
+
+##### `isEncrypted` <a name="isEncrypted" id="cdktg.Communication.isEncrypted"></a>
+
+```typescript
+public isEncrypted(): boolean
+```
+
+##### `isProcessLocal` <a name="isProcessLocal" id="cdktg.Communication.isProcessLocal"></a>
+
+```typescript
+public isProcessLocal(): boolean
+```
 
 ##### `receives` <a name="receives" id="cdktg.Communication.receives"></a>
 
@@ -4317,49 +4359,6 @@ public readonly filePath: string;
 
 ```typescript
 public readonly title: string;
-```
-
-- *Type:* string
-
----
-
-
-### InScope <a name="InScope" id="cdktg.InScope"></a>
-
-#### Initializers <a name="Initializers" id="cdktg.InScope.Initializer"></a>
-
-```typescript
-import { InScope } from 'cdktg'
-
-new InScope(justification?: string)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.InScope.Initializer.parameter.justification">justification</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.InScope.Initializer.parameter.justification"></a>
-
-- *Type:* string
-
----
-
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.InScope.property.justification">justification</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.InScope.property.justification"></a>
-
-```typescript
-public readonly justification: string;
 ```
 
 - *Type:* string
@@ -4590,49 +4589,6 @@ Synthesize the associated model to the session.
 ---
 
 
-
-
-### OutOfScope <a name="OutOfScope" id="cdktg.OutOfScope"></a>
-
-#### Initializers <a name="Initializers" id="cdktg.OutOfScope.Initializer"></a>
-
-```typescript
-import { OutOfScope } from 'cdktg'
-
-new OutOfScope(justification?: string)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.OutOfScope.Initializer.parameter.justification">justification</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.OutOfScope.Initializer.parameter.justification"></a>
-
-- *Type:* string
-
----
-
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.OutOfScope.property.justification">justification</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.OutOfScope.property.justification"></a>
-
-```typescript
-public readonly justification: string;
-```
-
-- *Type:* string
-
----
 
 
 ### Overview <a name="Overview" id="cdktg.Overview"></a>
@@ -4961,12 +4917,19 @@ public readonly ticket: string;
 ```typescript
 import { Scope } from 'cdktg'
 
-new Scope(justification?: string)
+new Scope(out: boolean, justification?: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdktg.Scope.Initializer.parameter.out">out</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.Scope.Initializer.parameter.justification">justification</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `out`<sup>Required</sup> <a name="out" id="cdktg.Scope.Initializer.parameter.out"></a>
+
+- *Type:* boolean
 
 ---
 
@@ -4977,12 +4940,49 @@ new Scope(justification?: string)
 ---
 
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Scope.inScope">inScope</a></code> | *No description.* |
+| <code><a href="#cdktg.Scope.outOfScope">outOfScope</a></code> | *No description.* |
+
+---
+
+##### `inScope` <a name="inScope" id="cdktg.Scope.inScope"></a>
+
+```typescript
+import { Scope } from 'cdktg'
+
+Scope.inScope(justification?: string)
+```
+
+###### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.Scope.inScope.parameter.justification"></a>
+
+- *Type:* string
+
+---
+
+##### `outOfScope` <a name="outOfScope" id="cdktg.Scope.outOfScope"></a>
+
+```typescript
+import { Scope } from 'cdktg'
+
+Scope.outOfScope(justification?: string)
+```
+
+###### `justification`<sup>Optional</sup> <a name="justification" id="cdktg.Scope.outOfScope.parameter.justification"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.Scope.property.justification">justification</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Scope.property.out">out</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
@@ -4993,6 +4993,16 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `out`<sup>Required</sup> <a name="out" id="cdktg.Scope.property.out"></a>
+
+```typescript
+public readonly out: boolean;
+```
+
+- *Type:* boolean
 
 ---
 

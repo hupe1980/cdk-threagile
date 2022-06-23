@@ -63,6 +63,39 @@ export class Communication {
     });
   }
 
+  public isEncrypted(): boolean {
+    return [
+      Protocol.HTTPS,
+      Protocol.WSS,
+      Protocol.JDBC_ENCRYPTED,
+      Protocol.ODBC_ENCRYPTED,
+      Protocol.NOSQL_ACCESS_PROTOCOL_ENCRYPTED,
+      Protocol.SQL_ACCESS_PROTOCOL_ENCRYPTED,
+      Protocol.BINARY_ENCRYPTED,
+      Protocol.TEXT_ENCRYPTED,
+      Protocol.SSH,
+      Protocol.SSH_TUNNEL,
+      Protocol.FTPS,
+      Protocol.SCP,
+      Protocol.LDAPS,
+      Protocol.REVERSE_PROXY_WEB_PROTOCOL_ENCRYPTED,
+      Protocol.IIOP_ENCRYPTED,
+      Protocol.JRMP_ENCRYPTED,
+      Protocol.SMB_ENCRYPTED,
+      Protocol.SMTP_ENCRYPTED,
+      Protocol.POP3_ENCRYPTED,
+      Protocol.IMAP_ENCRYPTED,
+    ].includes(this.protocol);
+  }
+
+  public isProcessLocal(): boolean {
+    return [
+      Protocol.IN_PROCESS_LIBRARY_CALL,
+      Protocol.LOCAL_FILE_ACCESS,
+      Protocol.CONTAINER_SPAWNING,
+    ].includes(this.protocol);
+  }
+
   /**
    * @internal
    */
