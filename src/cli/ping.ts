@@ -23,12 +23,16 @@ export class PingCommand<U extends PingOptions>
 
     const api = new Threagile(url);
 
-    const resp = await api.ping();
+    try {
+      const resp = await api.ping();
 
-    if (resp.status === 200) {
-      console.log(`✅  ${resp.data.message}\n`);
-    } else {
-      console.log("❌  Error\n");
+      if (resp.status === 200) {
+        console.log(`✅  ${resp.data.message}\n`);
+      } else {
+        console.log("❌  Error\n");
+      }
+    } catch (e) {
+      console.log(`❌  ${(e as Error).message}`);
     }
   };
 }
