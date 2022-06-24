@@ -97,7 +97,10 @@
     "yargs"
   ],
   "keywords": [
+    "appsec",
     "cdk",
+    "constructs",
+    "devsecops",
     "stride",
     "threagile",
     "threat modeling"

@@ -46,7 +46,7 @@ export class DataAsset extends Resource {
     return {
       [this.node.id]: {
         id: this.uuid,
-        description: this.description,
+        description: this.description ?? null,
         usage: this.usage,
         tags: Array.from(new Set(this.tags)),
         origin: this.origin,

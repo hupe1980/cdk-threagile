@@ -19,3 +19,7 @@ export * from "./synthesizer";
 export * from "./technical-asset";
 export * from "./trust-boundary";
 export * from "./usage";
+
+// export submobules
+export * as plus_aws from "./plus-aws";
+export * as plus from "./plus";

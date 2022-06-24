@@ -21,7 +21,7 @@ export interface TechnicalAssetProps extends ResourceProps {
   readonly internet: boolean;
   readonly machine: Machine;
   readonly encryption: Encryption;
-  readonly owner: string;
+  readonly owner?: string;
   readonly ciaTriad: CIATriad;
   readonly multiTenant: boolean;
   readonly redundant: boolean;
@@ -41,10 +41,11 @@ export class TechnicalAsset extends Resource {
   public readonly tags?: string[];
   public readonly machine: Machine;
   public readonly encryption: Encryption;
-  public readonly owner: string;
+  public readonly owner?: string;
   public readonly ciaTriad: CIATriad;
   public readonly multiTenant: boolean;
   public readonly redundant: boolean;
+  public readonly trustBoundary?: TrustBoundary;
   public readonly customDevelopedParts: boolean;
   public readonly dataFormatsAccepted?: DataFormat[];
 
@@ -83,7 +84,8 @@ export class TechnicalAsset extends Resource {
     }
 
     if (props.trustBoundary) {
-      props.trustBoundary.addTechnicalAssets(this);
+      this.trustBoundary = props.trustBoundary;
+      this.trustBoundary.addTechnicalAssets(this);
     }
   }
 
@@ -140,7 +142,7 @@ export class TechnicalAsset extends Resource {
     const threagile: any = {
       [this.node.id]: {
         id: this.uuid,
-        description: this.description,
+        description: this.description ?? null,
         type: this.type,
         usage: this.usage,
         used_as_client_by_human: this.humanUse,

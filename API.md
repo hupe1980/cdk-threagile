@@ -2,6 +2,988 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### ApplicationLoadBalancer <a name="ApplicationLoadBalancer" id="cdktg.plus_aws.ApplicationLoadBalancer"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.plus_aws.ApplicationLoadBalancer.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+new plus_aws.ApplicationLoadBalancer(scope: Construct, id: string, props: ApplicationLoadBalancerProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.props">props</a></code> | <code>cdktg.plus_aws.ApplicationLoadBalancerProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.plus_aws.ApplicationLoadBalancer.Initializer.parameter.props"></a>
+
+- *Type:* cdktg.plus_aws.ApplicationLoadBalancerProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebApplication">isWebApplication</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebService">isWebService</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.processes">processes</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.stores">stores</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.plus_aws.ApplicationLoadBalancer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `communicatesWith` <a name="communicatesWith" id="cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith"></a>
+
+```typescript
+public communicatesWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
+
+---
+
+##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus_aws.ApplicationLoadBalancer.isWebApplication"></a>
+
+```typescript
+public isWebApplication(): boolean
+```
+
+##### `isWebService` <a name="isWebService" id="cdktg.plus_aws.ApplicationLoadBalancer.isWebService"></a>
+
+```typescript
+public isWebService(): boolean
+```
+
+##### `processes` <a name="processes" id="cdktg.plus_aws.ApplicationLoadBalancer.processes"></a>
+
+```typescript
+public processes(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus_aws.ApplicationLoadBalancer.processes.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `stores` <a name="stores" id="cdktg.plus_aws.ApplicationLoadBalancer.stores"></a>
+
+```typescript
+public stores(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus_aws.ApplicationLoadBalancer.stores.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.plus_aws.ApplicationLoadBalancer.isConstruct"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+plus_aws.ApplicationLoadBalancer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.plus_aws.ApplicationLoadBalancer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.redundant">redundant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.size">size</a></code> | <code><a href="#cdktg.Size">Size</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.owner">owner</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.securityGroup">securityGroup</a></code> | <code>cdktg.plus_aws.SecurityGroup</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.plus_aws.ApplicationLoadBalancer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.ApplicationLoadBalancer.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.ApplicationLoadBalancer.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ciaTriad`<sup>Required</sup> <a name="ciaTriad" id="cdktg.plus_aws.ApplicationLoadBalancer.property.ciaTriad"></a>
+
+```typescript
+public readonly ciaTriad: CIATriad;
+```
+
+- *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `customDevelopedParts`<sup>Required</sup> <a name="customDevelopedParts" id="cdktg.plus_aws.ApplicationLoadBalancer.property.customDevelopedParts"></a>
+
+```typescript
+public readonly customDevelopedParts: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `encryption`<sup>Required</sup> <a name="encryption" id="cdktg.plus_aws.ApplicationLoadBalancer.property.encryption"></a>
+
+```typescript
+public readonly encryption: Encryption;
+```
+
+- *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `humanUse`<sup>Required</sup> <a name="humanUse" id="cdktg.plus_aws.ApplicationLoadBalancer.property.humanUse"></a>
+
+```typescript
+public readonly humanUse: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `internet`<sup>Required</sup> <a name="internet" id="cdktg.plus_aws.ApplicationLoadBalancer.property.internet"></a>
+
+```typescript
+public readonly internet: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `machine`<sup>Required</sup> <a name="machine" id="cdktg.plus_aws.ApplicationLoadBalancer.property.machine"></a>
+
+```typescript
+public readonly machine: Machine;
+```
+
+- *Type:* <a href="#cdktg.Machine">Machine</a>
+
+---
+
+##### `multiTenant`<sup>Required</sup> <a name="multiTenant" id="cdktg.plus_aws.ApplicationLoadBalancer.property.multiTenant"></a>
+
+```typescript
+public readonly multiTenant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `redundant`<sup>Required</sup> <a name="redundant" id="cdktg.plus_aws.ApplicationLoadBalancer.property.redundant"></a>
+
+```typescript
+public readonly redundant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `size`<sup>Required</sup> <a name="size" id="cdktg.plus_aws.ApplicationLoadBalancer.property.size"></a>
+
+```typescript
+public readonly size: Size;
+```
+
+- *Type:* <a href="#cdktg.Size">Size</a>
+
+---
+
+##### `technology`<sup>Required</sup> <a name="technology" id="cdktg.plus_aws.ApplicationLoadBalancer.property.technology"></a>
+
+```typescript
+public readonly technology: Technology;
+```
+
+- *Type:* <a href="#cdktg.Technology">Technology</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdktg.plus_aws.ApplicationLoadBalancer.property.type"></a>
+
+```typescript
+public readonly type: TechnicalAssetType;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a>
+
+---
+
+##### `usage`<sup>Required</sup> <a name="usage" id="cdktg.plus_aws.ApplicationLoadBalancer.property.usage"></a>
+
+```typescript
+public readonly usage: Usage;
+```
+
+- *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `dataFormatsAccepted`<sup>Optional</sup> <a name="dataFormatsAccepted" id="cdktg.plus_aws.ApplicationLoadBalancer.property.dataFormatsAccepted"></a>
+
+```typescript
+public readonly dataFormatsAccepted: DataFormat[];
+```
+
+- *Type:* <a href="#cdktg.DataFormat">DataFormat</a>[]
+
+---
+
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.plus_aws.ApplicationLoadBalancer.property.owner"></a>
+
+```typescript
+public readonly owner: string;
+```
+
+- *Type:* string
+
+---
+
+##### `scope`<sup>Optional</sup> <a name="scope" id="cdktg.plus_aws.ApplicationLoadBalancer.property.scope"></a>
+
+```typescript
+public readonly scope: Scope;
+```
+
+- *Type:* <a href="#cdktg.Scope">Scope</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.ApplicationLoadBalancer.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus_aws.ApplicationLoadBalancer.property.trustBoundary"></a>
+
+```typescript
+public readonly trustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+##### `securityGroup`<sup>Required</sup> <a name="securityGroup" id="cdktg.plus_aws.ApplicationLoadBalancer.property.securityGroup"></a>
+
+```typescript
+public readonly securityGroup: SecurityGroup;
+```
+
+- *Type:* cdktg.plus_aws.SecurityGroup
+
+---
+
+
+### Browser <a name="Browser" id="cdktg.plus.Browser"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.plus.Browser.Initializer"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+new plus.Browser(scope: Construct, id: string, props: BrowserProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.Browser.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.Initializer.parameter.props">props</a></code> | <code>cdktg.plus.BrowserProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus.Browser.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Browser.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.plus.Browser.Initializer.parameter.props"></a>
+
+- *Type:* cdktg.plus.BrowserProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus.Browser.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.plus.Browser.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.isWebApplication">isWebApplication</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.isWebService">isWebService</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.processes">processes</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.stores">stores</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.plus.Browser.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `communicatesWith` <a name="communicatesWith" id="cdktg.plus.Browser.communicatesWith"></a>
+
+```typescript
+public communicatesWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Browser.communicatesWith.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.plus.Browser.communicatesWith.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.plus.Browser.communicatesWith.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
+
+---
+
+##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus.Browser.isWebApplication"></a>
+
+```typescript
+public isWebApplication(): boolean
+```
+
+##### `isWebService` <a name="isWebService" id="cdktg.plus.Browser.isWebService"></a>
+
+```typescript
+public isWebService(): boolean
+```
+
+##### `processes` <a name="processes" id="cdktg.plus.Browser.processes"></a>
+
+```typescript
+public processes(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus.Browser.processes.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `stores` <a name="stores" id="cdktg.plus.Browser.stores"></a>
+
+```typescript
+public stores(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus.Browser.stores.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus.Browser.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.plus.Browser.isConstruct"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+plus.Browser.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.plus.Browser.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.Browser.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.plus.Browser.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.redundant">redundant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.size">size</a></code> | <code><a href="#cdktg.Size">Size</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.owner">owner</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.plus.Browser.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus.Browser.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus.Browser.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ciaTriad`<sup>Required</sup> <a name="ciaTriad" id="cdktg.plus.Browser.property.ciaTriad"></a>
+
+```typescript
+public readonly ciaTriad: CIATriad;
+```
+
+- *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `customDevelopedParts`<sup>Required</sup> <a name="customDevelopedParts" id="cdktg.plus.Browser.property.customDevelopedParts"></a>
+
+```typescript
+public readonly customDevelopedParts: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `encryption`<sup>Required</sup> <a name="encryption" id="cdktg.plus.Browser.property.encryption"></a>
+
+```typescript
+public readonly encryption: Encryption;
+```
+
+- *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `humanUse`<sup>Required</sup> <a name="humanUse" id="cdktg.plus.Browser.property.humanUse"></a>
+
+```typescript
+public readonly humanUse: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `internet`<sup>Required</sup> <a name="internet" id="cdktg.plus.Browser.property.internet"></a>
+
+```typescript
+public readonly internet: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `machine`<sup>Required</sup> <a name="machine" id="cdktg.plus.Browser.property.machine"></a>
+
+```typescript
+public readonly machine: Machine;
+```
+
+- *Type:* <a href="#cdktg.Machine">Machine</a>
+
+---
+
+##### `multiTenant`<sup>Required</sup> <a name="multiTenant" id="cdktg.plus.Browser.property.multiTenant"></a>
+
+```typescript
+public readonly multiTenant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `redundant`<sup>Required</sup> <a name="redundant" id="cdktg.plus.Browser.property.redundant"></a>
+
+```typescript
+public readonly redundant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `size`<sup>Required</sup> <a name="size" id="cdktg.plus.Browser.property.size"></a>
+
+```typescript
+public readonly size: Size;
+```
+
+- *Type:* <a href="#cdktg.Size">Size</a>
+
+---
+
+##### `technology`<sup>Required</sup> <a name="technology" id="cdktg.plus.Browser.property.technology"></a>
+
+```typescript
+public readonly technology: Technology;
+```
+
+- *Type:* <a href="#cdktg.Technology">Technology</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdktg.plus.Browser.property.type"></a>
+
+```typescript
+public readonly type: TechnicalAssetType;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a>
+
+---
+
+##### `usage`<sup>Required</sup> <a name="usage" id="cdktg.plus.Browser.property.usage"></a>
+
+```typescript
+public readonly usage: Usage;
+```
+
+- *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `dataFormatsAccepted`<sup>Optional</sup> <a name="dataFormatsAccepted" id="cdktg.plus.Browser.property.dataFormatsAccepted"></a>
+
+```typescript
+public readonly dataFormatsAccepted: DataFormat[];
+```
+
+- *Type:* <a href="#cdktg.DataFormat">DataFormat</a>[]
+
+---
+
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.plus.Browser.property.owner"></a>
+
+```typescript
+public readonly owner: string;
+```
+
+- *Type:* string
+
+---
+
+##### `scope`<sup>Optional</sup> <a name="scope" id="cdktg.plus.Browser.property.scope"></a>
+
+```typescript
+public readonly scope: Scope;
+```
+
+- *Type:* <a href="#cdktg.Scope">Scope</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus.Browser.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus.Browser.property.trustBoundary"></a>
+
+```typescript
+public readonly trustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+
+### Cloud <a name="Cloud" id="cdktg.plus_aws.Cloud"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.plus_aws.Cloud.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+new plus_aws.Cloud(scope: Construct, id: string, props?: CloudProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.Cloud.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.Initializer.parameter.props">props</a></code> | <code>cdktg.plus_aws.CloudProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus_aws.Cloud.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.Cloud.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="cdktg.plus_aws.Cloud.Initializer.parameter.props"></a>
+
+- *Type:* cdktg.plus_aws.CloudProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.Cloud.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.plus_aws.Cloud.addTechnicalAssets">addTechnicalAssets</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.addTrustBoundary">addTrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.isNetworkBoundary">isNetworkBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.isWithinCloud">isWithinCloud</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.plus_aws.Cloud.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addTechnicalAssets` <a name="addTechnicalAssets" id="cdktg.plus_aws.Cloud.addTechnicalAssets"></a>
+
+```typescript
+public addTechnicalAssets(assets: TechnicalAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus_aws.Cloud.addTechnicalAssets.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `addTrustBoundary` <a name="addTrustBoundary" id="cdktg.plus_aws.Cloud.addTrustBoundary"></a>
+
+```typescript
+public addTrustBoundary(boundary: TrustBoundary): void
+```
+
+###### `boundary`<sup>Required</sup> <a name="boundary" id="cdktg.plus_aws.Cloud.addTrustBoundary.parameter.boundary"></a>
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+##### `isNetworkBoundary` <a name="isNetworkBoundary" id="cdktg.plus_aws.Cloud.isNetworkBoundary"></a>
+
+```typescript
+public isNetworkBoundary(): boolean
+```
+
+##### `isWithinCloud` <a name="isWithinCloud" id="cdktg.plus_aws.Cloud.isWithinCloud"></a>
+
+```typescript
+public isWithinCloud(): boolean
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.Cloud.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.plus_aws.Cloud.isConstruct"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+plus_aws.Cloud.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.plus_aws.Cloud.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.Cloud.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.plus_aws.Cloud.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.plus_aws.Cloud.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.Cloud.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.Cloud.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdktg.plus_aws.Cloud.property.type"></a>
+
+```typescript
+public readonly type: TrustBoundaryType;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.Cloud.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+
 ### DataAsset <a name="DataAsset" id="cdktg.DataAsset"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.DataAsset.Initializer"></a>
@@ -99,8 +1081,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.DataAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.DataAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.DataAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.quantity">quantity</a></code> | <code><a href="#cdktg.Quantity">Quantity</a></code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
@@ -122,20 +1104,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.DataAsset.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.DataAsset.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.DataAsset.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.DataAsset.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -796,8 +1778,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.Resource.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.Resource.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Resource.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Resource.property.description">description</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -813,20 +1795,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.Resource.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.Resource.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.Resource.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.Resource.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -1020,8 +2002,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.RiskCategory.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.RiskCategory.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.cheatSheat">cheatSheat</a></code> | <code>string</code> | *No description.* |
@@ -1050,20 +2032,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.RiskCategory.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.RiskCategory.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.RiskCategory.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.RiskCategory.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -1201,6 +2183,203 @@ public readonly modelFailurePossibleReason: boolean;
 ---
 
 
+### SecurityGroup <a name="SecurityGroup" id="cdktg.plus_aws.SecurityGroup"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.plus_aws.SecurityGroup.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+new plus_aws.SecurityGroup(scope: Construct, id: string, props?: SecurityGroupProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.Initializer.parameter.props">props</a></code> | <code>cdktg.plus_aws.SecurityGroupProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus_aws.SecurityGroup.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.SecurityGroup.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="cdktg.plus_aws.SecurityGroup.Initializer.parameter.props"></a>
+
+- *Type:* cdktg.plus_aws.SecurityGroupProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.addTechnicalAssets">addTechnicalAssets</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.addTrustBoundary">addTrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.isNetworkBoundary">isNetworkBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.isWithinCloud">isWithinCloud</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.plus_aws.SecurityGroup.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addTechnicalAssets` <a name="addTechnicalAssets" id="cdktg.plus_aws.SecurityGroup.addTechnicalAssets"></a>
+
+```typescript
+public addTechnicalAssets(assets: TechnicalAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus_aws.SecurityGroup.addTechnicalAssets.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `addTrustBoundary` <a name="addTrustBoundary" id="cdktg.plus_aws.SecurityGroup.addTrustBoundary"></a>
+
+```typescript
+public addTrustBoundary(boundary: TrustBoundary): void
+```
+
+###### `boundary`<sup>Required</sup> <a name="boundary" id="cdktg.plus_aws.SecurityGroup.addTrustBoundary.parameter.boundary"></a>
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+##### `isNetworkBoundary` <a name="isNetworkBoundary" id="cdktg.plus_aws.SecurityGroup.isNetworkBoundary"></a>
+
+```typescript
+public isNetworkBoundary(): boolean
+```
+
+##### `isWithinCloud` <a name="isWithinCloud" id="cdktg.plus_aws.SecurityGroup.isWithinCloud"></a>
+
+```typescript
+public isWithinCloud(): boolean
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.plus_aws.SecurityGroup.isConstruct"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+plus_aws.SecurityGroup.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.plus_aws.SecurityGroup.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.plus_aws.SecurityGroup.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.SecurityGroup.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.SecurityGroup.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdktg.plus_aws.SecurityGroup.property.type"></a>
+
+```typescript
+public readonly type: TrustBoundaryType;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.SecurityGroup.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+
 ### SharedRuntime <a name="SharedRuntime" id="cdktg.SharedRuntime"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.SharedRuntime.Initializer"></a>
@@ -1311,8 +2490,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.SharedRuntime.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.SharedRuntime.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.SharedRuntime.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.SharedRuntime.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.SharedRuntime.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 
 ---
@@ -1329,20 +2508,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.SharedRuntime.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.SharedRuntime.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.SharedRuntime.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.SharedRuntime.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -1522,8 +2701,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.TechnicalAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
@@ -1531,15 +2710,16 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.redundant">redundant</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.size">size</a></code> | <code><a href="#cdktg.Size">Size</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 
 ---
 
@@ -1555,20 +2735,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.TechnicalAsset.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TechnicalAsset.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TechnicalAsset.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.TechnicalAsset.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -1645,16 +2825,6 @@ public readonly multiTenant: boolean;
 
 ---
 
-##### `owner`<sup>Required</sup> <a name="owner" id="cdktg.TechnicalAsset.property.owner"></a>
-
-```typescript
-public readonly owner: string;
-```
-
-- *Type:* string
-
----
-
 ##### `redundant`<sup>Required</sup> <a name="redundant" id="cdktg.TechnicalAsset.property.redundant"></a>
 
 ```typescript
@@ -1715,6 +2885,16 @@ public readonly dataFormatsAccepted: DataFormat[];
 
 ---
 
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.TechnicalAsset.property.owner"></a>
+
+```typescript
+public readonly owner: string;
+```
+
+- *Type:* string
+
+---
+
 ##### `scope`<sup>Optional</sup> <a name="scope" id="cdktg.TechnicalAsset.property.scope"></a>
 
 ```typescript
@@ -1732,6 +2912,16 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.TechnicalAsset.property.trustBoundary"></a>
+
+```typescript
+public readonly trustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
 
@@ -1873,8 +3063,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.TrustBoundary.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.TrustBoundary.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 
@@ -1892,20 +3082,20 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.TrustBoundary.property.description"></a>
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TrustBoundary.property.uuid"></a>
 
 ```typescript
-public readonly description: string;
+public readonly uuid: string;
 ```
 
 - *Type:* string
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TrustBoundary.property.uuid"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.TrustBoundary.property.description"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly description: string;
 ```
 
 - *Type:* string
@@ -1929,6 +3119,428 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+
+### Vault <a name="Vault" id="cdktg.plus.Vault"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.plus.Vault.Initializer"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+new plus.Vault(scope: Construct, id: string, props: VaultProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.Vault.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.Initializer.parameter.props">props</a></code> | <code>cdktg.plus.VaultProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus.Vault.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Vault.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.plus.Vault.Initializer.parameter.props"></a>
+
+- *Type:* cdktg.plus.VaultProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus.Vault.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.plus.Vault.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.isWebApplication">isWebApplication</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.isWebService">isWebService</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.processes">processes</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.stores">stores</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.isUsedBy">isUsedBy</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.plus.Vault.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `communicatesWith` <a name="communicatesWith" id="cdktg.plus.Vault.communicatesWith"></a>
+
+```typescript
+public communicatesWith(id: string, target: TechnicalAsset, options: CommunicationOptions): Communication
+```
+
+###### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Vault.communicatesWith.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `target`<sup>Required</sup> <a name="target" id="cdktg.plus.Vault.communicatesWith.parameter.target"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="cdktg.plus.Vault.communicatesWith.parameter.options"></a>
+
+- *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
+
+---
+
+##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus.Vault.isWebApplication"></a>
+
+```typescript
+public isWebApplication(): boolean
+```
+
+##### `isWebService` <a name="isWebService" id="cdktg.plus.Vault.isWebService"></a>
+
+```typescript
+public isWebService(): boolean
+```
+
+##### `processes` <a name="processes" id="cdktg.plus.Vault.processes"></a>
+
+```typescript
+public processes(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus.Vault.processes.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `stores` <a name="stores" id="cdktg.plus.Vault.stores"></a>
+
+```typescript
+public stores(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.plus.Vault.stores.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `isUsedBy` <a name="isUsedBy" id="cdktg.plus.Vault.isUsedBy"></a>
+
+```typescript
+public isUsedBy(client: TechnicalAsset): void
+```
+
+###### `client`<sup>Required</sup> <a name="client" id="cdktg.plus.Vault.isUsedBy.parameter.client"></a>
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus.Vault.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.plus.Vault.isConstruct"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+plus.Vault.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.plus.Vault.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.Vault.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.plus.Vault.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.redundant">redundant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.size">size</a></code> | <code><a href="#cdktg.Size">Size</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.type">type</a></code> | <code><a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.owner">owner</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.configurationSecrets">configurationSecrets</a></code> | <code><a href="#cdktg.DataAsset">DataAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.vaultStorage">vaultStorage</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.plus.Vault.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus.Vault.property.uuid"></a>
+
+```typescript
+public readonly uuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus.Vault.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ciaTriad`<sup>Required</sup> <a name="ciaTriad" id="cdktg.plus.Vault.property.ciaTriad"></a>
+
+```typescript
+public readonly ciaTriad: CIATriad;
+```
+
+- *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `customDevelopedParts`<sup>Required</sup> <a name="customDevelopedParts" id="cdktg.plus.Vault.property.customDevelopedParts"></a>
+
+```typescript
+public readonly customDevelopedParts: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `encryption`<sup>Required</sup> <a name="encryption" id="cdktg.plus.Vault.property.encryption"></a>
+
+```typescript
+public readonly encryption: Encryption;
+```
+
+- *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `humanUse`<sup>Required</sup> <a name="humanUse" id="cdktg.plus.Vault.property.humanUse"></a>
+
+```typescript
+public readonly humanUse: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `internet`<sup>Required</sup> <a name="internet" id="cdktg.plus.Vault.property.internet"></a>
+
+```typescript
+public readonly internet: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `machine`<sup>Required</sup> <a name="machine" id="cdktg.plus.Vault.property.machine"></a>
+
+```typescript
+public readonly machine: Machine;
+```
+
+- *Type:* <a href="#cdktg.Machine">Machine</a>
+
+---
+
+##### `multiTenant`<sup>Required</sup> <a name="multiTenant" id="cdktg.plus.Vault.property.multiTenant"></a>
+
+```typescript
+public readonly multiTenant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `redundant`<sup>Required</sup> <a name="redundant" id="cdktg.plus.Vault.property.redundant"></a>
+
+```typescript
+public readonly redundant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `size`<sup>Required</sup> <a name="size" id="cdktg.plus.Vault.property.size"></a>
+
+```typescript
+public readonly size: Size;
+```
+
+- *Type:* <a href="#cdktg.Size">Size</a>
+
+---
+
+##### `technology`<sup>Required</sup> <a name="technology" id="cdktg.plus.Vault.property.technology"></a>
+
+```typescript
+public readonly technology: Technology;
+```
+
+- *Type:* <a href="#cdktg.Technology">Technology</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdktg.plus.Vault.property.type"></a>
+
+```typescript
+public readonly type: TechnicalAssetType;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAssetType">TechnicalAssetType</a>
+
+---
+
+##### `usage`<sup>Required</sup> <a name="usage" id="cdktg.plus.Vault.property.usage"></a>
+
+```typescript
+public readonly usage: Usage;
+```
+
+- *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `dataFormatsAccepted`<sup>Optional</sup> <a name="dataFormatsAccepted" id="cdktg.plus.Vault.property.dataFormatsAccepted"></a>
+
+```typescript
+public readonly dataFormatsAccepted: DataFormat[];
+```
+
+- *Type:* <a href="#cdktg.DataFormat">DataFormat</a>[]
+
+---
+
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.plus.Vault.property.owner"></a>
+
+```typescript
+public readonly owner: string;
+```
+
+- *Type:* string
+
+---
+
+##### `scope`<sup>Optional</sup> <a name="scope" id="cdktg.plus.Vault.property.scope"></a>
+
+```typescript
+public readonly scope: Scope;
+```
+
+- *Type:* <a href="#cdktg.Scope">Scope</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus.Vault.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus.Vault.property.trustBoundary"></a>
+
+```typescript
+public readonly trustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+##### `configurationSecrets`<sup>Required</sup> <a name="configurationSecrets" id="cdktg.plus.Vault.property.configurationSecrets"></a>
+
+```typescript
+public readonly configurationSecrets: DataAsset;
+```
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `vaultStorage`<sup>Optional</sup> <a name="vaultStorage" id="cdktg.plus.Vault.property.vaultStorage"></a>
+
+```typescript
+public readonly vaultStorage: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
@@ -1974,6 +3586,78 @@ public readonly name: string;
 
 ---
 
+### ApplicationLoadBalancerProps <a name="ApplicationLoadBalancerProps" id="cdktg.plus_aws.ApplicationLoadBalancerProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.plus_aws.ApplicationLoadBalancerProps.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+const applicationLoadBalancerProps: plus_aws.ApplicationLoadBalancerProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancerProps.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancerProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancerProps.property.securityGroup">securityGroup</a></code> | <code>cdktg.plus_aws.SecurityGroup</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancerProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancerProps.property.waf">waf</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `ciaTriad`<sup>Required</sup> <a name="ciaTriad" id="cdktg.plus_aws.ApplicationLoadBalancerProps.property.ciaTriad"></a>
+
+```typescript
+public readonly ciaTriad: CIATriad;
+```
+
+- *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.ApplicationLoadBalancerProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `securityGroup`<sup>Optional</sup> <a name="securityGroup" id="cdktg.plus_aws.ApplicationLoadBalancerProps.property.securityGroup"></a>
+
+```typescript
+public readonly securityGroup: SecurityGroup;
+```
+
+- *Type:* cdktg.plus_aws.SecurityGroup
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.ApplicationLoadBalancerProps.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `waf`<sup>Optional</sup> <a name="waf" id="cdktg.plus_aws.ApplicationLoadBalancerProps.property.waf"></a>
+
+```typescript
+public readonly waf: boolean;
+```
+
+- *Type:* boolean
+
+---
+
 ### AuthorProps <a name="AuthorProps" id="cdktg.AuthorProps"></a>
 
 #### Initializer <a name="Initializer" id="cdktg.AuthorProps.Initializer"></a>
@@ -2007,6 +3691,67 @@ public readonly name: string;
 
 ```typescript
 public readonly homepage: string;
+```
+
+- *Type:* string
+
+---
+
+### BrowserProps <a name="BrowserProps" id="cdktg.plus.BrowserProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.plus.BrowserProps.Initializer"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+const browserProps: plus.BrowserProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.BrowserProps.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.BrowserProps.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.BrowserProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.BrowserProps.property.owner">owner</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `ciaTriad`<sup>Required</sup> <a name="ciaTriad" id="cdktg.plus.BrowserProps.property.ciaTriad"></a>
+
+```typescript
+public readonly ciaTriad: CIATriad;
+```
+
+- *Type:* <a href="#cdktg.CIATriad">CIATriad</a>
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.plus.BrowserProps.property.scope"></a>
+
+```typescript
+public readonly scope: Scope;
+```
+
+- *Type:* <a href="#cdktg.Scope">Scope</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus.BrowserProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.plus.BrowserProps.property.owner"></a>
+
+```typescript
+public readonly owner: string;
 ```
 
 - *Type:* string
@@ -2071,6 +3816,45 @@ public readonly justification: string;
 ```
 
 - *Type:* string
+
+---
+
+### CloudProps <a name="CloudProps" id="cdktg.plus_aws.CloudProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.plus_aws.CloudProps.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+const cloudProps: plus_aws.CloudProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.CloudProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.CloudProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.CloudProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.CloudProps.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -2330,7 +4114,7 @@ const dataAssetProps: DataAssetProps = { ... }
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.DataAssetProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.DataAssetProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -2884,7 +4668,7 @@ const resourceProps: ResourceProps = { ... }
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.ResourceProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.ResourceProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -2925,7 +4709,7 @@ const riskCategoryProps: RiskCategoryProps = { ... }
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.RiskCategoryProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.RiskCategoryProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -3336,6 +5120,45 @@ public readonly ticket: string;
 
 ---
 
+### SecurityGroupProps <a name="SecurityGroupProps" id="cdktg.plus_aws.SecurityGroupProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.plus_aws.SecurityGroupProps.Initializer"></a>
+
+```typescript
+import { plus_aws } from 'cdktg'
+
+const securityGroupProps: plus_aws.SecurityGroupProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus_aws.SecurityGroupProps.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroupProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.plus_aws.SecurityGroupProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus_aws.SecurityGroupProps.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
 ### SecurityRequirementProps <a name="SecurityRequirementProps" id="cdktg.SecurityRequirementProps"></a>
 
 #### Initializer <a name="Initializer" id="cdktg.SecurityRequirementProps.Initializer"></a>
@@ -3394,7 +5217,7 @@ const sharedRuntimeProps: SharedRuntimeProps = { ... }
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.SharedRuntimeProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.SharedRuntimeProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -3435,7 +5258,6 @@ const technicalAssetProps: TechnicalAssetProps = { ... }
 | <code><a href="#cdktg.TechnicalAssetProps.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAssetProps.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.redundant">redundant</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.size">size</a></code> | <code><a href="#cdktg.Size">Size</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.technology">technology</a></code> | <code><a href="#cdktg.Technology">Technology</a></code> | *No description.* |
@@ -3443,13 +5265,14 @@ const technicalAssetProps: TechnicalAssetProps = { ... }
 | <code><a href="#cdktg.TechnicalAssetProps.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.dataFormatsAccepted">dataFormatsAccepted</a></code> | <code><a href="#cdktg.DataFormat">DataFormat</a>[]</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAssetProps.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAssetProps.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.TechnicalAssetProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.TechnicalAssetProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -3516,16 +5339,6 @@ public readonly multiTenant: boolean;
 ```
 
 - *Type:* boolean
-
----
-
-##### `owner`<sup>Required</sup> <a name="owner" id="cdktg.TechnicalAssetProps.property.owner"></a>
-
-```typescript
-public readonly owner: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -3599,6 +5412,16 @@ public readonly dataFormatsAccepted: DataFormat[];
 
 ---
 
+##### `owner`<sup>Optional</sup> <a name="owner" id="cdktg.TechnicalAssetProps.property.owner"></a>
+
+```typescript
+public readonly owner: string;
+```
+
+- *Type:* string
+
+---
+
 ##### `scope`<sup>Optional</sup> <a name="scope" id="cdktg.TechnicalAssetProps.property.scope"></a>
 
 ```typescript
@@ -3649,7 +5472,7 @@ const trustBoundaryProps: TrustBoundaryProps = { ... }
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.TrustBoundaryProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdktg.TrustBoundaryProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -3676,6 +5499,89 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+### VaultProps <a name="VaultProps" id="cdktg.plus.VaultProps"></a>
+
+#### Initializer <a name="Initializer" id="cdktg.plus.VaultProps.Initializer"></a>
+
+```typescript
+import { plus } from 'cdktg'
+
+const vaultProps: plus.VaultProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.plus.VaultProps.property.authtentication">authtentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.VaultProps.property.multiTenant">multiTenant</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.plus.VaultProps.property.storageType">storageType</a></code> | <code>cdktg.plus.StorageType</code> | *No description.* |
+| <code><a href="#cdktg.plus.VaultProps.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdktg.plus.VaultProps.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.VaultProps.property.vendor">vendor</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `authtentication`<sup>Required</sup> <a name="authtentication" id="cdktg.plus.VaultProps.property.authtentication"></a>
+
+```typescript
+public readonly authtentication: Authentication;
+```
+
+- *Type:* <a href="#cdktg.Authentication">Authentication</a>
+
+---
+
+##### `multiTenant`<sup>Required</sup> <a name="multiTenant" id="cdktg.plus.VaultProps.property.multiTenant"></a>
+
+```typescript
+public readonly multiTenant: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `storageType`<sup>Required</sup> <a name="storageType" id="cdktg.plus.VaultProps.property.storageType"></a>
+
+```typescript
+public readonly storageType: StorageType;
+```
+
+- *Type:* cdktg.plus.StorageType
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdktg.plus.VaultProps.property.tags"></a>
+
+```typescript
+public readonly tags: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus.VaultProps.property.trustBoundary"></a>
+
+```typescript
+public readonly trustBoundary: TrustBoundary;
+```
+
+- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
+
+---
+
+##### `vendor`<sup>Optional</sup> <a name="vendor" id="cdktg.plus.VaultProps.property.vendor"></a>
+
+```typescript
+public readonly vendor: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -6210,6 +8116,63 @@ public readonly skipValidation: boolean;
 
 
 ##### `COMPONENT` <a name="COMPONENT" id="cdktg.Size.COMPONENT"></a>
+
+---
+
+
+### StorageType <a name="StorageType" id="cdktg.plus.StorageType"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.plus.StorageType.CLOUD_PROVIDER">CLOUD_PROVIDER</a></code> | Cloud Provider (storage buckets or similar). |
+| <code><a href="#cdktg.plus.StorageType.CONTAINER_PLATFORM">CONTAINER_PLATFORM</a></code> | Container Platform (orchestration platform managed storage). |
+| <code><a href="#cdktg.plus.StorageType.DATABASE">DATABASE</a></code> | Database (SQL-DB, NoSQL-DB, object store or similar). |
+| <code><a href="#cdktg.plus.StorageType.FILESYSTEM">FILESYSTEM</a></code> | Filesystem (local or remote). |
+| <code><a href="#cdktg.plus.StorageType.IN_MEMORY">IN_MEMORY</a></code> | In-Memory (no persistent storage of secrets). |
+| <code><a href="#cdktg.plus.StorageType.SERVICE_REGISTRY">SERVICE_REGISTRY</a></code> | Service Registry. |
+
+---
+
+##### `CLOUD_PROVIDER` <a name="CLOUD_PROVIDER" id="cdktg.plus.StorageType.CLOUD_PROVIDER"></a>
+
+Cloud Provider (storage buckets or similar).
+
+---
+
+
+##### `CONTAINER_PLATFORM` <a name="CONTAINER_PLATFORM" id="cdktg.plus.StorageType.CONTAINER_PLATFORM"></a>
+
+Container Platform (orchestration platform managed storage).
+
+---
+
+
+##### `DATABASE` <a name="DATABASE" id="cdktg.plus.StorageType.DATABASE"></a>
+
+Database (SQL-DB, NoSQL-DB, object store or similar).
+
+---
+
+
+##### `FILESYSTEM` <a name="FILESYSTEM" id="cdktg.plus.StorageType.FILESYSTEM"></a>
+
+Filesystem (local or remote).
+
+---
+
+
+##### `IN_MEMORY` <a name="IN_MEMORY" id="cdktg.plus.StorageType.IN_MEMORY"></a>
+
+In-Memory (no persistent storage of secrets).
+
+---
+
+
+##### `SERVICE_REGISTRY` <a name="SERVICE_REGISTRY" id="cdktg.plus.StorageType.SERVICE_REGISTRY"></a>
+
+Service Registry.
 
 ---
 

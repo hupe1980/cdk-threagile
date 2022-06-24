@@ -39,7 +39,7 @@ export class SharedRuntime extends Resource {
     return {
       [this.node.id]: {
         id: this.uuid,
-        description: this.description,
+        description: this.description ?? null,
         tags: Array.from(new Set(this.tags)),
         technical_assets_running: Array.from(this.technicalAssetsRunning),
       },
