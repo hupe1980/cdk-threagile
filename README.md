@@ -1,4 +1,4 @@
-# cdk-threagile
+# cdk-threagile (cdktg)
 ![Build](https://github.com/hupe1980/cdk-threagile/workflows/build/badge.svg)
 ![Release](https://github.com/hupe1980/cdk-threagile/workflows/release/badge.svg)
 > Agile Threat Modeling as Code
@@ -28,6 +28,8 @@ cdktg init
 
 ### Threat Model written in typescript:
 ```typescript
+// threagile.ts
+
 const project = new Project();
 
 const model = new Model(project, 'Model Stub', {
@@ -126,6 +128,28 @@ someSharedRuntime.runs(someTechnicalAsset, someOtherTechnicalAsset);
 project.synth();
 ```
 
+### High level constructs (cdktg/plus*)
+```typescript
+import { ApplicationLoadBalancer, Cloud } from "cdktg/plus_aws";
+
+// ...
+
+const alb = new ApplicationLoadBalancer(model, "ALB", {
+    waf: true,
+    ciaTriad: new CIATriad({
+        availability: Availability.CRITICAL,
+        integrity: Integrity.IMPORTANT,
+        confidentiality: Confidentiality.CONFIDENTIAL,
+    }),
+});
+
+const cloud = new Cloud(model, "AWS-Cloud");
+
+cloud.addTechnicalAssets(alb);
+
+// ...
+```
+
 ### cdktg CLI commands:
 A running thragile rest api server is required for the CLI. The URL can be passed by parameter `url` or environment variable `CDKTG_THREAGILE_BASE_URL`.
 
@@ -160,7 +184,7 @@ dist
     └── threagile.yaml
 ```
 
-## Example
+## Examples
 
 See more complete [examples](https://github.com/hupe1980/cdk-threagile-examples).
 ## License
