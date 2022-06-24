@@ -1,7 +1,7 @@
-import * as path from "path";
 import { Construct } from "constructs";
 import * as fs from "fs-extra";
 
+import { CDKTG_OUT_DIR, CDKTG_VERSION } from "./common";
 import { Manifest } from "./manifest";
 import { Model } from "./model";
 import { ISynthesisSession } from "./synthesizer";
@@ -38,18 +38,14 @@ export class Project extends Construct {
   constructor(props: ProjectProps = {}) {
     super(undefined as any, "");
 
-    this.outdir = props.outdir ?? ".cdktg.out";
+    this.outdir = props.outdir ?? CDKTG_OUT_DIR;
     this.skipValidation = props.skipValidation;
-
-    const { version } = fs.readJSONSync(
-      path.join(__dirname, "..", "package.json")
-    );
 
     if (!fs.existsSync(this.outdir)) {
       fs.mkdirSync(this.outdir, { recursive: true });
     }
 
-    this.manifest = new Manifest(version, this.outdir);
+    this.manifest = new Manifest(CDKTG_VERSION, this.outdir);
   }
 
   /**

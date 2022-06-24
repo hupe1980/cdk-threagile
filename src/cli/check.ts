@@ -2,6 +2,7 @@ import * as path from "path";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
 
 import { Threagile } from "../api/threagile";
+import { CDKTG_OUT_DIR } from "../common";
 import { Manifest } from "../manifest";
 
 interface CheckOptions extends Options {
@@ -25,7 +26,7 @@ export class CheckCommand<U extends CheckOptions>
 
     const api = new Threagile(url);
 
-    const manifest = Manifest.fromPath(".cdktg.out");
+    const manifest = Manifest.fromPath(CDKTG_OUT_DIR);
 
     for (const k in manifest.models) {
       try {

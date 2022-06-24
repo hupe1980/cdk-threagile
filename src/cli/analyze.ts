@@ -4,6 +4,7 @@ import * as fs from "fs-extra";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
 
 import { Threagile } from "../api/threagile";
+import { CDKTG_OUT_DIR } from "../common";
 import { Manifest } from "../manifest";
 
 interface AnalyzeOptions extends Options {
@@ -40,14 +41,14 @@ export class AnalyzeCommand<U extends AnalyzeOptions>
 
     const api = new Threagile(url);
 
-    const manifest = Manifest.fromPath(".cdktg.out");
+    const manifest = Manifest.fromPath(CDKTG_OUT_DIR);
 
     for (const k in manifest.models) {
       try {
         const modelManifest = manifest.models[k];
 
         const resp = await api.analyze(
-          path.join(".cdktg.out", modelManifest.synthesizedModelPath)
+          path.join(CDKTG_OUT_DIR, modelManifest.synthesizedModelPath)
         );
 
         if (resp.status === 400) {

@@ -3969,7 +3969,7 @@ const communicationProps: CommunicationProps = { ... }
 | <code><a href="#cdktg.CommunicationProps.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdktg.CommunicationProps.property.caller">caller</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.CommunicationProps.property.source">source</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.CommunicationProps.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 
 ---
@@ -4054,10 +4054,10 @@ public readonly vpn: boolean;
 
 ---
 
-##### `caller`<sup>Required</sup> <a name="caller" id="cdktg.CommunicationProps.property.caller"></a>
+##### `source`<sup>Required</sup> <a name="source" id="cdktg.CommunicationProps.property.source"></a>
 
 ```typescript
-public readonly caller: TechnicalAsset;
+public readonly source: TechnicalAsset;
 ```
 
 - *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
@@ -6072,12 +6072,12 @@ public sends(assets: DataAsset): void
 | --- | --- | --- |
 | <code><a href="#cdktg.Communication.property.authentication">authentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.authorization">authorization</a></code> | <code><a href="#cdktg.Authorization">Authorization</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.caller">caller</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.ipFiltered">ipFiltered</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.protocol">protocol</a></code> | <code><a href="#cdktg.Protocol">Protocol</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.source">source</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
@@ -6101,16 +6101,6 @@ public readonly authorization: Authorization;
 ```
 
 - *Type:* <a href="#cdktg.Authorization">Authorization</a>
-
----
-
-##### `caller`<sup>Required</sup> <a name="caller" id="cdktg.Communication.property.caller"></a>
-
-```typescript
-public readonly caller: TechnicalAsset;
-```
-
-- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 
@@ -6161,6 +6151,16 @@ public readonly readonly: boolean;
 ```
 
 - *Type:* boolean
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="cdktg.Communication.property.source"></a>
+
+```typescript
+public readonly source: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
 
 ---
 

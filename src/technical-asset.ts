@@ -134,7 +134,7 @@ export class TechnicalAsset extends Resource {
     options: CommunicationOptions
   ): Communication {
     const communication = new Communication(id, {
-      caller: this,
+      source: this,
       target: target,
       ...options,
     });

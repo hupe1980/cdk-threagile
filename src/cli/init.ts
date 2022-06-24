@@ -2,6 +2,8 @@ import * as path from "path";
 import * as fs from "fs-extra";
 import { CommandModule, Arguments, Argv, Options } from "yargs";
 
+import { CDKTG_VERSION } from "../common";
+
 interface InitOptions extends Options {
   language: string;
 }
@@ -79,10 +81,7 @@ project.synth();
 }
 
 interface CdktgPackageJson {
-  version: string;
-  scripts: Record<string, string>;
   peerDependencies: Record<string, string>;
-  dependencies: Record<string, string>;
   devDependencies: Record<string, string>;
 }
 
@@ -103,7 +102,7 @@ function createPackageJson(language: string) {
     return {
       scripts,
       devDependencies: {
-        cdktg: `^${cdktgJson.version}`,
+        cdktg: `^${CDKTG_VERSION}`,
       },
     };
   }
@@ -111,7 +110,7 @@ function createPackageJson(language: string) {
   return {
     scripts,
     dependencies: {
-      cdktg: `^${cdktgJson.version}`,
+      cdktg: `^${CDKTG_VERSION}`,
       constructs: cdktgJson.peerDependencies.constructs,
     },
     devDependencies: {
