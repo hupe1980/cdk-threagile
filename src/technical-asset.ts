@@ -45,9 +45,10 @@ export class TechnicalAsset extends Resource {
   public readonly ciaTriad: CIATriad;
   public readonly multiTenant: boolean;
   public readonly redundant: boolean;
-  public readonly trustBoundary?: TrustBoundary;
   public readonly customDevelopedParts: boolean;
   public readonly dataFormatsAccepted?: DataFormat[];
+
+  protected trustBoundary?: TrustBoundary;
 
   private dataAssetsProcessed: Set<string>;
   private dataAssetsStored: Set<string>;
@@ -119,6 +120,14 @@ export class TechnicalAsset extends Resource {
     );
   }
 
+  public isTrafficForwarding(): boolean {
+    return [
+      Technology.LOAD_BALANCER,
+      Technology.REVERSE_PROXY,
+      Technology.WAF,
+    ].includes(this.technology);
+  }
+
   public communicatesWith(
     id: string,
     target: TechnicalAsset,
@@ -133,6 +142,13 @@ export class TechnicalAsset extends Resource {
     this.communications.push(communication);
 
     return communication;
+  }
+
+  /**
+   * @internal
+   */
+  public get _trustBoundary() {
+    return this.trustBoundary;
   }
 
   /**

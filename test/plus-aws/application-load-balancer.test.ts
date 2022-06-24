@@ -35,7 +35,7 @@ test("synth application-load-balancer with default securit-group", () => {
 
   const cloud = new Cloud(model, "AWS-Cloud");
 
-  cloud.addTrustBoundary(alb.securityGroup);
+  cloud.addTechnicalAssets(alb);
 
   project.synth();
 });

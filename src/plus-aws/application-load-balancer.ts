@@ -45,7 +45,7 @@ export class ApplicationLoadBalancer extends TechnicalAsset {
       customDevelopedParts: false,
     });
 
-    this.securityGroup =
+    this.securityGroup = this.trustBoundary =
       props.securityGroup ?? new SecurityGroup(this, `${id} SG`);
 
     this.securityGroup.addTechnicalAssets(this);

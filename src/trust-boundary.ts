@@ -33,9 +33,8 @@ export class TrustBoundary extends Resource {
 
   public addTechnicalAssets(...assets: TechnicalAsset[]) {
     assets.forEach((a) => {
-      if (a.trustBoundary) {
-        this.addTrustBoundary(a.trustBoundary);
-        return;
+      if (a._trustBoundary) {
+        return this.addTrustBoundary(a._trustBoundary);
       }
 
       this.technicalAssetsInside.add(a.uuid);

@@ -44,6 +44,7 @@ new plus_aws.ApplicationLoadBalancer(scope: Construct, id: string, props: Applic
 | --- | --- |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.processes">processes</a></code> | *No description.* |
@@ -82,6 +83,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus_aws.ApplicationLoadBalancer.isTrafficForwarding"></a>
+
+```typescript
+public isTrafficForwarding(): boolean
+```
 
 ##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus_aws.ApplicationLoadBalancer.isWebApplication"></a>
 
@@ -182,7 +189,6 @@ Any object.
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.securityGroup">securityGroup</a></code> | <code>cdktg.plus_aws.SecurityGroup</code> | *No description.* |
 
 ---
@@ -379,16 +385,6 @@ public readonly tags: string[];
 
 ---
 
-##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus_aws.ApplicationLoadBalancer.property.trustBoundary"></a>
-
-```typescript
-public readonly trustBoundary: TrustBoundary;
-```
-
-- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
-
----
-
 ##### `securityGroup`<sup>Required</sup> <a name="securityGroup" id="cdktg.plus_aws.ApplicationLoadBalancer.property.securityGroup"></a>
 
 ```typescript
@@ -442,6 +438,7 @@ new plus.Browser(scope: Construct, id: string, props: BrowserProps)
 | --- | --- |
 | <code><a href="#cdktg.plus.Browser.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus.Browser.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.processes">processes</a></code> | *No description.* |
@@ -480,6 +477,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus.Browser.isTrafficForwarding"></a>
+
+```typescript
+public isTrafficForwarding(): boolean
+```
 
 ##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus.Browser.isWebApplication"></a>
 
@@ -580,7 +583,6 @@ Any object.
 | <code><a href="#cdktg.plus.Browser.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#cdktg.plus.Browser.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 
 ---
 
@@ -773,16 +775,6 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
-
----
-
-##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus.Browser.property.trustBoundary"></a>
-
-```typescript
-public readonly trustBoundary: TrustBoundary;
-```
-
-- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
 
@@ -2581,6 +2573,7 @@ new TechnicalAsset(scope: Construct, id: string, props: TechnicalAssetProps)
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TechnicalAsset.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.processes">processes</a></code> | *No description.* |
@@ -2619,6 +2612,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.TechnicalAsset.isTrafficForwarding"></a>
+
+```typescript
+public isTrafficForwarding(): boolean
+```
 
 ##### `isWebApplication` <a name="isWebApplication" id="cdktg.TechnicalAsset.isWebApplication"></a>
 
@@ -2719,7 +2718,6 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#cdktg.TechnicalAsset.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 
 ---
 
@@ -2912,16 +2910,6 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
-
----
-
-##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.TechnicalAsset.property.trustBoundary"></a>
-
-```typescript
-public readonly trustBoundary: TrustBoundary;
-```
-
-- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
 
@@ -3165,6 +3153,7 @@ new plus.Vault(scope: Construct, id: string, props: VaultProps)
 | --- | --- |
 | <code><a href="#cdktg.plus.Vault.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus.Vault.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.isWebService">isWebService</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.processes">processes</a></code> | *No description.* |
@@ -3204,6 +3193,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus.Vault.isTrafficForwarding"></a>
+
+```typescript
+public isTrafficForwarding(): boolean
+```
 
 ##### `isWebApplication` <a name="isWebApplication" id="cdktg.plus.Vault.isWebApplication"></a>
 
@@ -3316,7 +3311,6 @@ Any object.
 | <code><a href="#cdktg.plus.Vault.property.owner">owner</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.scope">scope</a></code> | <code><a href="#cdktg.Scope">Scope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#cdktg.plus.Vault.property.trustBoundary">trustBoundary</a></code> | <code><a href="#cdktg.TrustBoundary">TrustBoundary</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.configurationSecrets">configurationSecrets</a></code> | <code><a href="#cdktg.DataAsset">DataAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.vaultStorage">vaultStorage</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 
@@ -3511,16 +3505,6 @@ public readonly tags: string[];
 ```
 
 - *Type:* string[]
-
----
-
-##### `trustBoundary`<sup>Optional</sup> <a name="trustBoundary" id="cdktg.plus.Vault.property.trustBoundary"></a>
-
-```typescript
-public readonly trustBoundary: TrustBoundary;
-```
-
-- *Type:* <a href="#cdktg.TrustBoundary">TrustBoundary</a>
 
 ---
 
