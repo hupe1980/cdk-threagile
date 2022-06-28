@@ -5984,6 +5984,8 @@ new CIATriad(props: CIATriadProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdktg.CIATriad.hasHigherAvailabilty">hasHigherAvailabilty</a></code> | *No description.* |
+| <code><a href="#cdktg.CIATriad.hasHigherConfidentiality">hasHigherConfidentiality</a></code> | *No description.* |
+| <code><a href="#cdktg.CIATriad.hasHigherIntegrity">hasHigherIntegrity</a></code> | *No description.* |
 
 ---
 
@@ -5996,6 +5998,30 @@ public hasHigherAvailabilty(availability: Availability): boolean
 ###### `availability`<sup>Required</sup> <a name="availability" id="cdktg.CIATriad.hasHigherAvailabilty.parameter.availability"></a>
 
 - *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
+
+##### `hasHigherConfidentiality` <a name="hasHigherConfidentiality" id="cdktg.CIATriad.hasHigherConfidentiality"></a>
+
+```typescript
+public hasHigherConfidentiality(confidentiality: Confidentiality): boolean
+```
+
+###### `confidentiality`<sup>Required</sup> <a name="confidentiality" id="cdktg.CIATriad.hasHigherConfidentiality.parameter.confidentiality"></a>
+
+- *Type:* <a href="#cdktg.Confidentiality">Confidentiality</a>
+
+---
+
+##### `hasHigherIntegrity` <a name="hasHigherIntegrity" id="cdktg.CIATriad.hasHigherIntegrity"></a>
+
+```typescript
+public hasHigherIntegrity(integrity: Integrity): boolean
+```
+
+###### `integrity`<sup>Required</sup> <a name="integrity" id="cdktg.CIATriad.hasHigherIntegrity.parameter.integrity"></a>
+
+- *Type:* <a href="#cdktg.Integrity">Integrity</a>
 
 ---
 

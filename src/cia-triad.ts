@@ -18,6 +18,36 @@ export class CIATriad {
     this.justification = props.justification;
   }
 
+  public hasHigherConfidentiality(confidentiality: Confidentiality): boolean {
+    const confidentialityRank: Record<Confidentiality, number> = {
+      [Confidentiality.PUBLIC]: 0,
+      [Confidentiality.INTERNAL]: 1,
+      [Confidentiality.RESTRICTED]: 2,
+      [Confidentiality.CONFIDENTIAL]: 3,
+      [Confidentiality.STRICTLY_CONFIDENTIAL]: 4,
+    };
+
+    const thisRank = confidentialityRank[this.confidentiality];
+    const thatRank = confidentialityRank[confidentiality];
+
+    return thisRank > thatRank;
+  }
+
+  public hasHigherIntegrity(integrity: Integrity): boolean {
+    const integrityRank: Record<Integrity, number> = {
+      [Integrity.ARCHIVE]: 0,
+      [Integrity.OPERATIONAL]: 1,
+      [Integrity.IMPORTANT]: 2,
+      [Integrity.CRITICAL]: 3,
+      [Integrity.MISSION_CRITICAL]: 4,
+    };
+
+    const thisRank = integrityRank[this.integrity];
+    const thatRank = integrityRank[integrity];
+
+    return thisRank > thatRank;
+  }
+
   public hasHigherAvailabilty(availability: Availability): boolean {
     const availabilityRank: Record<Availability, number> = {
       [Availability.ARCHIVE]: 0,
