@@ -17,6 +17,7 @@ export * from "./security-requirement";
 export * from "./shared-runtime";
 export * from "./synthesizer";
 export * from "./technical-asset";
+export * from "./testing";
 export * from "./trust-boundary";
 export * from "./usage";
 
