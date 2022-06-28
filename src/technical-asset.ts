@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 
-import { CIATriad } from "./cia-triad";
+import { Availability, CIATriad } from "./cia-triad";
 import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
 import { Model } from "./model";
@@ -50,8 +50,8 @@ export class TechnicalAsset extends Resource {
 
   protected trustBoundary?: TrustBoundary;
 
-  private dataAssetsProcessed: Set<string>;
-  private dataAssetsStored: Set<string>;
+  private dataAssetsProcessed: Set<DataAsset>;
+  private dataAssetsStored: Set<DataAsset>;
   private communications: Communication[];
 
   constructor(scope: Construct, id: string, props: TechnicalAssetProps) {
@@ -74,8 +74,8 @@ export class TechnicalAsset extends Resource {
     this.customDevelopedParts = props.customDevelopedParts ?? false;
     this.dataFormatsAccepted = props.dataFormatsAccepted;
 
-    this.dataAssetsProcessed = new Set<string>();
-    this.dataAssetsStored = new Set<string>();
+    this.dataAssetsProcessed = new Set<DataAsset>();
+    this.dataAssetsStored = new Set<DataAsset>();
 
     this.communications = new Array<Communication>();
 
@@ -91,13 +91,13 @@ export class TechnicalAsset extends Resource {
 
   public processes(...assets: DataAsset[]) {
     assets.forEach((a) => {
-      this.dataAssetsProcessed.add(a.uuid);
+      this.dataAssetsProcessed.add(a);
     });
   }
 
   public stores(...assets: DataAsset[]) {
     assets.forEach((a) => {
-      this.dataAssetsStored.add(a.uuid);
+      this.dataAssetsStored.add(a);
     });
   }
 
@@ -125,6 +125,24 @@ export class TechnicalAsset extends Resource {
       Technology.REVERSE_PROXY,
       Technology.WAF,
     ].includes(this.technology);
+  }
+
+  public get highestAvailability(): Availability {
+    let { availability: highest } = this.ciaTriad;
+
+    this.dataAssetsProcessed.forEach((a) => {
+      if (a.ciaTriad.hasHigherAvailabilty(highest)) {
+        highest = a.ciaTriad.availability;
+      }
+    });
+
+    this.dataAssetsStored.forEach((a) => {
+      if (a.ciaTriad.hasHigherAvailabilty(highest)) {
+        highest = a.ciaTriad.availability;
+      }
+    });
+
+    return highest;
   }
 
   public communicatesWith(
@@ -173,8 +191,12 @@ export class TechnicalAsset extends Resource {
         multitenant: this.multiTenant,
         redundant: this.redundant,
         custom_developed_parts: this.customDevelopedParts,
-        data_assets_processed: Array.from(this.dataAssetsProcessed),
-        data_assets_stored: Array.from(this.dataAssetsStored),
+        data_assets_processed: Array.from(this.dataAssetsProcessed).map(
+          (a) => a.uuid
+        ),
+        data_assets_stored: Array.from(this.dataAssetsStored).map(
+          (a) => a.uuid
+        ),
         data_formats_accepted: this.dataFormatsAccepted,
       },
     };

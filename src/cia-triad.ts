@@ -18,6 +18,21 @@ export class CIATriad {
     this.justification = props.justification;
   }
 
+  public hasHigherAvailabilty(availability: Availability): boolean {
+    const availabilityRank: Record<Availability, number> = {
+      [Availability.ARCHIVE]: 0,
+      [Availability.OPERATIONAL]: 1,
+      [Availability.IMPORTANT]: 2,
+      [Availability.CRITICAL]: 3,
+      [Availability.MISSION_CRITICAL]: 4,
+    };
+
+    const thisRank = availabilityRank[this.availability];
+    const thatRank = availabilityRank[availability];
+
+    return thisRank > thatRank;
+  }
+
   /**
    * @internal
    */

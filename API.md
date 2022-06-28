@@ -176,6 +176,7 @@ Any object.
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -252,6 +253,16 @@ public readonly encryption: Encryption;
 ```
 
 - *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `highestAvailability`<sup>Required</sup> <a name="highestAvailability" id="cdktg.plus_aws.ApplicationLoadBalancer.property.highestAvailability"></a>
+
+```typescript
+public readonly highestAvailability: Availability;
+```
+
+- *Type:* <a href="#cdktg.Availability">Availability</a>
 
 ---
 
@@ -570,6 +581,7 @@ Any object.
 | <code><a href="#cdktg.plus.Browser.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -645,6 +657,16 @@ public readonly encryption: Encryption;
 ```
 
 - *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `highestAvailability`<sup>Required</sup> <a name="highestAvailability" id="cdktg.plus.Browser.property.highestAvailability"></a>
+
+```typescript
+public readonly highestAvailability: Availability;
+```
+
+- *Type:* <a href="#cdktg.Availability">Availability</a>
 
 ---
 
@@ -2705,6 +2727,7 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -2780,6 +2803,16 @@ public readonly encryption: Encryption;
 ```
 
 - *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `highestAvailability`<sup>Required</sup> <a name="highestAvailability" id="cdktg.TechnicalAsset.property.highestAvailability"></a>
+
+```typescript
+public readonly highestAvailability: Availability;
+```
+
+- *Type:* <a href="#cdktg.Availability">Availability</a>
 
 ---
 
@@ -3298,6 +3331,7 @@ Any object.
 | <code><a href="#cdktg.plus.Vault.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -3375,6 +3409,16 @@ public readonly encryption: Encryption;
 ```
 
 - *Type:* <a href="#cdktg.Encryption">Encryption</a>
+
+---
+
+##### `highestAvailability`<sup>Required</sup> <a name="highestAvailability" id="cdktg.plus.Vault.property.highestAvailability"></a>
+
+```typescript
+public readonly highestAvailability: Availability;
+```
+
+- *Type:* <a href="#cdktg.Availability">Availability</a>
 
 ---
 
@@ -5935,6 +5979,25 @@ new CIATriad(props: CIATriadProps)
 
 ---
 
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.CIATriad.hasHigherAvailabilty">hasHigherAvailabilty</a></code> | *No description.* |
+
+---
+
+##### `hasHigherAvailabilty` <a name="hasHigherAvailabilty" id="cdktg.CIATriad.hasHigherAvailabilty"></a>
+
+```typescript
+public hasHigherAvailabilty(availability: Availability): boolean
+```
+
+###### `availability`<sup>Required</sup> <a name="availability" id="cdktg.CIATriad.hasHigherAvailabilty.parameter.availability"></a>
+
+- *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
 
 
 #### Properties <a name="Properties" id="Properties"></a>
@@ -6978,6 +7041,29 @@ public readonly SECURING_ADMINISTRATIVE_ACCESS: SecurityRequirement;
 - *Type:* <a href="#cdktg.SecurityRequirement">SecurityRequirement</a>
 
 ---
+
+### Testing <a name="Testing" id="cdktg.Testing"></a>
+
+Testing utilities for cdktg models.
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Testing.model">model</a></code> | *No description.* |
+
+---
+
+##### `model` <a name="model" id="cdktg.Testing.model"></a>
+
+```typescript
+import { Testing } from 'cdktg'
+
+Testing.model()
+```
+
+
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
