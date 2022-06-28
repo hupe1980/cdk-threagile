@@ -80,8 +80,7 @@ export class TechnicalAsset extends Resource {
     this.communications = new Array<Communication>();
 
     if (this.tags && this.tags.length > 0) {
-      const model = Model.of(this);
-      model.addTags(...this.tags);
+      Model.of(this).addTags(...this.tags);
     }
 
     if (props.trustBoundary) {

@@ -33,7 +33,10 @@ export class InitCommand<U extends InitOptions>
       ".cdktg.out",
       ".DS_Store",
     ];
-    const requirementsTxtContent = ["constructs>=10.0.0", "cdktg>=0.0.24"];
+    const requirementsTxtContent = [
+      "constructs>=10.0.0",
+      `cdktg>=${CDKTG_VERSION}`,
+    ];
     const envContent = "CDKTG_THREAGILE_BASE_URL=";
 
     fs.writeFileSync(".env", envContent);

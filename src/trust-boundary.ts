@@ -26,8 +26,7 @@ export class TrustBoundary extends Resource {
     this.trustBoundariesNested = new Set<string>();
 
     if (this.tags && this.tags.length > 0) {
-      const model = Model.of(this);
-      model.addTags(...this.tags);
+      Model.of(this).addTags(...this.tags);
     }
   }
 
