@@ -11,14 +11,14 @@ export interface SharedRuntimeProps extends ResourceProps {
 export class SharedRuntime extends Resource {
   public readonly tags?: string[];
 
-  private technicalAssetsRunning: Set<string>;
+  private technicalAssetsRunning: Set<TechnicalAsset>;
 
   constructor(scope: Construct, id: string, props: SharedRuntimeProps) {
     super(scope, id, props);
 
     this.tags = props.tags;
 
-    this.technicalAssetsRunning = new Set<string>();
+    this.technicalAssetsRunning = new Set<TechnicalAsset>();
 
     if (this.tags && this.tags.length > 0) {
       Model.of(this).addTags(...this.tags);
@@ -27,7 +27,7 @@ export class SharedRuntime extends Resource {
 
   public runs(...assets: TechnicalAsset[]) {
     assets.forEach((a) => {
-      this.technicalAssetsRunning.add(a.uuid);
+      this.technicalAssetsRunning.add(a);
     });
   }
 
@@ -36,11 +36,13 @@ export class SharedRuntime extends Resource {
    */
   public _toThreagile(): spec.Threagile["shared_runtimes"] {
     return {
-      [this.node.id]: {
-        id: this.uuid,
+      [this.title]: {
+        id: this.id,
         description: this.description ?? null,
         tags: Array.from(new Set(this.tags)),
-        technical_assets_running: Array.from(this.technicalAssetsRunning),
+        technical_assets_running: Array.from(this.technicalAssetsRunning).map(
+          (a) => a.id
+        ),
       },
     };
   }

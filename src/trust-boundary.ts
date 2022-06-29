@@ -13,8 +13,8 @@ export class TrustBoundary extends Resource {
   public readonly type: TrustBoundaryType;
   public readonly tags?: string[];
 
-  private technicalAssetsInside: Set<string>;
-  private trustBoundariesNested: Set<string>;
+  private technicalAssetsInside: Set<TechnicalAsset>;
+  private trustBoundariesNested: Set<TrustBoundary>;
 
   constructor(scope: Construct, id: string, props: TrustBoundaryProps) {
     super(scope, id, props);
@@ -22,8 +22,8 @@ export class TrustBoundary extends Resource {
     this.type = props.type;
     this.tags = props.tags;
 
-    this.technicalAssetsInside = new Set<string>();
-    this.trustBoundariesNested = new Set<string>();
+    this.technicalAssetsInside = new Set<TechnicalAsset>();
+    this.trustBoundariesNested = new Set<TrustBoundary>();
 
     if (this.tags && this.tags.length > 0) {
       Model.of(this).addTags(...this.tags);
@@ -36,12 +36,12 @@ export class TrustBoundary extends Resource {
         return this.addTrustBoundary(a._trustBoundary);
       }
 
-      this.technicalAssetsInside.add(a.uuid);
+      this.technicalAssetsInside.add(a);
     });
   }
 
   public addTrustBoundary(boundary: TrustBoundary) {
-    this.trustBoundariesNested.add(boundary.uuid);
+    this.trustBoundariesNested.add(boundary);
   }
 
   public isWithinCloud(): boolean {
@@ -67,13 +67,17 @@ export class TrustBoundary extends Resource {
    */
   public _toThreagile(): spec.Threagile["trust_boundaries"] {
     return {
-      [this.node.id]: {
-        id: this.uuid,
+      [this.title]: {
+        id: this.id,
         description: this.description ?? null,
         type: this.type,
         tags: Array.from(new Set(this.tags)),
-        technical_assets_inside: Array.from(this.technicalAssetsInside),
-        trust_boundaries_nested: Array.from(this.trustBoundariesNested),
+        technical_assets_inside: Array.from(this.technicalAssetsInside).map(
+          (a) => a.id
+        ),
+        trust_boundaries_nested: Array.from(this.trustBoundariesNested).map(
+          (t) => t.id
+        ),
       },
     };
   }

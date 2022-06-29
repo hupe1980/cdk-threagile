@@ -6,15 +6,16 @@ export interface ResourceProps {
 }
 
 export abstract class Resource extends Construct {
-  public readonly uuid: string;
+  public readonly id: string;
+  public readonly title: string;
 
   public readonly description?: string;
 
   constructor(scope: Construct, id: string, props: ResourceProps) {
     super(scope, id);
 
-    this.uuid = kebabCase(id);
-
+    this.id = kebabCase(id);
+    this.title = id;
     this.description = props.description;
   }
 

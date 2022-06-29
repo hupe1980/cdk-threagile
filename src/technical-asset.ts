@@ -173,8 +173,8 @@ export class TechnicalAsset extends Resource {
    */
   public _toThreagile(): spec.Threagile["technical_assets"] {
     const threagile: any = {
-      [this.node.id]: {
-        id: this.uuid,
+      [this.title]: {
+        id: this.id,
         description: this.description ?? null,
         type: this.type,
         usage: this.usage,
@@ -192,11 +192,9 @@ export class TechnicalAsset extends Resource {
         redundant: this.redundant,
         custom_developed_parts: this.customDevelopedParts,
         data_assets_processed: Array.from(this.dataAssetsProcessed).map(
-          (a) => a.uuid
+          (a) => a.id
         ),
-        data_assets_stored: Array.from(this.dataAssetsStored).map(
-          (a) => a.uuid
-        ),
+        data_assets_stored: Array.from(this.dataAssetsStored).map((a) => a.id),
         data_formats_accepted: this.dataFormatsAccepted,
       },
     };

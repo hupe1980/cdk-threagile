@@ -43,8 +43,8 @@ export class DataAsset extends Resource {
    */
   public _toThreagile(): spec.Threagile["data_assets"] {
     return {
-      [this.node.id]: {
-        id: this.uuid,
+      [this.title]: {
+        id: this.id,
         description: this.description ?? null,
         usage: this.usage,
         tags: Array.from(new Set(this.tags)),

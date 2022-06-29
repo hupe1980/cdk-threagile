@@ -62,14 +62,14 @@ export class Risk {
         exploitation_impact: this.exploitationImpact,
         data_breach_probability: this.dataBreachProbability,
         data_breach_technical_assets: this.dataBreachTechnicalAssets.map(
-          (a) => a.uuid
+          (a) => a.id
         ),
-        most_relevant_data_asset: this.mostRelevantDataAsset?.uuid,
-        most_relevant_technical_asset: this.mostRelevantTechnicalAsset?.uuid,
+        most_relevant_data_asset: this.mostRelevantDataAsset?.id,
+        most_relevant_technical_asset: this.mostRelevantTechnicalAsset?.id,
         most_relevant_communication_link:
-          this.mostRelevantCommunicationLink?.id,
-        most_relevant_trust_boundary: this.mostRelevantTrustBoundary?.uuid,
-        most_relevant_shared_runtime: this.mostRelevantSharedRuntime?.uuid,
+          this.mostRelevantCommunicationLink?.title,
+        most_relevant_trust_boundary: this.mostRelevantTrustBoundary?.id,
+        most_relevant_shared_runtime: this.mostRelevantSharedRuntime?.id,
       },
     };
   }
@@ -177,8 +177,8 @@ export class RiskCategory extends Resource {
    */
   public _toThreagile(): spec.Threagile["individual_risk_categories"] {
     const threagile: any = {
-      [this.node.id]: {
-        id: this.uuid,
+      [this.title]: {
+        id: this.id,
         description: this.description,
         impact: this.impact,
         asvs: this.asvs,

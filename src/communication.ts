@@ -19,7 +19,7 @@ export interface CommunicationProps extends CommunicationOptions {
 }
 
 export class Communication {
-  public readonly id: string;
+  public readonly title: string;
   public readonly source: TechnicalAsset;
   public readonly target: TechnicalAsset;
   public readonly description: string;
@@ -31,11 +31,11 @@ export class Communication {
   public readonly readonly: boolean;
   public readonly usage: Usage;
 
-  private dataAssetsSent: Set<string>;
-  private dataAssetsReceived: Set<string>;
+  private dataAssetsSent: Set<DataAsset>;
+  private dataAssetsReceived: Set<DataAsset>;
 
-  constructor(id: string, props: CommunicationProps) {
-    this.id = id;
+  constructor(title: string, props: CommunicationProps) {
+    this.title = title;
     this.source = props.source;
     this.target = props.target;
     this.description = props.description;
@@ -47,19 +47,19 @@ export class Communication {
     this.readonly = props.readonly;
     this.usage = props.usage;
 
-    this.dataAssetsSent = new Set<string>();
-    this.dataAssetsReceived = new Set<string>();
+    this.dataAssetsSent = new Set<DataAsset>();
+    this.dataAssetsReceived = new Set<DataAsset>();
   }
 
   public sends(...assets: DataAsset[]) {
     assets.forEach((a) => {
-      this.dataAssetsSent.add(a.uuid);
+      this.dataAssetsSent.add(a);
     });
   }
 
   public receives(...assets: DataAsset[]) {
     assets.forEach((a) => {
-      this.dataAssetsReceived.add(a.uuid);
+      this.dataAssetsReceived.add(a);
     });
   }
 
@@ -101,8 +101,8 @@ export class Communication {
    */
   public _toThreagile() {
     return {
-      [this.id]: {
-        target: this.target.uuid,
+      [this.title]: {
+        target: this.target.id,
         description: this.description,
         protocol: this.protocol,
         authentication: this.authentication,
@@ -111,8 +111,10 @@ export class Communication {
         ipFiltered: this.ipFiltered,
         readonly: this.readonly,
         usage: this.usage,
-        data_assets_sent: this.dataAssetsSent,
-        data_assets_received: this.dataAssetsReceived,
+        data_assets_sent: Array.from(this.dataAssetsSent).map((a) => a.id),
+        data_assets_received: Array.from(this.dataAssetsReceived).map(
+          (a) => a.id
+        ),
       },
     };
   }

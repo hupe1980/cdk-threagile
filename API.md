@@ -171,7 +171,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
@@ -206,10 +207,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.ApplicationLoadBalancer.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.ApplicationLoadBalancer.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.plus_aws.ApplicationLoadBalancer.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -576,7 +587,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.plus.Browser.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.plus.Browser.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
@@ -610,10 +622,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus.Browser.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Browser.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.plus.Browser.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -938,7 +960,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.plus_aws.Cloud.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.plus_aws.Cloud.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.Cloud.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.Cloud.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.Cloud.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.Cloud.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
@@ -957,10 +980,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.Cloud.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.Cloud.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.plus_aws.Cloud.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -1095,7 +1128,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.DataAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.DataAsset.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.DataAsset.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.DataAsset.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.DataAsset.property.quantity">quantity</a></code> | <code><a href="#cdktg.Quantity">Quantity</a></code> | *No description.* |
@@ -1118,10 +1152,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.DataAsset.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.DataAsset.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.DataAsset.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -1792,7 +1836,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.Resource.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.Resource.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Resource.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Resource.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Resource.property.description">description</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -1809,10 +1854,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.Resource.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Resource.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Resource.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -2016,7 +2071,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.RiskCategory.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.RiskCategory.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
@@ -2046,10 +2102,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.RiskCategory.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.RiskCategory.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.RiskCategory.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -2334,7 +2400,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.plus_aws.SecurityGroup.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.plus_aws.SecurityGroup.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.SecurityGroup.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.SecurityGroup.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.SecurityGroup.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.SecurityGroup.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
@@ -2353,10 +2420,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus_aws.SecurityGroup.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus_aws.SecurityGroup.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.plus_aws.SecurityGroup.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -2504,7 +2581,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.SharedRuntime.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.SharedRuntime.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.SharedRuntime.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.SharedRuntime.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.SharedRuntime.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.SharedRuntime.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
 
@@ -2522,10 +2600,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.SharedRuntime.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.SharedRuntime.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.SharedRuntime.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -2722,7 +2810,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.TechnicalAsset.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
@@ -2756,10 +2845,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TechnicalAsset.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.TechnicalAsset.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.TechnicalAsset.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -3084,7 +3183,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.TrustBoundary.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.TrustBoundary.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.TrustBoundary.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.type">type</a></code> | <code><a href="#cdktg.TrustBoundaryType">TrustBoundaryType</a></code> | *No description.* |
 | <code><a href="#cdktg.TrustBoundary.property.tags">tags</a></code> | <code>string[]</code> | *No description.* |
@@ -3103,10 +3203,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.TrustBoundary.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.TrustBoundary.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.TrustBoundary.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -3326,7 +3436,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdktg.plus.Vault.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdktg.plus.Vault.property.uuid">uuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.ciaTriad">ciaTriad</a></code> | <code><a href="#cdktg.CIATriad">CIATriad</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
@@ -3362,10 +3473,20 @@ The tree node.
 
 ---
 
-##### `uuid`<sup>Required</sup> <a name="uuid" id="cdktg.plus.Vault.property.uuid"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.plus.Vault.property.id"></a>
 
 ```typescript
-public readonly uuid: string;
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.plus.Vault.property.title"></a>
+
+```typescript
+public readonly title: string;
 ```
 
 - *Type:* string
@@ -6085,17 +6206,17 @@ public readonly justification: string;
 ```typescript
 import { Communication } from 'cdktg'
 
-new Communication(id: string, props: CommunicationProps)
+new Communication(title: string, props: CommunicationProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdktg.Communication.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Communication.Initializer.parameter.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.CommunicationProps">CommunicationProps</a></code> | *No description.* |
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="cdktg.Communication.Initializer.parameter.id"></a>
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Communication.Initializer.parameter.title"></a>
 
 - *Type:* string
 
@@ -6162,12 +6283,12 @@ public sends(assets: DataAsset): void
 | <code><a href="#cdktg.Communication.property.authentication">authentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.authorization">authorization</a></code> | <code><a href="#cdktg.Authorization">Authorization</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.ipFiltered">ipFiltered</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.protocol">protocol</a></code> | <code><a href="#cdktg.Protocol">Protocol</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.source">source</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.title">title</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
 | <code><a href="#cdktg.Communication.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
 
@@ -6197,16 +6318,6 @@ public readonly authorization: Authorization;
 
 ```typescript
 public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-##### `id`<sup>Required</sup> <a name="id" id="cdktg.Communication.property.id"></a>
-
-```typescript
-public readonly id: string;
 ```
 
 - *Type:* string
@@ -6260,6 +6371,16 @@ public readonly target: TechnicalAsset;
 ```
 
 - *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Communication.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
 
 ---
 
