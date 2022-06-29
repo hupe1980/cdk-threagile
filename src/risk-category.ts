@@ -78,7 +78,7 @@ export class Risk {
 export interface RiskCategoryProps extends ResourceProps {
   readonly impact: string;
   readonly asvs: string;
-  readonly cheatSheat: string;
+  readonly cheatSheet: string;
   readonly action: string;
   readonly mitigation: string;
   readonly check: string;
@@ -94,7 +94,7 @@ export interface RiskCategoryProps extends ResourceProps {
 export class RiskCategory extends Resource {
   public readonly impact: string;
   public readonly asvs: string;
-  public readonly cheatSheat: string;
+  public readonly cheatSheet: string;
   public readonly action: string;
   public readonly mitigation: string;
   public readonly check: string;
@@ -113,7 +113,7 @@ export class RiskCategory extends Resource {
 
     this.impact = props.impact;
     this.asvs = props.asvs;
-    this.cheatSheat = props.cheatSheat;
+    this.cheatSheet = props.cheatSheet;
     this.action = props.action;
     this.mitigation = props.mitigation;
     this.check = props.check;
@@ -182,7 +182,7 @@ export class RiskCategory extends Resource {
         description: this.description,
         impact: this.impact,
         asvs: this.asvs,
-        cheat_sheet: this.cheatSheat,
+        cheat_sheet: this.cheatSheet,
         action: this.action,
         mitigation: this.mitigation,
         check: this.check,

@@ -142,7 +142,7 @@ test("synth the model stub example", () => {
     description: "Some text describing the risk category...",
     impact: "Some text describing the impact...",
     asvs: "V0 - Something Strange",
-    cheatSheat: "https://example.com",
+    cheatSheet: "https://example.com",
     action: "Some text describing the action...",
     mitigation: "Some text describing the mitigation...",
     check: "Check if XYZ...",

@@ -188,7 +188,7 @@ export class TechnicalAsset extends Resource {
         encryption: this.encryption,
         owner: this.owner,
         ...this.ciaTriad._toThreagile(),
-        multitenant: this.multiTenant,
+        multi_tenant: this.multiTenant,
         redundant: this.redundant,
         custom_developed_parts: this.customDevelopedParts,
         data_assets_processed: Array.from(this.dataAssetsProcessed).map(

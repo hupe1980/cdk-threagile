@@ -2020,7 +2020,7 @@ Any object.
 | <code><a href="#cdktg.RiskCategory.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.RiskCategory.property.cheatSheat">cheatSheat</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategory.property.cheatSheet">cheatSheet</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.check">check</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.cwe">cwe</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategory.property.detectionLogic">detectionLogic</a></code> | <code>string</code> | *No description.* |
@@ -2086,10 +2086,10 @@ public readonly asvs: string;
 
 ---
 
-##### `cheatSheat`<sup>Required</sup> <a name="cheatSheat" id="cdktg.RiskCategory.property.cheatSheat"></a>
+##### `cheatSheet`<sup>Required</sup> <a name="cheatSheet" id="cdktg.RiskCategory.property.cheatSheet"></a>
 
 ```typescript
-public readonly cheatSheat: string;
+public readonly cheatSheet: string;
 ```
 
 - *Type:* string
@@ -4723,7 +4723,7 @@ const riskCategoryProps: RiskCategoryProps = { ... }
 | <code><a href="#cdktg.RiskCategoryProps.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategoryProps.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategoryProps.property.asvs">asvs</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.RiskCategoryProps.property.cheatSheat">cheatSheat</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.RiskCategoryProps.property.cheatSheet">cheatSheet</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategoryProps.property.check">check</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategoryProps.property.cwe">cwe</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdktg.RiskCategoryProps.property.detectionLogic">detectionLogic</a></code> | <code>string</code> | *No description.* |
@@ -4767,10 +4767,10 @@ public readonly asvs: string;
 
 ---
 
-##### `cheatSheat`<sup>Required</sup> <a name="cheatSheat" id="cdktg.RiskCategoryProps.property.cheatSheat"></a>
+##### `cheatSheet`<sup>Required</sup> <a name="cheatSheet" id="cdktg.RiskCategoryProps.property.cheatSheet"></a>
 
 ```typescript
-public readonly cheatSheat: string;
+public readonly cheatSheet: string;
 ```
 
 - *Type:* string
