@@ -178,6 +178,7 @@ Any object.
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.highestIntegrity">highestIntegrity</a></code> | <code><a href="#cdktg.Integrity">Integrity</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -274,6 +275,16 @@ public readonly highestAvailability: Availability;
 ```
 
 - *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
+
+##### `highestIntegrity`<sup>Required</sup> <a name="highestIntegrity" id="cdktg.plus_aws.ApplicationLoadBalancer.property.highestIntegrity"></a>
+
+```typescript
+public readonly highestIntegrity: Integrity;
+```
+
+- *Type:* <a href="#cdktg.Integrity">Integrity</a>
 
 ---
 
@@ -594,6 +605,7 @@ Any object.
 | <code><a href="#cdktg.plus.Browser.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.property.highestIntegrity">highestIntegrity</a></code> | <code><a href="#cdktg.Integrity">Integrity</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -689,6 +701,16 @@ public readonly highestAvailability: Availability;
 ```
 
 - *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
+
+##### `highestIntegrity`<sup>Required</sup> <a name="highestIntegrity" id="cdktg.plus.Browser.property.highestIntegrity"></a>
+
+```typescript
+public readonly highestIntegrity: Integrity;
+```
+
+- *Type:* <a href="#cdktg.Integrity">Integrity</a>
 
 ---
 
@@ -2817,6 +2839,7 @@ Any object.
 | <code><a href="#cdktg.TechnicalAsset.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.property.highestIntegrity">highestIntegrity</a></code> | <code><a href="#cdktg.Integrity">Integrity</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -2912,6 +2935,16 @@ public readonly highestAvailability: Availability;
 ```
 
 - *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
+
+##### `highestIntegrity`<sup>Required</sup> <a name="highestIntegrity" id="cdktg.TechnicalAsset.property.highestIntegrity"></a>
+
+```typescript
+public readonly highestIntegrity: Integrity;
+```
+
+- *Type:* <a href="#cdktg.Integrity">Integrity</a>
 
 ---
 
@@ -3443,6 +3476,7 @@ Any object.
 | <code><a href="#cdktg.plus.Vault.property.customDevelopedParts">customDevelopedParts</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.encryption">encryption</a></code> | <code><a href="#cdktg.Encryption">Encryption</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.highestAvailability">highestAvailability</a></code> | <code><a href="#cdktg.Availability">Availability</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.property.highestIntegrity">highestIntegrity</a></code> | <code><a href="#cdktg.Integrity">Integrity</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.humanUse">humanUse</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.internet">internet</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.property.machine">machine</a></code> | <code><a href="#cdktg.Machine">Machine</a></code> | *No description.* |
@@ -3540,6 +3574,16 @@ public readonly highestAvailability: Availability;
 ```
 
 - *Type:* <a href="#cdktg.Availability">Availability</a>
+
+---
+
+##### `highestIntegrity`<sup>Required</sup> <a name="highestIntegrity" id="cdktg.plus.Vault.property.highestIntegrity"></a>
+
+```typescript
+public readonly highestIntegrity: Integrity;
+```
+
+- *Type:* <a href="#cdktg.Integrity">Integrity</a>
 
 ---
 

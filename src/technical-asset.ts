@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 
-import { Availability, CIATriad } from "./cia-triad";
+import { Integrity, Availability, CIATriad } from "./cia-triad";
 import { Communication, CommunicationOptions } from "./communication";
 import { DataAsset } from "./data-asset";
 import { Model } from "./model";
@@ -125,6 +125,24 @@ export class TechnicalAsset extends Resource {
       Technology.REVERSE_PROXY,
       Technology.WAF,
     ].includes(this.technology);
+  }
+
+  public get highestIntegrity(): Integrity {
+    let { integrity: highest } = this.ciaTriad;
+
+    this.dataAssetsProcessed.forEach((a) => {
+      if (a.ciaTriad.hasHigherIntegrity(highest)) {
+        highest = a.ciaTriad.integrity;
+      }
+    });
+
+    this.dataAssetsStored.forEach((a) => {
+      if (a.ciaTriad.hasHigherIntegrity(highest)) {
+        highest = a.ciaTriad.integrity;
+      }
+    });
+
+    return highest;
   }
 
   public get highestAvailability(): Availability {
