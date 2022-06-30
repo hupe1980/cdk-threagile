@@ -1,11 +1,13 @@
 import { Construct, IConstruct } from "constructs";
 import { AbuseCase } from "./abuse-case";
+import { Aspects } from "./aspect";
 
 import { Author } from "./author";
 import { DataAsset } from "./data-asset";
 import { Overview } from "./overview";
 import { RiskCategory } from "./risk-category";
 import { RiskTracking, RiskTrackingProps } from "./risk-tracking";
+import { RiskAspect } from "./risks";
 import { SecurityRequirement } from "./security-requirement";
 import { SharedRuntime } from "./shared-runtime";
 import { Threagile } from "./spec/threatgile.generated";
@@ -165,6 +167,8 @@ export class Model extends Construct {
     this.tags = new Set<string>();
     this.riskTracking = new Map<string, RiskTracking>();
     this.rawOverrides = {};
+
+    Aspects.of(this).add(new RiskAspect());
   }
 
   public addTag(tag: string) {

@@ -67,7 +67,7 @@ export class Risk {
         most_relevant_data_asset: this.mostRelevantDataAsset?.id,
         most_relevant_technical_asset: this.mostRelevantTechnicalAsset?.id,
         most_relevant_communication_link:
-          this.mostRelevantCommunicationLink?.title,
+          this.mostRelevantCommunicationLink?.id,
         most_relevant_trust_boundary: this.mostRelevantTrustBoundary?.id,
         most_relevant_shared_runtime: this.mostRelevantSharedRuntime?.id,
       },

@@ -1,6 +1,9 @@
+import { Construct } from "constructs";
 import { DataAsset } from "./data-asset";
 import { TechnicalAsset } from "./technical-asset";
 import { Usage } from "./usage";
+
+const COMMUNICATION_SYMBOL = Symbol.for("cdktg/Communication");
 
 export interface CommunicationOptions {
   readonly description: string;
@@ -18,7 +21,12 @@ export interface CommunicationProps extends CommunicationOptions {
   readonly target: TechnicalAsset;
 }
 
-export class Communication {
+export class Communication extends Construct {
+  public static isCommunicationl(x: any): x is Communication {
+    return x !== null && typeof x === "object" && COMMUNICATION_SYMBOL in x;
+  }
+
+  public readonly id: string;
   public readonly title: string;
   public readonly source: TechnicalAsset;
   public readonly target: TechnicalAsset;
@@ -34,8 +42,10 @@ export class Communication {
   private dataAssetsSent: Set<DataAsset>;
   private dataAssetsReceived: Set<DataAsset>;
 
-  constructor(title: string, props: CommunicationProps) {
-    this.title = title;
+  constructor(scope: Construct, id: string, props: CommunicationProps) {
+    super(scope, id);
+    this.id = createId(props.source.id, id);
+    this.title = id;
     this.source = props.source;
     this.target = props.target;
     this.description = props.description;
@@ -61,6 +71,10 @@ export class Communication {
     assets.forEach((a) => {
       this.dataAssetsReceived.add(a);
     });
+  }
+
+  public hasDataAssets(): boolean {
+    return this.dataAssetsSent.size > 0 || this.dataAssetsReceived.size > 0;
   }
 
   public isEncrypted(): boolean {
@@ -96,6 +110,10 @@ export class Communication {
     ].includes(this.protocol);
   }
 
+  public isBidirectional(): boolean {
+    return this.dataAssetsSent.size > 0 && this.dataAssetsReceived.size > 0;
+  }
+
   /**
    * @internal
    */
@@ -118,6 +136,10 @@ export class Communication {
       },
     };
   }
+}
+
+function createId(sourceAssetId: string, title: string): string {
+  return sourceAssetId + ">" + title.toLowerCase();
 }
 
 export enum Protocol {

@@ -1053,6 +1053,320 @@ public readonly tags: string[];
 ---
 
 
+### Communication <a name="Communication" id="cdktg.Communication"></a>
+
+#### Initializers <a name="Initializers" id="cdktg.Communication.Initializer"></a>
+
+```typescript
+import { Communication } from 'cdktg'
+
+new Communication(scope: Construct, id: string, props: CommunicationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Communication.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdktg.Communication.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Communication.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.CommunicationProps">CommunicationProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdktg.Communication.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Communication.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdktg.Communication.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdktg.CommunicationProps">CommunicationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Communication.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdktg.Communication.hasDataAssets">hasDataAssets</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.isBidirectional">isBidirectional</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.isEncrypted">isEncrypted</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.isProcessLocal">isProcessLocal</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.receives">receives</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.sends">sends</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdktg.Communication.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `hasDataAssets` <a name="hasDataAssets" id="cdktg.Communication.hasDataAssets"></a>
+
+```typescript
+public hasDataAssets(): boolean
+```
+
+##### `isBidirectional` <a name="isBidirectional" id="cdktg.Communication.isBidirectional"></a>
+
+```typescript
+public isBidirectional(): boolean
+```
+
+##### `isEncrypted` <a name="isEncrypted" id="cdktg.Communication.isEncrypted"></a>
+
+```typescript
+public isEncrypted(): boolean
+```
+
+##### `isProcessLocal` <a name="isProcessLocal" id="cdktg.Communication.isProcessLocal"></a>
+
+```typescript
+public isProcessLocal(): boolean
+```
+
+##### `receives` <a name="receives" id="cdktg.Communication.receives"></a>
+
+```typescript
+public receives(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.receives.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+##### `sends` <a name="sends" id="cdktg.Communication.sends"></a>
+
+```typescript
+public sends(assets: DataAsset): void
+```
+
+###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.sends.parameter.assets"></a>
+
+- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.Communication.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#cdktg.Communication.isCommunicationl">isCommunicationl</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdktg.Communication.isConstruct"></a>
+
+```typescript
+import { Communication } from 'cdktg'
+
+Communication.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.Communication.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCommunicationl` <a name="isCommunicationl" id="cdktg.Communication.isCommunicationl"></a>
+
+```typescript
+import { Communication } from 'cdktg'
+
+Communication.isCommunicationl(x: any)
+```
+
+###### `x`<sup>Required</sup> <a name="x" id="cdktg.Communication.isCommunicationl.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdktg.Communication.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdktg.Communication.property.authentication">authentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.authorization">authorization</a></code> | <code><a href="#cdktg.Authorization">Authorization</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.ipFiltered">ipFiltered</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.protocol">protocol</a></code> | <code><a href="#cdktg.Protocol">Protocol</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.source">source</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.title">title</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
+| <code><a href="#cdktg.Communication.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdktg.Communication.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `authentication`<sup>Required</sup> <a name="authentication" id="cdktg.Communication.property.authentication"></a>
+
+```typescript
+public readonly authentication: Authentication;
+```
+
+- *Type:* <a href="#cdktg.Authentication">Authentication</a>
+
+---
+
+##### `authorization`<sup>Required</sup> <a name="authorization" id="cdktg.Communication.property.authorization"></a>
+
+```typescript
+public readonly authorization: Authorization;
+```
+
+- *Type:* <a href="#cdktg.Authorization">Authorization</a>
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdktg.Communication.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdktg.Communication.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `ipFiltered`<sup>Required</sup> <a name="ipFiltered" id="cdktg.Communication.property.ipFiltered"></a>
+
+```typescript
+public readonly ipFiltered: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `protocol`<sup>Required</sup> <a name="protocol" id="cdktg.Communication.property.protocol"></a>
+
+```typescript
+public readonly protocol: Protocol;
+```
+
+- *Type:* <a href="#cdktg.Protocol">Protocol</a>
+
+---
+
+##### `readonly`<sup>Required</sup> <a name="readonly" id="cdktg.Communication.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="cdktg.Communication.property.source"></a>
+
+```typescript
+public readonly source: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `target`<sup>Required</sup> <a name="target" id="cdktg.Communication.property.target"></a>
+
+```typescript
+public readonly target: TechnicalAsset;
+```
+
+- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="cdktg.Communication.property.title"></a>
+
+```typescript
+public readonly title: string;
+```
+
+- *Type:* string
+
+---
+
+##### `usage`<sup>Required</sup> <a name="usage" id="cdktg.Communication.property.usage"></a>
+
+```typescript
+public readonly usage: Usage;
+```
+
+- *Type:* <a href="#cdktg.Usage">Usage</a>
+
+---
+
+##### `vpn`<sup>Required</sup> <a name="vpn" id="cdktg.Communication.property.vpn"></a>
+
+```typescript
+public readonly vpn: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+
 ### DataAsset <a name="DataAsset" id="cdktg.DataAsset"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.DataAsset.Initializer"></a>
@@ -6243,212 +6557,6 @@ public readonly justification: string;
 ---
 
 
-### Communication <a name="Communication" id="cdktg.Communication"></a>
-
-#### Initializers <a name="Initializers" id="cdktg.Communication.Initializer"></a>
-
-```typescript
-import { Communication } from 'cdktg'
-
-new Communication(title: string, props: CommunicationProps)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.Communication.Initializer.parameter.title">title</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.Communication.Initializer.parameter.props">props</a></code> | <code><a href="#cdktg.CommunicationProps">CommunicationProps</a></code> | *No description.* |
-
----
-
-##### `title`<sup>Required</sup> <a name="title" id="cdktg.Communication.Initializer.parameter.title"></a>
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="cdktg.Communication.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#cdktg.CommunicationProps">CommunicationProps</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdktg.Communication.isEncrypted">isEncrypted</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.isProcessLocal">isProcessLocal</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.receives">receives</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.sends">sends</a></code> | *No description.* |
-
----
-
-##### `isEncrypted` <a name="isEncrypted" id="cdktg.Communication.isEncrypted"></a>
-
-```typescript
-public isEncrypted(): boolean
-```
-
-##### `isProcessLocal` <a name="isProcessLocal" id="cdktg.Communication.isProcessLocal"></a>
-
-```typescript
-public isProcessLocal(): boolean
-```
-
-##### `receives` <a name="receives" id="cdktg.Communication.receives"></a>
-
-```typescript
-public receives(assets: DataAsset): void
-```
-
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.receives.parameter.assets"></a>
-
-- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
-
----
-
-##### `sends` <a name="sends" id="cdktg.Communication.sends"></a>
-
-```typescript
-public sends(assets: DataAsset): void
-```
-
-###### `assets`<sup>Required</sup> <a name="assets" id="cdktg.Communication.sends.parameter.assets"></a>
-
-- *Type:* <a href="#cdktg.DataAsset">DataAsset</a>
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdktg.Communication.property.authentication">authentication</a></code> | <code><a href="#cdktg.Authentication">Authentication</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.authorization">authorization</a></code> | <code><a href="#cdktg.Authorization">Authorization</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.ipFiltered">ipFiltered</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.protocol">protocol</a></code> | <code><a href="#cdktg.Protocol">Protocol</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.readonly">readonly</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.source">source</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.target">target</a></code> | <code><a href="#cdktg.TechnicalAsset">TechnicalAsset</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.title">title</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.usage">usage</a></code> | <code><a href="#cdktg.Usage">Usage</a></code> | *No description.* |
-| <code><a href="#cdktg.Communication.property.vpn">vpn</a></code> | <code>boolean</code> | *No description.* |
-
----
-
-##### `authentication`<sup>Required</sup> <a name="authentication" id="cdktg.Communication.property.authentication"></a>
-
-```typescript
-public readonly authentication: Authentication;
-```
-
-- *Type:* <a href="#cdktg.Authentication">Authentication</a>
-
----
-
-##### `authorization`<sup>Required</sup> <a name="authorization" id="cdktg.Communication.property.authorization"></a>
-
-```typescript
-public readonly authorization: Authorization;
-```
-
-- *Type:* <a href="#cdktg.Authorization">Authorization</a>
-
----
-
-##### `description`<sup>Required</sup> <a name="description" id="cdktg.Communication.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-##### `ipFiltered`<sup>Required</sup> <a name="ipFiltered" id="cdktg.Communication.property.ipFiltered"></a>
-
-```typescript
-public readonly ipFiltered: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `protocol`<sup>Required</sup> <a name="protocol" id="cdktg.Communication.property.protocol"></a>
-
-```typescript
-public readonly protocol: Protocol;
-```
-
-- *Type:* <a href="#cdktg.Protocol">Protocol</a>
-
----
-
-##### `readonly`<sup>Required</sup> <a name="readonly" id="cdktg.Communication.property.readonly"></a>
-
-```typescript
-public readonly readonly: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `source`<sup>Required</sup> <a name="source" id="cdktg.Communication.property.source"></a>
-
-```typescript
-public readonly source: TechnicalAsset;
-```
-
-- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
-
----
-
-##### `target`<sup>Required</sup> <a name="target" id="cdktg.Communication.property.target"></a>
-
-```typescript
-public readonly target: TechnicalAsset;
-```
-
-- *Type:* <a href="#cdktg.TechnicalAsset">TechnicalAsset</a>
-
----
-
-##### `title`<sup>Required</sup> <a name="title" id="cdktg.Communication.property.title"></a>
-
-```typescript
-public readonly title: string;
-```
-
-- *Type:* string
-
----
-
-##### `usage`<sup>Required</sup> <a name="usage" id="cdktg.Communication.property.usage"></a>
-
-```typescript
-public readonly usage: Usage;
-```
-
-- *Type:* <a href="#cdktg.Usage">Usage</a>
-
----
-
-##### `vpn`<sup>Required</sup> <a name="vpn" id="cdktg.Communication.property.vpn"></a>
-
-```typescript
-public readonly vpn: boolean;
-```
-
-- *Type:* boolean
-
----
-
-
 ### Image <a name="Image" id="cdktg.Image"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.Image.Initializer"></a>
@@ -6949,6 +7057,48 @@ public readonly mostRelevantTrustBoundary: TrustBoundary;
 ---
 
 
+### RiskAspect <a name="RiskAspect" id="cdktg.RiskAspect"></a>
+
+- *Implements:* <a href="#cdktg.IAspect">IAspect</a>
+
+#### Initializers <a name="Initializers" id="cdktg.RiskAspect.Initializer"></a>
+
+```typescript
+import { RiskAspect } from 'cdktg'
+
+new RiskAspect()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdktg.RiskAspect.visit">visit</a></code> | All aspects can visit an IConstruct. |
+
+---
+
+##### `visit` <a name="visit" id="cdktg.RiskAspect.visit"></a>
+
+```typescript
+public visit(node: IConstruct): void
+```
+
+All aspects can visit an IConstruct.
+
+###### `node`<sup>Required</sup> <a name="node" id="cdktg.RiskAspect.visit.parameter.node"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+
+
+
 ### RiskTracking <a name="RiskTracking" id="cdktg.RiskTracking"></a>
 
 #### Initializers <a name="Initializers" id="cdktg.RiskTracking.Initializer"></a>
@@ -7260,7 +7410,7 @@ Testing.model()
 
 ### IAspect <a name="IAspect" id="cdktg.IAspect"></a>
 
-- *Implemented By:* <a href="#cdktg.IAspect">IAspect</a>
+- *Implemented By:* <a href="#cdktg.RiskAspect">RiskAspect</a>, <a href="#cdktg.IAspect">IAspect</a>
 
 Represents an Aspect.
 

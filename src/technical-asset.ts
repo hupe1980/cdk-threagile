@@ -168,7 +168,7 @@ export class TechnicalAsset extends Resource {
     target: TechnicalAsset,
     options: CommunicationOptions
   ): Communication {
-    const communication = new Communication(id, {
+    const communication = new Communication(this, id, {
       source: this,
       target: target,
       ...options,
@@ -217,7 +217,7 @@ export class TechnicalAsset extends Resource {
       },
     };
 
-    threagile[this.node.id].communication_links = this.communications.reduce(
+    threagile[this.title].communication_links = this.communications.reduce(
       (prev, current) => Object.assign(prev, current._toThreagile()),
       {}
     );
