@@ -127,6 +127,10 @@ export class TechnicalAsset extends Resource {
     ].includes(this.technology);
   }
 
+  public isInScope(): boolean {
+    return this.scope === Scope.inScope();
+  }
+
   public get highestIntegrity(): Integrity {
     let { integrity: highest } = this.ciaTriad;
 

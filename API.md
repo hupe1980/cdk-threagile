@@ -44,6 +44,7 @@ new plus_aws.ApplicationLoadBalancer(scope: Construct, id: string, props: Applic
 | --- | --- |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isInScope">isInScope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus_aws.ApplicationLoadBalancer.isWebService">isWebService</a></code> | *No description.* |
@@ -83,6 +84,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isInScope` <a name="isInScope" id="cdktg.plus_aws.ApplicationLoadBalancer.isInScope"></a>
+
+```typescript
+public isInScope(): boolean
+```
 
 ##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus_aws.ApplicationLoadBalancer.isTrafficForwarding"></a>
 
@@ -471,6 +478,7 @@ new plus.Browser(scope: Construct, id: string, props: BrowserProps)
 | --- | --- |
 | <code><a href="#cdktg.plus.Browser.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus.Browser.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Browser.isInScope">isInScope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Browser.isWebService">isWebService</a></code> | *No description.* |
@@ -510,6 +518,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isInScope` <a name="isInScope" id="cdktg.plus.Browser.isInScope"></a>
+
+```typescript
+public isInScope(): boolean
+```
 
 ##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus.Browser.isTrafficForwarding"></a>
 
@@ -3019,6 +3033,7 @@ new TechnicalAsset(scope: Construct, id: string, props: TechnicalAssetProps)
 | --- | --- |
 | <code><a href="#cdktg.TechnicalAsset.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.TechnicalAsset.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.TechnicalAsset.isInScope">isInScope</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.TechnicalAsset.isWebService">isWebService</a></code> | *No description.* |
@@ -3058,6 +3073,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isInScope` <a name="isInScope" id="cdktg.TechnicalAsset.isInScope"></a>
+
+```typescript
+public isInScope(): boolean
+```
 
 ##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.TechnicalAsset.isTrafficForwarding"></a>
 
@@ -3643,6 +3664,7 @@ new plus.Vault(scope: Construct, id: string, props: VaultProps)
 | --- | --- |
 | <code><a href="#cdktg.plus.Vault.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdktg.plus.Vault.communicatesWith">communicatesWith</a></code> | *No description.* |
+| <code><a href="#cdktg.plus.Vault.isInScope">isInScope</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.isTrafficForwarding">isTrafficForwarding</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.isWebApplication">isWebApplication</a></code> | *No description.* |
 | <code><a href="#cdktg.plus.Vault.isWebService">isWebService</a></code> | *No description.* |
@@ -3683,6 +3705,12 @@ public communicatesWith(id: string, target: TechnicalAsset, options: Communicati
 - *Type:* <a href="#cdktg.CommunicationOptions">CommunicationOptions</a>
 
 ---
+
+##### `isInScope` <a name="isInScope" id="cdktg.plus.Vault.isInScope"></a>
+
+```typescript
+public isInScope(): boolean
+```
 
 ##### `isTrafficForwarding` <a name="isTrafficForwarding" id="cdktg.plus.Vault.isTrafficForwarding"></a>
 

@@ -9,7 +9,9 @@ export class RiskAspect implements IAspect {
       // When a technical communication link does not send or receive any data assets, this is
       // an indicator for an unnecessary communication link (or for an incomplete model).
       if (!node.hasDataAssets()) {
-        Annotations.of(node).addWarning("Unnecessary Communication Link");
+        if (node.source.isInScope() || node.target.isInScope()) {
+          Annotations.of(node).addWarning("Unnecessary Communication Link");
+        }
       }
     }
   }
